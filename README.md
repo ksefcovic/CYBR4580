@@ -1,6 +1,3 @@
-# Makers README.md
-This is a test made by Kevin to try making something on Github
-
 # Team members
 | Name | Specialty |
 |------|-----------|
@@ -8,3 +5,10 @@ This is a test made by Kevin to try making something on Github
 | Lauren Shultz | Web development |
 | Aaron Wurtele | Network Analysis |
 | Dylan Christiansen | Elevators |
+
+# Executive Project Summary
+# Proposed project timeline
+# Project-oriented risk list
+# Project methodology
+# Resources/Technology needed
+# First sprint plan
