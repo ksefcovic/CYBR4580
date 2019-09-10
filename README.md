@@ -1,10 +1,10 @@
 # Team members
-Name 
-------
-Kevin Sefcovic
-Lauren Shultz
-Aaron Wurtele
-Dylan Christiansen
+| Name |
+| ------ |
+| Kevin Sefcovic |
+| Lauren Shultz |
+| Aaron Wurtele |
+| Dylan Christiansen |
 
 # Executive Project Summary
 
