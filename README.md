@@ -21,9 +21,9 @@ Project Goals for proof of concept
 Device Finder would help people get their stolen devices back. This could help cut down on device theft as it would be easier for law enforcement to gather information about stolen devices and their locations. Many applications exist for finding stolen phones, but this would help with other devices as well.
 
 # Proposed project timeline
-+ Router work:
-    - Create a branch of OpenWRT’s Github repository (done on 9/3)
-    - Locate the section of code responsible for DHCP functionality
++ Android NIC Firmware work:
+    - Find repository for AOSP NIC general driver
+    - Fork the repository
     - Add code that connects to the server and sends the MAC that was just given a lease
 + Virtual Private Server work:
     - Purchase a low cost Virtual Private Server to host the application on
