@@ -47,6 +47,39 @@ Device Finder would help people get their stolen devices back. This could help c
 # Project-oriented risk list
 
 # Project methodology
+For literature review we used the following key words:
++ Keywords
++ Router updates
++ Network sniffing
++ Device location
++ MAC spoofing
++ Database hardening
+Relevant papers
++ Using mobiles for on campus location tracking (F. Aloul, A. Sagahyroon, 	A. Al-Shami, I. Al-Midfa, R. Moutassem) 
++ Patent US7373425B2
++ Investigation of multi-device location spoofing attacks on air traffic control and possible countermeasures (D. Moser, P. Leu, V. Lenders, A. Ranganathan, F. Ricciato, S. Capkun)
++ Decomposition of MAC address structure for granular device inference (J. Martin, E. Rye, R. Beverly)
++ A MAC-address Relaying NAT Router for PC Identification from Outside of a LAN (R. Murakami, N. Yamai, K. Okayama)
+State of the art
++ A few applications exist that work similarly to the proposed application, but 
+
+Our technical plan will work along these lines:
++ Find open source Android libraries and modify them to send MAC to server
++ Create alerting code
++ Update application to scrape IP information and send notification
++ Create web application 
+    - Need account creation
+    - User device MAC location
+    - Send information to database server
+    - Allow user to mark device as “stolen”
+    - Allow user to unmark device as “stolen”
++ Create database server
+    - Purchase and install OS
+    - Write application database to store user information
++ Setup listener to gather user information
++ Setup alerting for when MAC has been located
++ Send IP and MAC information to “Authorities”
+
 
 # Resources/Technology needed
 
