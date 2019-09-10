@@ -7,6 +7,18 @@
 | Dylan Christiansen |
 
 # Executive Project Summary
+Devices are stolen every day whether it be phones, laptops or others. There have been apps created to locate devices, but these applications are usually created for phones and not so much other mobile devices such as tablets or laptops. While these efforts can help law enforcement to a certain extent, if the device is wiped, the device may not work for this as they are account based and not hardware based. This leads to frustration by both the owner and law enforcement as they struggle to locate stolen merchandise and return it to the proper location.
+
+Device Finder is an OS based firmware solution that allows devices to be located whether they have been factory reset or are still in the condition in which they were stolen. Device Finder works by discovering device locations based off the MAC on their network card and sending IP location to authorities. 
+
+Project Goals for proof of concept
++ Find and manipulate Android open source NIC libraries
++ Create database for storing user information 
++ Create web app for user interfacing
++ Create alerting system for notification of authorities
+
+
+Device Finder would help people get their stolen devices back. This could help cut down on device theft as it would be easier for law enforcement to gather information about stolen devices and their locations. Many applications exist for finding stolen phones, but this would help with other devices as well.
 
 # Proposed project timeline
 + Router work:
