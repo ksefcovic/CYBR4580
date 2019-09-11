@@ -85,5 +85,3 @@ Our technical plan will work along these lines:
 
 
 # Resources/Technology needed
-
-# First sprint plan
