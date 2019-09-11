@@ -9,7 +9,7 @@
 # Executive Project Summary
 Devices are stolen every day whether it be phones, laptops or others. There have been apps created to locate devices, but these applications are usually created for phones and not so much other mobile devices such as tablets or laptops. While these efforts can help law enforcement to a certain extent, if the device is wiped, the device may not work for this as they are account based and not hardware based. This leads to frustration by both the owner and law enforcement as they struggle to locate stolen merchandise and return it to the proper location.
 
-Device Finder is an OS based firmware solution that allows devices to be located whether they have been factory reset or are still in the condition in which they were stolen. Device Finder works by discovering device locations based off the MAC on their network card and sending IP location to authorities. 
+Device Finder is an OS based firmware solution that allows devices to be located whether they have been factory reset or are still in the condition in which they were stolen. Device Finder works by sending MAC addresses to a private server that checks to see if the device has been marked as missing and then, if the device has been previously marked as missing, it alerts the owner with location information.
 
 Project Goals for proof of concept
 + Find and manipulate Android open source NIC libraries
@@ -40,19 +40,21 @@ Device Finder would help people get their stolen devices back. This could help c
     - ??
 + Alerting functionality
     - Write the code for checking MAC against stolen list and verify functionality
-    - Write code for pushing stolen list changes to router
     - Write code for sending stolen MAC found alert to alerting platform
 + Security testing (if we get there)
+    - Properly sanitize input
     - Ensure stolen MAC list is encrypted
     - Ensure alerting is encrypted
-    - Ensure database doesn’t have leaks 
+    - Ensure database doesn’t have leaks
 
 # Project-oriented risk list
 
 # Project methodology
 For literature review we used the following key words:
 + Keywords
-+ Router updates
++ Android Open Source Project
++ Android firmware flashing
++ Android Open Source Project network drivers
 + Network sniffing
 + Device location
 + MAC spoofing
