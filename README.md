@@ -54,8 +54,8 @@ Device Finder would help people get their stolen devices back. This could help c
 |No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope  |
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the update firmware on an emulator we will have to try it on another device |
 |Issue communicating the information from the NIC to the WebApp | 6 | 4 | The firmware that we update will have to communicate the MAC address to the WebApp |
-|Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works | 
-| MAC Address spoofing | 5 | 3 | On the application a user could Spoof a MAC address |
+|Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
+| There may be different NIC drives for each manufacture  | 3 | 6 | Different manufactures like Samsung, HTC, etc. may use different NIC drivers so a general firmware update may not be possible  |
 
 # Project methodology
 For literature review we used the following key words:
