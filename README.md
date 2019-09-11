@@ -69,10 +69,12 @@ For literature review we used the following key words:
 + Database hardening
 Relevant papers
 + Using mobiles for on campus location tracking (F. Aloul, A. Sagahyroon, 	A. Al-Shami, I. Al-Midfa, R. Moutassem)
-+ Patent US7373425B2
++ Patent US7373425B2 (Craig Barrack, James Ching-Shau Yik, Rong-Feng Chang, Eric Lin )
 + Investigation of multi-device location spoofing attacks on air traffic control and possible countermeasures (D. Moser, P. Leu, V. Lenders, A. Ranganathan, F. Ricciato, S. Capkun)
 + Decomposition of MAC address structure for granular device inference (J. Martin, E. Rye, R. Beverly)
 + A MAC-address Relaying NAT Router for PC Identification from Outside of a LAN (R. Murakami, N. Yamai, K. Okayama)
++ I know your MAC address: targeted tracking of individual using Wi-Fi (Mathieu Cunch)
++ Hardening web applications using a least privilege DBMS access model (Stuart Steiner, Daniel Conte de Leon, Ananth A. Jillepalli)
 State of the art
 + A few applications exist that work similarly to the proposed application, but
 
@@ -94,3 +96,10 @@ Our technical plan will work along these lines:
 + Send IP and MAC information to “Authorities”
 
 # Resources/Technology needed
+
+|Resource  | Dr. Hale needed? | Investigating Team member | Description |
+|-------------------|---------|---------------------------|-------------|
+|Android Studios | No | Dylan  and Aaron | Android Studio lets you develop for Android  |
+|Android emulator | No | Dylan | We will need an emulator to flash the updated firmware too |
+|Android device (optional) | No | Dylan and Aaron | If we want to test the firmware on a physical device |
+|Web Server | No | Kevin and Lauren | We will need a web server in order to host our web app |
