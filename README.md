@@ -21,6 +21,9 @@ Project Goals for proof of concept
 Device Finder would help people get their stolen devices back. This could help cut down on device theft as it would be easier for law enforcement to gather information about stolen devices and their locations. Many applications exist for finding stolen phones, but this would help with other devices as well.
 
 # Proposed project timeline
+
+[Github project here](https://github.com/ksefcovic/CYBR4580/projects/1)
+
 + Android NIC Firmware work:
     - Find repository for AOSP NIC general driver
     - Fork the repository
