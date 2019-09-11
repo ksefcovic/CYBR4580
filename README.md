@@ -83,5 +83,4 @@ Our technical plan will work along these lines:
 + Setup alerting for when MAC has been located
 + Send IP and MAC information to “Authorities”
 
-
 # Resources/Technology needed
