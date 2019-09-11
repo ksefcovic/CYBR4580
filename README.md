@@ -13,7 +13,7 @@ Device Finder is an OS based firmware solution that allows devices to be located
 
 Project Goals for proof of concept
 + Find and manipulate Android open source NIC libraries
-+ Create database for storing user information 
++ Create database for storing user information
 + Create web app for user interfacing
 + Create alerting system for notification of authorities
 
@@ -49,6 +49,14 @@ Device Finder would help people get their stolen devices back. This could help c
 
 # Project-oriented risk list
 
+|Risk name (value)  | Impact     | Likelihood | Description |
+|-------------------|------------|------------|-------------|
+|No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope  |
+|Issue with pushing updated firmware | 8 | 2 | If we can't flash the update firmware on an emulator we will have to try it on another device |
+|Issue communicating the information from the NIC to the WebApp | 6 | 4 | The firmware that we update will have to communicate the MAC address to the WebApp |
+|Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works | 
+| MAC Address spoofing | 5 | 3 | On the application a user could Spoof a MAC address |
+
 # Project methodology
 For literature review we used the following key words:
 + Keywords
@@ -60,19 +68,19 @@ For literature review we used the following key words:
 + MAC spoofing
 + Database hardening
 Relevant papers
-+ Using mobiles for on campus location tracking (F. Aloul, A. Sagahyroon, 	A. Al-Shami, I. Al-Midfa, R. Moutassem) 
++ Using mobiles for on campus location tracking (F. Aloul, A. Sagahyroon, 	A. Al-Shami, I. Al-Midfa, R. Moutassem)
 + Patent US7373425B2
 + Investigation of multi-device location spoofing attacks on air traffic control and possible countermeasures (D. Moser, P. Leu, V. Lenders, A. Ranganathan, F. Ricciato, S. Capkun)
 + Decomposition of MAC address structure for granular device inference (J. Martin, E. Rye, R. Beverly)
 + A MAC-address Relaying NAT Router for PC Identification from Outside of a LAN (R. Murakami, N. Yamai, K. Okayama)
 State of the art
-+ A few applications exist that work similarly to the proposed application, but 
++ A few applications exist that work similarly to the proposed application, but
 
 Our technical plan will work along these lines:
 + Find open source Android libraries and modify them to send MAC to server
 + Create alerting code
 + Update application to scrape IP information and send notification
-+ Create web application 
++ Create web application
     - Need account creation
     - User device MAC location
     - Send information to database server
