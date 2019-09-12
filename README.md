@@ -56,7 +56,7 @@ Device Finder would help people get their stolen devices back. This could help c
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
 |Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
 |Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-| There may be many NIC drivers and not a general purpose driver  | 5 | 2 | Different manufactures like Samsung, HTC, etc. may use different NICs or NIC drivers, so a general firmware update may not be possible |
+| There may be many NIC drivers and not a general purpose driver  | 9 | 2 | Different manufactures like Samsung, HTC, etc. may use different NICs or NIC drivers, so a general firmware update may not be possible |
 
 # Project methodology
 For literature review we used the following key words:
