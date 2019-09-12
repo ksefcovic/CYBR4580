@@ -24,30 +24,6 @@ Device Finder would help people get their stolen devices back. This could help c
 
 [Github project here](https://github.com/ksefcovic/CYBR4580/projects/1)
 
-+ Android NIC Firmware work:
-    - Find repository for AOSP NIC general driver
-    - Fork the repository
-    - Add code that connects to the server and sends the MAC
-        - Ensure communication is not in plaintext
-+ Virtual Private Server work:
-    - Purchase a low cost Virtual Private Server to host the application on
-    - Purchase a certificate for the server so communications can be encrypted
-    - Install the server’s OS
-    - Configure the database for the application (?)
-    - Configure the web server on the server (?)
-    - OS patch management??
-    - Harden the server
-+ Web application
-    - ??
-+ Alerting functionality
-    - Write the code for checking MAC against stolen list and verify functionality
-    - Write code for sending stolen MAC found alert to alerting platform
-+ Security testing (if we get there)
-    - Properly sanitize input
-    - Ensure stolen MAC list is encrypted
-    - Ensure alerting is encrypted
-    - Ensure database doesn’t have leaks
-
 # Project-oriented risk list
 
 |Risk name (value)  | Impact     | Likelihood | Description |
