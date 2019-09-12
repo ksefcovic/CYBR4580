@@ -15,7 +15,7 @@ Project Goals for proof of concept
 + Find and manipulate Android open source NIC libraries
 + Create database for storing user information
 + Create web app for user interfacing
-+ Create alerting system for notification of authorities
++ Create alerting system for notification of device owner
 
 
 Device Finder would help people get their stolen devices back. This could help cut down on device theft as it would be easier for law enforcement to gather information about stolen devices and their locations. Many applications exist for finding stolen phones, but this would help with other devices as well.
@@ -27,10 +27,11 @@ Device Finder would help people get their stolen devices back. This could help c
 + Android NIC Firmware work:
     - Find repository for AOSP NIC general driver
     - Fork the repository
-    - Add code that connects to the server and sends the MAC that was just given a lease
+    - Add code that connects to the server and sends the MAC
+        - Ensure communication is not in plaintext
 + Virtual Private Server work:
     - Purchase a low cost Virtual Private Server to host the application on
-    - Purchase a certificate for the server so traffic can be encrypted
+    - Purchase a certificate for the server so communications can be encrypted
     - Install the server’s OS
     - Configure the database for the application (?)
     - Configure the web server on the server (?)
@@ -52,10 +53,10 @@ Device Finder would help people get their stolen devices back. This could help c
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
 |No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope  |
-|Issue with pushing updated firmware | 8 | 2 | If we can't flash the update firmware on an emulator we will have to try it on another device |
-|Issue communicating the information from the NIC to the WebApp | 6 | 4 | The firmware that we update will have to communicate the MAC address to the WebApp |
+|Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
+|Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
 |Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-| There may be different NIC drives for each manufacture  | 3 | 6 | Different manufactures like Samsung, HTC, etc. may use different NIC drivers so a general firmware update may not be possible  |
+| There may be many NIC drivers and not a general purpose driver  | 5 | 2 | Different manufactures like Samsung, HTC, etc. may use different NICs or NIC drivers, so a general firmware update may not be possible |
 
 # Project methodology
 For literature review we used the following key words:
