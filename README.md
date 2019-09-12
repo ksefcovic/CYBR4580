@@ -80,7 +80,8 @@ State of the art
 + A few applications exist that work similarly to the proposed application, but
 
 Our technical plan will work along these lines:
-+ Find open source Android libraries and modify them to send MAC to server
++ Find open source Android libraries relating to NIC general purpose driver
++ Modify the general purpose drive to send MAC to server
 + Create alerting code
 + Update application to scrape IP information and send notification
 + Create web application
@@ -94,7 +95,7 @@ Our technical plan will work along these lines:
     - Write application database to store user information
 + Setup listener to gather user information
 + Setup alerting for when MAC has been located
-+ Send IP and MAC information to “Authorities”
++ Send IP and MAC information to device owner
 
 # Resources/Technology needed
 
@@ -103,4 +104,4 @@ Our technical plan will work along these lines:
 |Android Studios | No | Dylan  and Aaron | Android Studio lets you develop for Android  |
 |Android emulator | No | Dylan | We will need an emulator to flash the updated firmware too |
 |Android device (optional) | No | Dylan and Aaron | If we want to test the firmware on a physical device |
-|Web Server | No | Kevin and Lauren | We will need a web server in order to host our web app |
+|Web Server | No | Kevin and Lauren | We will need a web server in order to host our web app and the alerting application |
