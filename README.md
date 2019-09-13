@@ -37,13 +37,13 @@ Device Finder would help people get their stolen devices back. This could help c
 # Project methodology
 For literature review we used the following key words:
 + Keywords
-+ Android Open Source Project
-+ Android firmware flashing
-+ Android Open Source Project network drivers
-+ Network sniffing
-+ Device location
-+ MAC spoofing
-+ Database hardening
+    - Android Open Source Project
+    - Android firmware flashing
+    - Android Open Source Project network drivers
+    - Network sniffing
+    - Device location
+    - MAC spoofing
+    - Database hardening
 Relevant papers
 + Using mobiles for on campus location tracking (F. Aloul, A. Sagahyroon, 	A. Al-Shami, I. Al-Midfa, R. Moutassem)
 + Patent US7373425B2 (Craig Barrack, James Ching-Shau Yik, Rong-Feng Chang, Eric Lin )
@@ -53,7 +53,9 @@ Relevant papers
 + I know your MAC address: targeted tracking of individual using Wi-Fi (Mathieu Cunch)
 + Hardening web applications using a least privilege DBMS access model (Stuart Steiner, Daniel Conte de Leon, Ananth A. Jillepalli)
 State of the art
-+ A few applications exist that work similarly to the proposed application, but
++ A few applications exist that work similarly to the proposed application, but these work at the application level while the user is logged in to the phone. These applications work on IOS and through companies like Google. The user will have to have an account active on that device in order to make it work. 
++ In 2007 a company called AbsoluteSoftware did something similar to what we are proposing through Dell. If your laptop was stolen, you could contact them and they would work with local law enforcement to get your laptop back. This application only worked on Windows XP and Vista machines. 
+
 
 Our technical plan will work along these lines:
 + Find open source Android libraries relating to NIC general purpose driver
