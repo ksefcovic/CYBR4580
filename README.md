@@ -12,7 +12,7 @@ Devices are stolen every day whether it be phones, laptops or others. There have
 Device Finder is an OS based firmware solution that allows devices to be located whether they have been factory reset or are still in the condition in which they were stolen. Device Finder works by sending MAC addresses to a private server that checks to see if the device has been marked as missing and then, if the device has been previously marked as missing, it alerts the owner with location information.
 
 Project Goals for proof of concept
-+ Find and manipulate Android open source NIC libraries
++ Find and manipulate Android open source project NIC libraries
 + Create database for storing user information
 + Create web app for user interfacing
 + Create alerting system for notification of device owner
@@ -28,11 +28,11 @@ Device Finder would help people get their stolen devices back. This could help c
 
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
-|No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope  |
+|No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
 |Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
 |Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-| There may be many NIC drivers and not a general purpose driver  | 9 | 2 | Different manufactures like Samsung, HTC, etc. may use different NICs or NIC drivers, so a general firmware update may not be possible |
+| There may be many NIC drivers and not a general purpose driver  | 9 | 2 | Different manufactures like Samsung, HTC, etc. may use different NICs or NIC drivers, so a general firmware update may not be possible | 
 
 # Project methodology
 For literature review we used the following key words:
@@ -59,15 +59,15 @@ For literature review we used the following key words:
 
 Our technical plan will work along these lines:
 + Find open source Android libraries relating to NIC general purpose driver
-+ Modify the general purpose drive to send MAC to server
-+ Create alerting code
-+ Update application to scrape IP information and send notification
++ Modify the general purpose NIC driver to send MAC to server
++ Create server-side alerting code
++ Update application to scrape IP information, check if device is stolen, and potentially send notification
 + Create web application
     - Need account creation
     - User device MAC location
     - Send information to database server
     - Allow user to mark device as “stolen”
-    - Allow user to unmark device as “stolen”
+    - Allow user to mark device as "found" (stolen value changed to false)
 + Create database server
     - Purchase and install OS
     - Write application database to store user information
