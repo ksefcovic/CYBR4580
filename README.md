@@ -54,8 +54,9 @@ For literature review we used the following key words:
     - Hardening web applications using a least privilege DBMS access model (Stuart Steiner, Daniel Conte de Leon, Ananth A. Jillepalli)
 + State of the art
     - A few applications exist that work similarly to the proposed application, but these work at the application level while the user is logged in to the phone. These applications work on IOS and through companies like Google. The user will have to have an account active on that device in order to make it work.
-    - In 2007 a company called AbsoluteSoftware did something similar to what we are proposing through Dell. If your laptop was stolen, you could contact them and they would work with local law enforcement to get your laptop back. This application only worked on Windows XP and Vista machines.
-
+    - Dell utilizes a software called LoJack for Laptops, which runs when the system’s BIOS initializes and allows for device tracking (Dell).
+    - Absolute office created a similar program that also runs upon BIOS initialization, but it allows for remote locking, wiping, and tracking of the device (Absolute Home and Office).
+    - The implementation from Dell and Absolute Office were exploited by the LoJax malware in 2018 (WeLiveSecurity).
 
 Our technical plan will work along these lines:
 + Find open source Android libraries relating to NIC general purpose driver
@@ -84,3 +85,11 @@ Our technical plan will work along these lines:
 |Android emulator | No | Dylan | We will need an emulator to flash the updated firmware too |
 |Android device (optional) | No | Dylan and Aaron | If we want to test the firmware on a physical device |
 |Virtual Private Server | No | Kevin and Lauren | We will need a virtual private server (VPS) in order to host our web app, the database, and the alerting application |
+
+#Works Cited
+
+“Absolute Home & Office - Leader in Data and Device Protection.” Absolute Home and Office, 2019, homeoffice.absolute.com/.
+
+Dell. “LoJack for Laptops.” Dell, 2019, www.dell.com/content/topics/segtopic.aspx/lojack?c=us&l=en&cs=19.
+
+“LoJax: First UEFI Rootkit Found in the Wild, Courtesy of the Sednit Group.” WeLiveSecurity, ESET Research, 9 Oct. 2018, www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-courtesy-sednit-group/.
