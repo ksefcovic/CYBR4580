@@ -86,7 +86,7 @@ Our technical plan will work along these lines:
 |Android device (optional) | No | Dylan and Aaron | If we want to test the firmware on a physical device |
 |Virtual Private Server | No | Kevin and Lauren | We will need a virtual private server (VPS) in order to host our web app, the database, and the alerting application |
 
-#Works Cited
+# Works Cited
 
 “Absolute Home & Office - Leader in Data and Device Protection.” Absolute Home and Office, 2019, homeoffice.absolute.com/.
 
