@@ -88,6 +88,19 @@ Our technical plan will work along these lines:
 
 “Absolute Home & Office - Leader in Data and Device Protection.” Absolute Home and Office, 2019, homeoffice.absolute.com/.
 
+Aloul, F., et al. “Using Mobiles for on Campus Location Tracking.” Proceedings of the 7th International Conference on Advances in Mobile Computing and Multimedia - MoMM '09, 2009. ACM Digital Library, doi:10.1145/1821748.1821792.
+
+Cunche, Mathieu. “I Know Your MAC Address: Targeted Tracking of Individual Using Wi-Fi.” Journal of Computer Virology and Hacking Techniques, vol. 10, no. 4, 2013, pp. 219–227., doi:10.1007/s11416-013-0196-1.
+Martin, Jeremy, et al. “Decomposition of MAC Address Structure for Granular Device Inference.” Proceedings of the 32nd Annual Conference on Computer Security Applications - ACSAC '16, 2016. IEEE Explore , doi:10.1145/2991079.2991098.
+
 Dell. “LoJack for Laptops.” Dell, 2019, www.dell.com/content/topics/segtopic.aspx/lojack?c=us&l=en&cs=19.
 
+High-speed MAC address search engine Barrack, Craig, et al. 13 May 2004.
+
+Moser, Daniel, et al. “Investigation of Multi-Device Location Spoofing Attacks on Air Traffic Control and Possible Countermeasures.” Proceedings of the 22nd Annual International Conference on Mobile Computing and Networking - MobiCom '16, 2016. ACM Digital Library, doi:10.1145/2973750.2973763.
+
+Murakami, Ryo, et al. “A MAC-Address Relaying NAT Router for PC Identification from Outside of a LAN.” 2010 10th IEEE/IPSJ International Symposium on Applications and the Internet, 2010. IEEE Explore , doi:10.1109/saint.2010.97.
+
 “LoJax: First UEFI Rootkit Found in the Wild, Courtesy of the Sednit Group.” WeLiveSecurity, ESET Research, 9 Oct. 2018, www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-courtesy-sednit-group/.
+
+Steiner, Stuart, et al. “Hardening Web Applications Using a Least Privilege DBMS Access Model.” Proceedings of the Fifth Cybersecurity Symposium on   - CyberSec '18, 2018. ACM Digital Library, doi:10.1145/3212687.3212863.
