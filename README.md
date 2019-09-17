@@ -63,14 +63,15 @@ Our technical plan will work along these lines:
 + Create alerting code
 + Update application to scrape IP information and send notification
 + Create web application
-    - Need account creation
-    - User device MAC location
-    - Send information to database server
+    - Deploy rails-react app on aws
+    - Configure token based authentication
+    - Add functionality for user account creation
+    - Allow user to register device MAC address
     - Allow user to mark device as “stolen”
     - Allow user to unmark device as “stolen”
-+ Create database server
-    - Purchase and install OS
-    - Write application database to store user information
+    - Create endpoints to retrieve list of stolen devices
++ Create database
+    - Create PostgreSQL database
 + Setup listener to gather user information
 + Setup alerting for when MAC has been located
 + Send IP and MAC information to device owner
