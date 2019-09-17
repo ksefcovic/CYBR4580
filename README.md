@@ -12,7 +12,7 @@ Devices are stolen every day whether it be phones, laptops or others. There have
 Device Finder is an OS based firmware solution that allows devices to be located whether they have been factory reset or are still in the condition in which they were stolen. Device Finder works by sending MAC addresses to a private server that checks to see if the device has been marked as missing and then, if the device has been previously marked as missing, it alerts the owner with location information.
 
 Project Goals for proof of concept
-+ Find and manipulate Android open source NIC libraries
++ Find and manipulate Android open source project NIC libraries
 + Create database for storing user information
 + Create web app for user interfacing
 + Create alerting system for notification of device owner
@@ -28,11 +28,11 @@ Device Finder would help people get their stolen devices back. This could help c
 
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
-|No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope  |
+|No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
 |Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
 |Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-| There may be many NIC drivers and not a general purpose driver  | 9 | 2 | Different manufactures like Samsung, HTC, etc. may use different NICs or NIC drivers, so a general firmware update may not be possible |
+| NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
 
 # Project methodology
 For literature review we used the following key words:
@@ -53,22 +53,22 @@ For literature review we used the following key words:
     - I know your MAC address: targeted tracking of individual using Wi-Fi (Mathieu Cunch)
     - Hardening web applications using a least privilege DBMS access model (Stuart Steiner, Daniel Conte de Leon, Ananth A. Jillepalli)
 + State of the art
-    - A few applications exist that work similarly to the proposed application, but these work at the application level while the user is logged in to the phone. These applications work on IOS and through companies like Google. The user will have to have an account active on that device in order to make it work. 
-    - In 2007 a company called AbsoluteSoftware did something similar to what we are proposing through Dell. If your laptop was stolen, you could contact them and they would work with local law enforcement to get your laptop back. This application only worked on Windows XP and Vista machines. 
+    - A few applications exist that work similarly to the proposed application, but these work at the application level while the user is logged in to the phone. These applications work on IOS and through companies like Google. The user will have to have an account active on that device in order to make it work.
+    - In 2007 a company called AbsoluteSoftware did something similar to what we are proposing through Dell. If your laptop was stolen, you could contact them and they would work with local law enforcement to get your laptop back. This application only worked on Windows XP and Vista machines.
 
 
 Our technical plan will work along these lines:
 + Find open source Android libraries relating to NIC general purpose driver
-+ Modify the general purpose drive to send MAC to server
-+ Create alerting code
-+ Update application to scrape IP information and send notification
++ Modify the general purpose NIC driver to send MAC to server
++ Create server-side alerting code
++ Update application to scrape IP information, check if device is stolen, and potentially send notification
 + Create web application
     - Deploy rails-react app on aws
     - Configure token based authentication
     - Add functionality for user account creation
     - Allow user to register device MAC address
     - Allow user to mark device as “stolen”
-    - Allow user to unmark device as “stolen”
+    - Allow user to mark device as "found" (stolen value changed to false)
     - Create endpoints to retrieve list of stolen devices
 + Create database
     - Create PostgreSQL database
@@ -83,4 +83,4 @@ Our technical plan will work along these lines:
 |Android Studios | No | Dylan  and Aaron | Android Studio lets you develop for Android  |
 |Android emulator | No | Dylan | We will need an emulator to flash the updated firmware too |
 |Android device (optional) | No | Dylan and Aaron | If we want to test the firmware on a physical device |
-|Web Server | No | Kevin and Lauren | We will need a web server in order to host our web app, the database, and the alerting application |
+|Virtual Private Server | No | Kevin and Lauren | We will need a virtual private server (VPS) in order to host our web app, the database, and the alerting application |
