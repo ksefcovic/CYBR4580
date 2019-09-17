@@ -32,7 +32,7 @@ Device Finder would help people get their stolen devices back. This could help c
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
 |Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
 |Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-| There may be many NIC drivers and not a general purpose driver  | 9 | 2 | Different manufactures like Samsung, HTC, etc. may use different NICs or NIC drivers, so a general firmware update may not be possible | 
+| NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
 
 # Project methodology
 For literature review we used the following key words:
@@ -53,8 +53,8 @@ For literature review we used the following key words:
     - I know your MAC address: targeted tracking of individual using Wi-Fi (Mathieu Cunch)
     - Hardening web applications using a least privilege DBMS access model (Stuart Steiner, Daniel Conte de Leon, Ananth A. Jillepalli)
 + State of the art
-    - A few applications exist that work similarly to the proposed application, but these work at the application level while the user is logged in to the phone. These applications work on IOS and through companies like Google. The user will have to have an account active on that device in order to make it work. 
-    - In 2007 a company called AbsoluteSoftware did something similar to what we are proposing through Dell. If your laptop was stolen, you could contact them and they would work with local law enforcement to get your laptop back. This application only worked on Windows XP and Vista machines. 
+    - A few applications exist that work similarly to the proposed application, but these work at the application level while the user is logged in to the phone. These applications work on IOS and through companies like Google. The user will have to have an account active on that device in order to make it work.
+    - In 2007 a company called AbsoluteSoftware did something similar to what we are proposing through Dell. If your laptop was stolen, you could contact them and they would work with local law enforcement to get your laptop back. This application only worked on Windows XP and Vista machines.
 
 
 Our technical plan will work along these lines:
