@@ -1,5 +1,5 @@
 # Project Proposal
-# Team members
+## Team members
 | Name |
 | ------ |
 | Kevin Sefcovic |
@@ -7,7 +7,7 @@
 | Aaron Wurtele |
 | Dylan Christiansen |
 
-# Executive Project Summary
+## Executive Project Summary
 Devices are stolen every day whether it be phones, laptops or others. There have been apps created to locate devices, but these applications are usually created for phones and not so much other mobile devices such as tablets or laptops. While these efforts can help law enforcement to a certain extent, if the device is wiped, the device may not work for this as they are account based and not hardware based. This leads to frustration by both the owner and law enforcement as they struggle to locate stolen merchandise and return it to the proper location.
 
 Device Finder is an OS based firmware solution that allows devices to be located whether they have been factory reset or are still in the condition in which they were stolen. Device Finder works by sending MAC addresses to a private server that checks to see if the device has been marked as missing and then, if the device has been previously marked as missing, it alerts the owner with location information.
@@ -21,11 +21,11 @@ Project Goals for proof of concept
 
 Device Finder would help people get their stolen devices back. This could help cut down on device theft as it would be easier for law enforcement to gather information about stolen devices and their locations. Many applications exist for finding stolen phones, but this would help with other devices as well.
 
-# Proposed project timeline
+## Proposed project timeline
 
 [Github project here](https://github.com/ksefcovic/CYBR4580/projects/1)
 
-# Project-oriented risk list
+## Project-oriented risk list
 
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
@@ -35,7 +35,7 @@ Device Finder would help people get their stolen devices back. This could help c
 |Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
 | NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
 
-# Project methodology
+## Project methodology
 For literature review we used the following key words:
 + Keywords
     - Android Open Source Project
@@ -76,7 +76,7 @@ Our technical plan will work along these lines:
 + Setup alerting for when MAC has been located
 + Send IP and MAC information to device owner
 
-# Resources/Technology needed
+## Resources/Technology needed
 
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
@@ -85,7 +85,7 @@ Our technical plan will work along these lines:
 |Android device (optional) | No | Dylan and Aaron | If we want to test the firmware on a physical device |
 |Virtual Private Server | No | Kevin and Lauren | We will need a virtual private server (VPS) in order to host our web app, the database, and the alerting application |
 
-# Works Cited
+## Works Cited
 
 “Absolute Home & Office - Leader in Data and Device Protection.” Absolute Home and Office, 2019, homeoffice.absolute.com/.
 
