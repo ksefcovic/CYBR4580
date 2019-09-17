@@ -54,9 +54,7 @@ For literature review we used the following key words:
     - Hardening web applications using a least privilege DBMS access model (Stuart Steiner, Daniel Conte de Leon, Ananth A. Jillepalli)
 + State of the art
     - A few applications exist that work similarly to the proposed application, but these work at the application level while the user is logged in to the phone. These applications work on IOS and through companies like Google. The user will have to have an account active on that device in order to make it work.
-    - Dell utilizes a software called LoJack for Laptops, which runs when the system’s BIOS initializes and allows for device tracking (Dell).
-    - Absolute office created a similar program that also runs upon BIOS initialization, but it allows for remote locking, wiping, and tracking of the device (Absolute Home and Office).
-    - The implementation from Dell and Absolute Office were exploited by the LoJax malware in 2018 (WeLiveSecurity).
+    - Dell and other computer manufacturers utilize a software called LoJack for Laptops, which runs when the system’s BIOS initializes and allows for device tracking (Dell). Absolute office created this program, and it allows for remote locking, wiping, and tracking of the device (Absolute Home and Office). The BIOS module was exploited by the LoJax malware in 2018 (WeLiveSecurity).
 
 Our technical plan will work along these lines:
 + Find open source Android libraries relating to NIC general purpose driver
