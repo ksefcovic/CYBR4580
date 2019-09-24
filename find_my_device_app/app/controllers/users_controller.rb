@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       render json: {
         user_id: @new_user.id,
         user_email: @new_user.email,
-        access_token: TokenManager.generate_token(@new_user.id)
+        access_token: token_manager.build(user.id) #TokenManager.generate_token(@new_user.id)
       }, status: 201
     else
       render json: {
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       render json: {
         user_id: user.id,
         user_email: user.email,
-        access_token: TokenManager.generate_token(user.id)
+        access_token: token_manager.build(user.id) #TokenManager.generate_token(user.id)
       }, status: 201
     else
       render json: {
@@ -37,10 +37,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    #TokenManager.validate_token()
     if current_user.id == params[:id]
-      render json: current_user
+      render json: {
+        user_id: current_user.id,
+        user_email: current_user.email
+      }, status: 201
     else
+      # Route to login
       render json: {
         message: "You do not have access to this account!"
       }, status: :forbidden
