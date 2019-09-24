@@ -20,12 +20,11 @@
 -------------------------------------------------------------------
 ### Step 3: Run Local Development DB Setup Script
 - This will allow the development enviorment to point to a postgres db you own locally
-- Execute: `.WebappLocalSetup/configure_local_db.sh`
-- Local DB Info:
-    - Name: device_finder_development
+- Create a Local postgres DB with Info:
+    - Name: device_finder_dev
     - Usernmae: admin
     - Password: admin_dev_password
-    - Note: If you want to create your own local database, make sure to change the name, username, and password values in the database.yml file to match your configuration
+    - Note: If you want to create your own local database info, make sure to change the name, username, and password values in the database.yml file to match your configuration
 
 ### Step 4: Start the Server
 - Execute: `cd find_my_device_app`

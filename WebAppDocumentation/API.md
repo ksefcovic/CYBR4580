@@ -21,10 +21,13 @@ TODO
 ## Users
 ----------------------------------------------------------------
 
-### GET: 
-#### Headers: TODO
-#### Body: TODO
-#### Returns: TODO
+### GET: http://base_url/api/v1/user/:id
+#### Headers: X-Access-Token
+#### Body: None
+#### Returns: User Json : {
+    user_id: string
+    user_email: string
+}
 
 ### POST: 
 #### Headers: TODO
