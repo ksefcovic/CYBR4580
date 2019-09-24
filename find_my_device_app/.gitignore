@@ -32,3 +32,4 @@ yarn-debug.log*
 
 config/secrets.yml
 /keys/*
+.DS_Store
