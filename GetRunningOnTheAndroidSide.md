@@ -16,7 +16,7 @@ git config --global user.email "you@example.com"```
 6. Download the AOSP Souce Tree (make sure to change the number of threads)
 NOTE: This will take a while (several hours in my case)
 ```repo sync -j NumberOfThreadsHere```
-7. Download the proprietary binaries for the Pixel XL
+7. Download the proprietary binaries for the Pixel XL into the directory created in Step 3
 [Google Binaries](https://dl.google.com/dl/android/aosp/google_devices-marlin-qp1a.190711.020-62a87646.tgz)
 [Qualcomm Binaries](https://dl.google.com/dl/android/aosp/qcom-marlin-qp1a.190711.020-2b9bc5b4.tgz)
 8. Decompress the files
@@ -26,12 +26,13 @@ tar -xf google_devices-marlin-qp1a.190711.020-62a87646.tar
 tar -xf qcom-marlin-qp1a.190711.020-2b9bc5b4.tar
 rm google_devices-marlin-qp1a.190711.020-62a87646.tar
 rm qcom-marlin-qp1a.190711.020-2b9bc5b4.tar```
-9. Run the extraction shell script and delete the shell scripts
+9. Run the extraction shell script
 ```./extract-qcom-marlin.sh
-./extract-google_devices-marlin.sh
-rm extract-qcom-marlin.sh
-rm extract-google_devices-marlin.sh```
+./extract-google_devices-marlin.sh```
 10. Hit enter to move down through the license agreement and after point 8.e type "I ACCEPT"
-11. Open Android Studio
-12. Click "Open Project"
-13. Select the directory created in Step 3
+11. delete the binaries
+```rm extract-qcom-marlin.sh
+rm extract-google_devices-marlin.sh```
+12. Open Android Studio
+13. Click "Open Project"
+14. Select the directory created in Step 3
