@@ -1,7 +1,7 @@
 These steps originate from [here](https://source.android.com/setup/build/downloading#getting-the-files), but have been modified for our specific use.
 1. Create a bin/ directory in your home directory by running
-  `mkdir ~/bin  
-  PATH=~/bin:$PATH`
+```mkdir ~/bin  
+PATH=~/bin:$PATH```
 
 2. Download Repo and make it executable
   `curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo  
