@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       render json: {
         user_id: @new_user.id,
         user_email: @new_user.email,
-        access_token: token_manager.build(user.id) #TokenManager.generate_token(@new_user.id)
+        access_token: token_manager.build(@new_user.id)
       }, status: 201
     else
       render json: {
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       render json: {
         user_id: user.id,
         user_email: user.email,
-        access_token: token_manager.build(user.id) #TokenManager.generate_token(user.id)
+        access_token: token_manager.build(user.id)
       }, status: 201
     else
       render json: {
