@@ -64,8 +64,16 @@ rm extract-qcom-marlin.sh
 rm extract-google_devices-marlin.sh
 ```
 
-12. Open Android Studio
+12. Run the following commands
+```bash
+source build/envsetup.sh
+lunch aosp_x86-eng
+make
+mmm development/tools/idegen/
+development/tools/idegen/idegen.sh
+```
+13. Open android studio
 
-13. Click "Open Project"
+14. click open project
 
-14. Select the directory created in Step 3
+15. select the file named "android.ipr"
