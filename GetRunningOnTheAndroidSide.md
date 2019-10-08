@@ -25,13 +25,13 @@ git config --global user.email "you@example.com"`
 
 5. intialize repo with the Android 10 R3 Branch
 ```bash
-repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r3`
+repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r3
 ```
 
 6. Download the AOSP Souce Tree (make sure to change the number of threads)
 NOTE: This will take a while (6.5 or so hours in my case)
 ```bash
-repo sync -j NumberOfThreadsHere `
+repo sync -j NumberOfThreadsHere
 ```
 
 7. Download the proprietary binaries for the Pixel XL into the directory created in Step 3
