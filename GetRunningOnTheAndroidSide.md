@@ -72,11 +72,7 @@ sudo apt install lunch
 
 13. Run the following commands
 ```bash
-source build/envsetup.sh
-lunch aosp_x86-eng
-make
-mmm development/tools/idegen/
-development/tools/idegen/idegen.sh
+make idegen && development/tools/idegen/idegen.sh
 ```
 14. Open android studio
 
