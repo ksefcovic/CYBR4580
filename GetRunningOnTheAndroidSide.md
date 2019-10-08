@@ -64,9 +64,10 @@ rm extract-qcom-marlin.sh
 rm extract-google_devices-marlin.sh
 ```
 
-12. Install libncurses5
+12. Install libncurses5 and lunch
 ```bash
-sudo apt-get install libncurses5
+sudo apt install libncurses5
+sudo apt install lunch 
 ```
 
 13. Run the following commands
