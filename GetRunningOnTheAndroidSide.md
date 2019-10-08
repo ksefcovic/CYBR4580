@@ -58,7 +58,7 @@ rm qcom-marlin-qp1a.190711.020-2b9bc5b4.tar
 
 10. Hit enter to move down through the license agreement and after point 8.e type "I ACCEPT"
 
-11. delete the binaries
+11. delete the shell scripts
 ```bash
 rm extract-qcom-marlin.sh  
 rm extract-google_devices-marlin.sh
