@@ -76,6 +76,17 @@ make idegen && development/tools/idegen/idegen.sh
 ```
 14. Open android studio
 
-15. click open project
+15. Click on configure --> Edit Custom VM Options, then enter the following and click save.
+```
+-Xms748m
+-Xmx748m
+```
 
-16. select the file named "android.ipr"
+16. Click configure --> Edit Custom Properties and click save
+```
+idea.max.intellisense.filesize=5000
+```
+
+17. click open project
+
+18. select the file named "android.ipr"
