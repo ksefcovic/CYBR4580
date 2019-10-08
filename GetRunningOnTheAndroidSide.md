@@ -64,7 +64,13 @@ rm extract-qcom-marlin.sh
 rm extract-google_devices-marlin.sh
 ```
 
-12. Run the following commands
+12. Install libncurses5
+```bash
+sudo apt-get install libncurses5:i386
+sudo apt-get install ia32-libs
+```
+
+13. Run the following commands
 ```bash
 source build/envsetup.sh
 lunch aosp_x86-eng
@@ -72,8 +78,8 @@ make
 mmm development/tools/idegen/
 development/tools/idegen/idegen.sh
 ```
-13. Open android studio
+14. Open android studio
 
-14. click open project
+15. click open project
 
-15. select the file named "android.ipr"
+16. select the file named "android.ipr"
