@@ -8,7 +8,7 @@ PATH=~/bin:$PATH
 2. Download Repo and make it executable
 ```bash
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo  
- chmod a+x ~/bin/repo
+chmod a+x ~/bin/repo
  ```
 
 3. Make a directory for the source code
