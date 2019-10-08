@@ -10,4 +10,4 @@ class LandingProvider extends React.Component {
   }
 }
 
-export default LandingProvider
+export default LandingProvider;
