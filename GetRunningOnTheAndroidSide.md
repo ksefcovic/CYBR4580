@@ -66,7 +66,7 @@ rm extract-google_devices-marlin.sh
 
 12. Install libncurses5
 ```bash
-sudo apt-get install libncurses5:i386
+sudo apt-get install libncurses5
 ```
 
 13. Run the following commands
