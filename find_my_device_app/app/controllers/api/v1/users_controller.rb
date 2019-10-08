@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    before_action :authenticate_user
+    before_action :authenticate_user, except: [:login]
 
     def user 
         if current_user.id == params[:id]
@@ -13,5 +13,20 @@ class Api::V1::UsersController < ApplicationController
               message: "You do not have access to this account!"
             }, status: :forbidden
           end
+    end
+
+    def login
+      email, password = params.values_at :email, :password
+      if (user = User.find_by_email(email)&.authenticate(password))
+        render json: {
+          user_id: user.id,
+          user_email: user.email,
+          access_token: token_manager.build(user.id)
+        }, status: 201
+      else
+        render json: {
+          message: "username or password is incorrect."
+        }, status: :unauthorized
+      end
     end
 end

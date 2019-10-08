@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'static#index'
+
+  # namespace :api, defaults: { format: 'json'} do 
+  #   namespace :v1 do
+  #     get 'user/:id', to: 'users#user'
+  #     get 'login', to: 'users#login'
+  #   end
+  # end
   #API
-  get 'api/v1/user/:id' => 'api/v1/users#user'
+  #get 'api/v1/user/:id' => 'api/v1/users#user'
   #UI
-  get '/signup' => 'users#new'
-  get '/user/:id' => 'users#show'
-  post '/create_user' => 'users#create'
-  resources :users, only: :show do
-    post :login, on: :collection
-  end
+  #get '/signup' => 'users#new'
+  #get '/user/:id' => 'users#show'
+  #post '/create_user' => 'users#create'
+  # resources :users, only: :show do
+  #   post :login, on: :collection
+  # end
 end
