@@ -87,6 +87,13 @@ make idegen && development/tools/idegen/idegen.sh
 idea.max.intellisense.filesize=5000
 ```
 
-17. click open project
+17. increase the watch limit by adding ```fs.inotify.max_user_watches = 524288``` to /etc/sysctl.conf and running the following command:
+```bash
+sudo sysctl -p --system
+```
 
-18. select the file named "android.ipr"
+18. click open project
+
+19. select the file named "android.ipr"
+
+20. Click on File -> Settings Expand System settings, and click on Memory settings. Set the IDE Max Heap size to at least 2048 MB.
