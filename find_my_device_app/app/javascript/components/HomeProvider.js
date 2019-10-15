@@ -3,20 +3,35 @@ import PropTypes from "prop-types"
 
 import DeviceListPane from './homePage/DeviceListPane'
 import DeviceDetailWindow from './homePage/DeviceDetailWindow'
+import styles from './homePage/styles.scss';
+
+//"css-loader": "^2.1.1",
+//"style-loader": "^1.0.0",
+const horizontalLayout = {
+
+}
+const deviceList = {
+  backgroundColor: "#37BC9B"
+}
+const deviceDetailCard = {
+  backgroundColor: "#F6BB42"
+}
+//style={deviceDetailCard}
 
 class HomeProvider extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <h1>This is the Home Page</h1>
-        <h2>Hello {this.props.user.name}</h2>
-        <DeviceListPane {...{
-          devices: [{id: "1", name: "macbook pro"}, {id: "2", name: "iphone"}],
-          styles: this.props.styles
-        }}></DeviceListPane>
-        <DeviceDetailWindow {...{
-          styles: this.props.styles
-        }}></DeviceDetailWindow>
+        <h2>Hello {this.props.user.first_name} {this.props.user.last_name}</h2>
+        <div className={styles.horizontalLayout}>
+          <DeviceListPane className={styles.deviceList} {...{
+            devices: [],
+            styles
+          }}></DeviceListPane>
+          <DeviceDetailWindow className={styles.deviceDetailCard} {...{
+            styles
+          }}></DeviceDetailWindow>
+        </div>
       </React.Fragment>
     );
   }

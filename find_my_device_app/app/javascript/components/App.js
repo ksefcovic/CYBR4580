@@ -15,10 +15,13 @@ class App extends React.Component {
       <React.Fragment>
         <h1>This is app.</h1>
         {this.props.hasValidToken
-          ? <HomeProvider {...{
-            user: {name: "Michael Scott", devices: []},
-            styles: {}
-          }}></HomeProvider>
+          ? 
+          <Provider store={store}>
+            <HomeProvider {...{
+              user: this.props.user,
+              styles: {}
+            }}></HomeProvider>
+          </Provider>
           : <LandingProvider></LandingProvider>
         }
       </React.Fragment>

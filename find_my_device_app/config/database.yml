@@ -23,7 +23,7 @@ development:
   <<: *default
   database: device_finder_dev
   username: admin
-  password: admin_dev_password
+  password: admin_prod_password
   host: localhost
   port: 5432
 
