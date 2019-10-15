@@ -1,0 +1,19 @@
+.horizontalLayout {
+    background-color: lightgrey;
+    flex-direction: row;
+}
+
+.floatRight {
+    float: right;
+    justify-self: flex-end;
+}
+
+.deviceList {
+    width: 30%;
+    background-color: coral;
+}
+
+.deviceDetailCard {
+    width: 70%;
+    background-color: blue;
+}

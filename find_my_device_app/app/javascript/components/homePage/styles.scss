@@ -1,14 +1,42 @@
 
 .horizontalLayout {
+    background-color: lightgrey;
+    display: flex;
     flex-direction: row;
+    margin: auto;
+    padding-left: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mainHomeLayout {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: space-between;
 }
 
 .deviceList {
+    display: flex;
+    flex-direction: column;
     width: 30%;
     background-color: coral;
 }
 
 .deviceDetailCard {
     width: 70%;
-    background-color: blue;
+    background-color: goldenrod;
+}
+
+.columnLayout {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.deviceRow {
+    background-color: azure;
+}
+
+.deviceDetailsMainBox {
+    background-color: beige;
 }
