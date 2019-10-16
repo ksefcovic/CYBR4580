@@ -62,6 +62,7 @@ rm qcom-marlin-qp1a.190711.020-2b9bc5b4.tar
 ```bash
 rm extract-qcom-marlin.sh  
 rm extract-google_devices-marlin.sh
+make clobber
 ```
 
 12. Install libncurses5 and lunch
