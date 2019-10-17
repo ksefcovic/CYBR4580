@@ -4,7 +4,7 @@ https://source.android.com/setup/build/requirements
 
 Recommended process to build all of the java code for the userdebug variant of the Pixel XL (for flashing only):
 ```bash
-cd /home/aaron/CapstoneProjectRootOfAospTree
+cd ProjectRootOfAospTree
 source build/envsetup.sh
 lunch aosp_marlin-userdebug
 m droid -jThreadCountHere
