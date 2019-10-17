@@ -28,8 +28,6 @@ class UsersController < ApplicationController
     current_user = nil
     response.headers["X-Access-Token"] = ""
     redirect_to root_path #controller: 'static', action: 'index'
-
-    #render html: 'Could not logout'
   end
 
   def submit_login

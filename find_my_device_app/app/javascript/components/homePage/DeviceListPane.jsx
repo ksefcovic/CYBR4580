@@ -4,13 +4,19 @@ import DeviceRow from './list/DeviceRow'
 
 const DeviceListPane = ({
     focusedDevice,
+    setFocusedDevice,
     devices,
     styles
 }) => {
 
+    const addNewDevice = () => {
+        console.log("Add new device")
+    }
+
     const renderDeviceRow = (device) => {
         return (<DeviceRow key={device.id} {...{
             focusedDevice,
+            setFocusedDevice,
             device
         }}></DeviceRow>)
     }
@@ -18,8 +24,13 @@ const DeviceListPane = ({
     return (
         <>
             <div className="deviceList">
-                <h1>Device list pane</h1>
+                <div className="deviceListHeader">
+                    Your Devices
+                </div>
                 { devices.map( device => renderDeviceRow(device) ) }
+                <div onClick={addNewDevice} className="addNewDeviceButton">
+                    Add New Device +
+                </div>
             </div>
         </>
     )
