@@ -10,17 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_005402) do
+ActiveRecord::Schema.define(version: 2019_10_15_041127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "devices", force: :cascade do |t|
+    t.string "name", default: "MyDevice"
+    t.string "status", default: "good-standing"
+    t.string "mac_address"
+  end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name", default: ""
+    t.string "last_name", default: ""
+    t.string "username", default: ""
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
