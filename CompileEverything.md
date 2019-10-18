@@ -19,3 +19,9 @@ lunch aosp_arm-eng
 m droid -jThreadCountHere
 ```
 from https://source.android.com/setup/build/building
+
+if you run out of memory (if you get an OutOfMemory Exception) run:
+```bash
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+```
+from https://stackoverflow.com/questions/35579646/android-source-code-compile-error-try-increasing-heap-size-with-java-option
