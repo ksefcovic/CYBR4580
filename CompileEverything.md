@@ -14,7 +14,7 @@ for testing with the emulator:
 ```bash
 cd RootOfAospTree
 source build/envsetup.sh
-lunch aosp_arm-eng
+lunch aosp_x86_64-userdebug
 make -jNumberOfThreadsHere
 ```
 from https://source.android.com/setup/build/building
