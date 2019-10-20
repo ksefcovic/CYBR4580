@@ -1,26 +1,26 @@
 These steps originate from [here](https://source.android.com/setup/build/downloading#getting-the-files), but have been modified for our specific use.
 
-1. Create a bin/ directory in your home directory by running
+1. Install dependencies
+```bash
+sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip
+```
+
+2. Create a bin/ directory in your home directory by running
 ```bash
 mkdir ~/bin  
 PATH=~/bin:$PATH 
 ```
 
-2. Download Repo and make it executable
+3. Download Repo and make it executable
 ```bash
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo  
 chmod a+x ~/bin/repo
  ```
 
-3. Make a directory for the source code
+4. Make a directory for the source code
 ```bash
 mkdir DirectoryNameHere  
 cd DirectoryNameHere
-```
-
-4. If doing this on Windows via the Windows Subsystem for Linux (WSL) make your directory case-sensitive (run in commandprompt)
-```cmd
-fsutil.exe file SetCaseSensitiveInfo C:\folder\path enable
 ```
 
 5. Add your name and email to your git configuration
@@ -71,35 +71,30 @@ rm extract-google_devices-marlin.sh
 make clobber
 ```
 
-13. Install dependencies
-```bash
-sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip
-```
-
-14. Run the following commands
+13. Run the following commands
 ```bash
 make idegen && development/tools/idegen/idegen.sh
 ```
-15. Open android studio
+14. Open android studio
 
-16. Click on configure --> Edit Custom VM Options, then enter the following and click save.
+15. Click on configure --> Edit Custom VM Options, then enter the following and click save.
 ```
 -Xms748m
 -Xmx748m
 ```
 
-17. Click configure --> Edit Custom Properties and click save
+16. Click configure --> Edit Custom Properties and click save
 ```
 idea.max.intellisense.filesize=5000
 ```
 
-18. increase the watch limit by adding ```fs.inotify.max_user_watches = 524288``` to /etc/sysctl.conf and running the following command:
+17. increase the watch limit by adding ```fs.inotify.max_user_watches = 524288``` to /etc/sysctl.conf and running the following command:
 ```bash
 sudo sysctl -p --system
 ```
 
-19. click open project
+18. click open project
 
-20. select the file named "android.ipr"
+19. select the file named "android.ipr"
 
-21. Click on File -> Settings Expand System settings, and click on Memory settings. Set the IDE Max Heap size to at least 2048 MB.
+20. Click on File -> Settings Expand System settings, and click on Memory settings. Set the IDE Max Heap size to at least 2048 MB.
