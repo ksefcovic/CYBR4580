@@ -73,6 +73,8 @@ make clobber
 
 13. Run the following commands
 ```bash
+source build/envsetup.sh
+lunch aosp_x86_64-userdebug
 make idegen && development/tools/idegen/idegen.sh
 ```
 14. Open android studio
