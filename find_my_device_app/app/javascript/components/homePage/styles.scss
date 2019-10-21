@@ -1,0 +1,79 @@
+
+.horizontalLayout {
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding-left: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mainHomeLayout {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.deviceList {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: darkgray;
+}
+
+.deviceDetailCard {
+    width: 70%;
+    background-color: lightseagreen;
+    padding: 10px;
+}
+
+.columnLayout {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.deviceRow {
+    padding-left: 10px;
+    background-color: azure;
+}
+.focusedDeviceRow {
+    padding-left: 10px;
+    background-color: lightseagreen;
+}
+
+.deviceDetailsMainBox {
+    background-color: beige;
+}
+
+.addNewDeviceButton {
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    // position: absolute; 
+    // bottom: 0;
+    // width: 100%;
+}
+
+.deviceInfoHorizontalLayout {
+    display: flex;
+    flex-direction: row;
+}
+
+.deviceInfoList {
+    padding: 10px;
+    text-decoration-color: white;
+}
+
+.markDeviceMissingButton {
+    background-color: red;
+    color: white;
+}
+
+.deviceListHeader {
+    padding: 10px;
+}

@@ -1,0 +1,17 @@
+.blueBackground {
+    background-color: coral;
+}
+
+.horizontalLayout {
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding-left: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.floatRight {
+    float: right;
+    justify-self: flex-end;
+}
