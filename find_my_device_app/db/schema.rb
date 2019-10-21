@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_005402) do
+ActiveRecord::Schema.define(version: 2019_10_17_060030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "devices", force: :cascade do |t|
+    t.string "name", default: "MyDevice"
+    t.string "status", default: "good-standing"
+    t.string "mac_address"
+    t.string "imei", default: ""
+    t.json "known_locations", default: [], array: true
+    t.string "registration_status", default: "pending"
+    t.string "registration_code", default: ""
+  end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email"
