@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get 'login/submit', to: 'users#submit_login'
   get 'logout', to: 'users#logout'
   post 'create_user/submit', to: 'users#submit_create'
+  post 'new_device/register', to: 'devices#build_partial_registration'
+  get 'pending_devices', to: 'devices#pending_devices'
+  get 'registered_devices', to: 'devices#registered_devices'
+  #build_partial_registration
 
   # get 'home/:user', to: 'static#index'
   # get 'login', to: 'users#login'
