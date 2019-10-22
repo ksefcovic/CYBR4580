@@ -8,6 +8,7 @@ Recommended process to build all of the java code for the userdebug variant of t
 cd RootOfAospTree
 source build/envsetup.sh
 lunch aosp_marlin-userdebug
+make update-api
 make -jNumberOfThreadsHere
 ```
 
@@ -15,7 +16,8 @@ for testing with the emulator:
 ```bash
 cd RootOfAospTree
 source build/envsetup.sh
-lunch aosp_x86_64-userdebug
+lunch aosp_x86_64-userdebug or lunch aosp_marlin-userdebug
+make update-api
 make -jNumberOfThreadsHere
 ```
 from https://source.android.com/setup/build/building
