@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :devices
   has_secure_password
 
   # before_save :encrypt_password

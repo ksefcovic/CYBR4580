@@ -4,7 +4,10 @@ class LandingProvider extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <h1>Landing Provider</h1>
+        <div className={styles.blueBackground}>
+          <h1>Welcome to Device Finder.</h1>
+          <p>What is the purpose of device finder?</p>
+        </div>
       </React.Fragment>
     );
   }

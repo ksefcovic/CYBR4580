@@ -4,8 +4,18 @@ class UsersController < ApplicationController
   def new
   end
 
-  def create
-    email, password = params.values_at :email, :password
+  def create 
+  end
+
+  def all_users 
+    @users = User.all
+    render json: {
+        message: @users
+    }, status: 201
+  end
+
+  def submit_create
+    first_name, last_name, email, username, password, confirm_password = params.values_at :first_name, :last_name, :email, :username, :password, :confirm_password
     if (!User.find_by_email(email))
       @new_user = User.new(:email => email, :password => password)
       @new_user.save
@@ -21,7 +31,18 @@ class UsersController < ApplicationController
     end
   end
 
-  def login
+  def login 
+    puts 'Login'
+  end
+
+  def logout
+    current_user = nil
+    response.headers["X-Access-Token"] = ""
+    redirect_to root_path #controller: 'static', action: 'index'
+  end
+
+  def submit_login
+    puts 'Submit login'
     email, password = params.values_at :email, :password
     if (user = User.find_by_email(email)&.authenticate(password))
       render json: {
@@ -48,5 +69,24 @@ class UsersController < ApplicationController
         message: "You do not have access to this account!"
       }, status: :forbidden
     end
+  end
+
+  def show
+    @user = User.find_by_id(params[:id])
+    @devices = Device.where(:user_id => @user.id)
+    #if current_user == nil || current_user.id != params[:id]
+      # render json: {
+      #   user_id: current_user.id,
+      #   user_email: current_user.email
+      # }, status: 201
+    # else
+    #   # Route to login
+    #   render json: {
+    #     message: "You do not have access to this account!"
+    #   }, status: :forbidden
+    #  end
+  end
+
+  def logout
   end
 end
