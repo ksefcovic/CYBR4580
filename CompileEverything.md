@@ -1,3 +1,4 @@
+Before trying to compile, make sure that you have a system with at least 16gb of RAM and perferably more than 4 threads.
 https://www.androidauthority.com/build-custom-android-rom-720453/
 
 https://source.android.com/setup/build/requirements
@@ -21,6 +22,6 @@ from https://source.android.com/setup/build/building
 
 if you run out of memory (if you get an OutOfMemory Exception) run:
 ```bash
-export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx8g"
 ```
 from https://stackoverflow.com/questions/35579646/android-source-code-compile-error-try-increasing-heap-size-with-java-option
