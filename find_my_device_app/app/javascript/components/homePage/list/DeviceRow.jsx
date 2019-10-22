@@ -14,17 +14,23 @@ const DeviceRow = ({
     }
 
     const unfocusedDeviceRow = () => {
+        const deviceName = device.registration_status == "registered"
+        ? device.name
+        : "Pending: " + device.name
         return (
             <div className="deviceRow" onClick={onDeviceSelected}>
-                <h2>{device.name}</h2>
+                <h2>{deviceName}</h2>
             </div>
         )
     }
 
     const focusedDeviceRow = () => {
+        const deviceName = device.registration_status == "registered"
+        ? device.name
+        : "Pending: " + device.name
         return (
             <div className="focusedDeviceRow" onClick={onDeviceSelected}>
-                <h2>{device.name}</h2>
+                <h2>{deviceName}</h2>
             </div>
         )
     }

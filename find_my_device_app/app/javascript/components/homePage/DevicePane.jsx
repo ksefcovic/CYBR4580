@@ -7,22 +7,35 @@ import { createStructuredSelector } from 'reselect'
 import { useSelector, createSelector } from 'react-redux'
 
 const DevicePane = ({
+    user,
     devices,
-    styles
+    styles,
+    addNewDevice,
+    updateDeviceStatus
 }) => {
     const [focusedDevice, setFocusedDevice] = useState(null);
+    //const [newDevice, addNewDevice] = useState(null);
+
+    if (focusedDevice == null && devices != null && devices.length > 0) {
+        setFocusedDevice(devices[0]);
+    }
+
     return (
         <>
         <div className="mainHomeLayout">
             <DeviceListPane className="deviceList" {...{
+              user,
               focusedDevice,
               setFocusedDevice,
               devices,
-              styles
+              styles,
+              addNewDevice
             }}></DeviceListPane>
             <DeviceDetailWindow className="deviceDetailCard" {...{
               focusedDevice,
-              styles
+              styles,
+              addNewDevice,
+              updateDeviceStatus
             }}></DeviceDetailWindow>
           </div>
         </>
