@@ -1,16 +1,20 @@
 import React from "react"
 
 import DeviceRow from './list/DeviceRow'
+import AddDeviceForm from './details/AddDeviceForm'
 
 const DeviceListPane = ({
+    user,
     focusedDevice,
     setFocusedDevice,
     devices,
-    styles
+    styles,
+    addNewDevice
 }) => {
 
-    const addNewDevice = () => {
-        console.log("Add new device")
+    const addNewDeviceForm = () => {
+        console.log("Add new device");
+        //Todo: open form
     }
 
     const renderDeviceRow = (device) => {
@@ -28,9 +32,13 @@ const DeviceListPane = ({
                     Your Devices
                 </div>
                 { devices.map( device => renderDeviceRow(device) ) }
-                <div onClick={addNewDevice} className="addNewDeviceButton">
+                <div onClick={addNewDeviceForm} className="addNewDeviceButton">
                     Add New Device +
                 </div>
+                <AddDeviceForm {...{
+                    user,
+                    addNewDevice
+                }}></AddDeviceForm>
             </div>
         </>
     )

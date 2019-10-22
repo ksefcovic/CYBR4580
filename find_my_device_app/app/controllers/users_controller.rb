@@ -7,6 +7,13 @@ class UsersController < ApplicationController
   def create 
   end
 
+  def all_users 
+    @users = User.all
+    render json: {
+        message: @users
+    }, status: 201
+  end
+
   def submit_create
     first_name, last_name, email, username, password, confirm_password = params.values_at :first_name, :last_name, :email, :username, :password, :confirm_password
     if (!User.find_by_email(email))
@@ -22,6 +29,7 @@ class UsersController < ApplicationController
   end
 
   def login 
+    puts 'Login'
   end
 
   def logout
@@ -31,6 +39,7 @@ class UsersController < ApplicationController
   end
 
   def submit_login
+    puts 'Submit login'
     email, password = params.values_at :email, :password
     if (user = User.find_by_email(email)&.authenticate(password))
       response.headers["X-Access-Token"] = token_manager.build(user.id)
@@ -62,6 +71,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @devices = Device.where(:user_id => @user.id)
     #if current_user == nil || current_user.id != params[:id]
       # render json: {
       #   user_id: current_user.id,

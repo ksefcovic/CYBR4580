@@ -36,10 +36,12 @@ class Api::V1::DevicesController < ApplicationController
             newLocation = {
                 latitude: latitude,
                 longitude: longitude,
-                timestamep: Now()
+                timestamp: Time.zone.now()
             }
-            #device.known_locations.add(newLocation)
-            #device.save
+            # new_known_locations = device.known_locations
+            # new_known_locations.add(newLocation)
+            device.update(:known_locations => device.known_locations << newLocation)
+            device.save
             render json: {
                 message: "Device info was recorded for missing deivce."
             }, status: 201
@@ -49,4 +51,46 @@ class Api::V1::DevicesController < ApplicationController
             }, status: 201
         end
     end
+
+    def update
+      id, attributes = params.values_at :id, :attributes
+      status = attributes.values_at :status
+      #id, attributes = params.values_at :id, :attributes
+      @device = Device.find_by_id(id)
+      if @device.update(:status => status)
+          render json: @device
+      else
+          render json: @device.errors, status: :unprocessable_entity
+      end
+  end
+
+  def create
+    puts 'Hits Create'
+      #attributes = params.values_at :attributes
+      #user_id, name = params.values_at :user_id, :name
+      #user_params
+      #@device = Device.new(:user_id => user_id, :name => name)
+      #@device = Device.new(attributes)
+      name, user_id = attributes.values_at :name, :user_id
+      #name, user_id = attributes.values_at :name, :user_id
+      registration_code = generate_registration_code
+      #@device = Device.new(device_params)
+      if (user_id != nil && User.find_by_id(user_id) != nil) 
+        @new_device = Device.new(:name => name, :registration_code => registration_code, :user_id => user_id)
+        @new_device.save
+        if @new_device.save
+          render json: @device, status: :created, location: device_url(@device)
+        else
+          render json: @device.errors, status: :unprocessable_entity
+        end
+    else
+        render json: {
+            message: "Device must belong to a user"
+        }, status: 404
+    end
+  end
+
+def generate_registration_code
+    (SecureRandom.random_number(9e5) + 1e5).to_i
+end
 end

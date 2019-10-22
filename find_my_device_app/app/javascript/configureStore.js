@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
+import { middleWare, apiReducer, railsActions } from 'redux-rails'
 //import { thunk } from 'redux-thunk';
 //import thunkMiddleware = require("redux-thunk");
 import { default as thunk } from 'redux-thunk';
@@ -19,6 +20,47 @@ function rootReducer(state, action) {
             return state;
     }
 }
+
+// const apiConfig = {
+//     baseUrl: 'https://localhost:3000/',
+//     resources: {
+//       Devices: {
+//         controller: 'devices'
+//       },
+//       Users: {
+//         controller: 'users'
+//       }
+//     }
+//   }
+
+//   const App = createStore(
+//     {
+//       resources: apiReducer(apiConfig) // auto-generates reducers
+//     },
+//     {},
+//     compose(
+//       applyMiddleware(middleWare(apiConfig))
+//     )
+//   )
+
+//   export default App;
+
+//   App.dispatch(railsActions.update({
+//     resource: 'Devices',
+//     id: 3,
+//     attributes: {
+//       title: 'foo',
+//       body: 'bar'
+//     }
+//   }))
+
+//   App.dispatch(railsActions.create({
+//     resource: 'Devices',
+//     attributes: {
+//       name: 'foo',
+//       type: 'bar'
+//     }
+//   }))
 
 export default function configureStore() {
     const store = createStore(
