@@ -22,9 +22,6 @@ lunch aosp_marlin-userdebug
 m update-api
 m droid
 m
-
-aka:
-source build/envsetup.sh && lunch aosp_marlin-userdebug && m update-api && m droid && m
 ```
   
 from https://source.android.com/setup/build/building
