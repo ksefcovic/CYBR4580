@@ -1,5 +1,11 @@
 These steps originate from [here](https://source.android.com/setup/build/downloading#getting-the-files), but have been modified for our specific use.
 
+NOTE: 
+- You will not be able to run the custom rom using the emulator in a VM, so there is almost no use in pulling the source in a VM. 
+- The build system does not support the Windows Subsystem for Linux (WSL), so pulling using it will also likely be a waste of time.
+- I was unable to get repo working on OSX due to a git cleanup error.
+- These instructions are written for and have been tested on Ubuntu 19.10, but can be ported to other distributions.
+
 1. Install dependencies
 ```bash
 sudo apt update && sudo apt upgrade && sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev libncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip python python3
