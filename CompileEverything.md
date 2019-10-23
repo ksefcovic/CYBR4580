@@ -15,14 +15,16 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx8g"
 ```
 
-3. Compile the custom ROM
+3. Compile the custom ROM from the root of the AOSP tree
 ```bash
-cd RootOfAospTree
 source build/envsetup.sh
 lunch aosp_marlin-userdebug
 m update-api
 m droid
 m
+
+aka:
+source build/envsetup.sh && lunch aosp_marlin-userdebug && m update-api && m droid && m
 ```
   
 from https://source.android.com/setup/build/building
