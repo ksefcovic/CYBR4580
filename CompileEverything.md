@@ -1,29 +1,29 @@
-Before trying to compile, make sure that you have a system with at least 16gb of RAM and perferably more than 4 threads.
-https://www.androidauthority.com/build-custom-android-rom-720453/
+Before trying to compile, make sure that you have a system with at least 16gb of RAM, perferably more than 4 threads, and at least 400gb of storage. The official requirements are at https://source.android.com/setup/build/requirements.
 
-https://source.android.com/setup/build/requirements
+NOTE: You will not be able to use the 
 
-Recommended process to build all of the java code for the userdebug variant of the Pixel XL (for flashing only):
+1. Make sure that your environment variables are set
+```bash
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+2. Increase the max heap size to 8gb
+```bash
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx8g"
+```
+
+3. Compile the custom ROM
 ```bash
 cd RootOfAospTree
 source build/envsetup.sh
 lunch aosp_marlin-userdebug
-make update-api
-make -jNumberOfThreadsHere
+m update-api
+m droid
+m
 ```
-
-for testing with the emulator:
-```bash
-cd RootOfAospTree
-source build/envsetup.sh
-lunch aosp_x86_64-userdebug or lunch aosp_marlin-userdebug
-make update-api
-make -jNumberOfThreadsHere
-```
+  
 from https://source.android.com/setup/build/building
-
-if you run out of memory (if you get an OutOfMemory Exception) run:
-```bash
-export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx8g"
-```
 from https://stackoverflow.com/questions/35579646/android-source-code-compile-error-try-increasing-heap-size-with-java-option
