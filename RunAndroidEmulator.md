@@ -9,5 +9,5 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 4. In the root of the AOSP source, run the following:
 ```bash
-emulator @Pixel_XL_API_29 -logcat *:i > OutputFileNameHere.txt
+emulator @Pixel_XL_API_29 -system out/target/product/marlin/system.img -logcat *:v
 ```
