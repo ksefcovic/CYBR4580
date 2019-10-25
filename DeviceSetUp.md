@@ -21,3 +21,17 @@ Our initial plan was to build the custom ROM on the Android Studio emulator. Our
 13. On the Pixel there will be a confirmation on the screen and using the **volume up rocker** highlight yes and press the **power button** to select yes. This will begin the process of unlocking the bootloader.
 14. Once the bootloader is unlocked the device will boot back into the bootloader. To boot into the system press the **power button** or issue the command `fastboot reboot` in the command prompt.
 15. Then the bootloader is unlocked.
+
+## Flashing the TWRP Recovery Environment
+---
+1. Download the TWRP image for your device [Pixel XL TWRP image link](https://twrp.me/google/googlepixelxl.html).
+2. Copy the downloaded image into the folder where you extracted the ADB. Renaming the file as ***twrp.img*** will make the following steps easier.
+2. Connect the device via USB and open a command prompt in the directory you extracted the ADB in.
+3. Boot the device into bootloader mode by typing `adb reboot bootloader`.
+4. Once the device is in the bootloader issue the command `fastboot flash recovery twrp.img` in the command prompt.
+5. If everything worked correctly you should see a success message.
+6. Unplug your phone and use the **volume down rocker** to scroll to the _“Recovery”_ option in your bootloader
+7. Press the **power button** to select and your device should then boot into TWRP
+8. If it asks for a password enter the devices PIN/Password
+9. It may also ask if you want to open TWRP in "read-only" mode this means TWRP will only exist on the phone until next reboot (less convenient, but doesn't stay on your phone)
+10. At this point, TWRP is on the device and can be used to flash a custom ROM
