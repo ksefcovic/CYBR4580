@@ -5,6 +5,8 @@ NOTE:
 - The build system does not support the Windows Subsystem for Linux (WSL), so pulling using it will also likely be a waste of time.
 - I was unable to get repo working on OSX due to a git cleanup error.
 - These instructions are written for and have been tested on Ubuntu 19.10, but can be ported to other distributions.
+- Before pulling the code, you should know that building the source tree requires at least 16gb of RAM, perferably more than 4 threads, and at least 400gb of storage. The official requirements are at https://source.android.com/setup/build/requirements.
+
 
 1. Install dependencies
 ```bash
