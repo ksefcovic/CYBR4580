@@ -35,3 +35,5 @@ Our initial plan was to build the custom ROM on the Android Studio emulator. Our
 8. If it asks for a password enter the devices PIN/Password
 9. It may also ask if you want to open TWRP in "read-only" mode this means TWRP will only exist on the phone until next reboot (less convenient, but doesn't stay on your phone)
 10. At this point, TWRP is on the device and can be used to flash a custom ROM
+
+Note this is a good time to create a backup of the device. If you tap the "backup" button on the TWRP screen you can select "Boot", "System", and "Data" then swipe at the bottom of the screen to start the backup. You can give the backup a "Name" to make it more recognizable. The backup will take a while, so give it time. When it finishes, head back into the Backup menu. Uncheck all the options and scroll to the bottom. If you have a special partition listed after “Recovery”, such as WiMAX, PDS, or EFS, check it, and perform one more backup. This partition usually contains your EFS or IMEI information, which is crucial. If it ever becomes corrupted, you’ll lose data connectivity and can restore this backup to make your phone function again.
