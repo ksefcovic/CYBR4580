@@ -22,27 +22,109 @@
     background-color: darkgray;
 }
 
+// Device Detail Card
 .deviceDetailCard {
     width: 70%;
-    background-color: lightseagreen;
+    background-color: grey;
+    padding: 10px;
+}
+.missingDeviceDetailCard {
+    width: 70%;
+    background-color: rosybrown;
     padding: 10px;
 }
 
+// Devices Column
 .columnLayout {
     display: flex;
     flex-direction: column;
     background-color: aqua;
 }
 
+// Device Rows
 .deviceRow {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding-left: 10px;
     background-color: azure;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    vertical-align: middle;
+}
+.deviceRowPending {
+    color: gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+    background-color: azure;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.deviceRowMissing {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+    background-color: lightcoral;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
 }
 .focusedDeviceRow {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding-left: 10px;
-    background-color: lightseagreen;
+    color: white;
+    background-color: grey;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.focusedDeviceRowPending {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: lightgrey;
+    padding-left: 10px;
+    background-color: grey;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.focusedDeviceRowMissing {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+    color: white;
+    background-color: rosybrown;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
 }
 
+.deviceRowContainer {
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: row;
+    //margin: auto;
+    //padding-left: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+// Images
+.circularSquare {
+    height: 50px;
+    border-radius: 50%;
+    margin: 0;
+    padding-right: 10px;
+    //vertical-align: middle;
+    padding-top: 15px;
+}
+
+.circularSquareLarge {
+    height: 250px;
+    border-radius: 50%;
+    margin: 0;
+}
+
+// Main
 .deviceDetailsMainBox {
     background-color: beige;
 }
@@ -65,6 +147,7 @@
 }
 
 .deviceInfoList {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 10px;
     text-decoration-color: white;
 }
@@ -75,5 +158,16 @@
 }
 
 .deviceListHeader {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 10px;
+}
+
+.missingDeviceInfoCard {
+    padding: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.addDeviceForm {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px;
 }

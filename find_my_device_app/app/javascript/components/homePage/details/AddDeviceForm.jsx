@@ -8,6 +8,7 @@ const AddDeviceForm = ({
 
     const createNewDevice = () => {
         console.log("Creating new device.");
+        console.log("User: ", user);
         if (value != "") {
             addNewDevice(user.id, value);
         }
@@ -18,7 +19,7 @@ const AddDeviceForm = ({
     }
 
     return (
-        <>
+        <div className="addDeviceForm">
             <h2>Add New Device:</h2>
             <form onSubmit={createNewDevice}>
                 <label>
@@ -27,7 +28,7 @@ const AddDeviceForm = ({
                 </label>
                 <input type="submit" value="Submit" />
             </form>
-        </>
+        </div>
     )
 }
 

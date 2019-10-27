@@ -1,71 +1,79 @@
-import { createStore, applyMiddleware } from 'redux';
-import { middleWare, apiReducer, railsActions } from 'redux-rails'
-//import { thunk } from 'redux-thunk';
-//import thunkMiddleware = require("redux-thunk");
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { middleWare, apiReducer, railsActions } from 'redux-rails';
 import { default as thunk } from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { ADD_DEVICE, 
+    UPDATE_DEVICE_STATUS, 
+    UPDATE_DEVICE_STATUS_SUCCESS,
+    ADD_DEVICE_SUCCESS, 
+    ADD_DEVICE_FAILURE,
+    SET_LOADING_STATUS,
+    REMOVE_DEVICE_SUCCESS
+} from './components/actions'
+import update from 'immutability-helper';
 
 const initialState = {
-    test: "Test2",
-    focusedDevice: {id: 1, name: "testDevice"}
+    currentUser: {},
+    userDevices: [],
+    isLoading: false
 };
 
-function rootReducer(state, action) {
+function isLoading(state = false, action) {
     switch (action.type) {
-        case "GET_FOCUSED_DEVICE":
-            return {};
-        case "SET_FOCUSED_DEVICE":
-            focusedDevice = {id: 2, name: "newDevice"}
+        case SET_LOADING_STATUS:
+            console.log("Loading Set To: ", action.isLoading);
+            return action.isLoading;
         default:
             return state;
     }
 }
 
-// const apiConfig = {
-//     baseUrl: 'https://localhost:3000/',
-//     resources: {
-//       Devices: {
-//         controller: 'devices'
-//       },
-//       Users: {
-//         controller: 'users'
-//       }
-//     }
-//   }
+function currentUser(state = {}, action) {
+    return state;
+}
 
-//   const App = createStore(
-//     {
-//       resources: apiReducer(apiConfig) // auto-generates reducers
-//     },
-//     {},
-//     compose(
-//       applyMiddleware(middleWare(apiConfig))
-//     )
-//   )
+function userDevices(state = [], action) {
+    switch (action.type) {
+        case ADD_DEVICE:
+            console.log("Add New Device Requested");
+            return state;
+        case ADD_DEVICE_SUCCESS:
+            console.log("Device Added: ", action.devices);
+            return action.devices;
+        case ADD_DEVICE_FAILURE:
+            console.log("Device Added Failure: ", action.error);
+            return state;
+        case UPDATE_DEVICE_STATUS_SUCCESS:
+            console.log("Updating status to:", action.status);
+            var index = 0;
+            for (index = 0; index < state.length; index++) {
+                if (state[index].id === action.deviceId) {
+                    break;
+                }
+            }
+            return update(state, { 
+                  [index]: {
+                    status: {$set: action.status}
+                  }
+              });
+        case REMOVE_DEVICE_SUCCESS:
+            console.log("Update Device Status: ", action.devices);
+            return action.devices;
+        default:
+            return state;
+    }
+}
 
-//   export default App;
+const rootReducer = combineReducers({
+    currentUser,
+    userDevices,
+    isLoading
+})
 
-//   App.dispatch(railsActions.update({
-//     resource: 'Devices',
-//     id: 3,
-//     attributes: {
-//       title: 'foo',
-//       body: 'bar'
-//     }
-//   }))
-
-//   App.dispatch(railsActions.create({
-//     resource: 'Devices',
-//     attributes: {
-//       name: 'foo',
-//       type: 'bar'
-//     }
-//   }))
-
-export default function configureStore() {
+export default function configureStore(hydratedState = {}) {
     const store = createStore(
         rootReducer, 
-        initialState,
+        {...initialState, ...hydratedState},
         composeWithDevTools (
             applyMiddleware(thunk)
         )

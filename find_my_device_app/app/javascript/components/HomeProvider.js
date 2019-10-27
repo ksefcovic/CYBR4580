@@ -2,33 +2,33 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { Provider } from 'react-redux'
 
-import DevicePane from './homePage/DevicePane'
 import styles from './homePage/styles.scss';
 import configureStore from '../configureStore'
-import dispatchActions from './dispatch'
+import HomePage from './homePage/HomePage';
 
-const store = configureStore();
-//const [newDevice, addNewDevice] = useState(null);
-
-console.log("Dispatch Actions:", dispatchActions);
-//[{id: 1, name: "Macbook Pro", macaddress: "macadress"}, {id: 2, name: "iPhone", macaddress: "macadress"}]
+// const store = configureStore({
+//   currentUser: this.props.user,
+//   userDevices: this.props.devices
+// });
+ 
 class HomeProvider extends React.Component {
   //const [newDevice, addNewDevice] = useState(null);
   render () {
+    console.log("Starting User: ", this.props.user);
+    const store = configureStore({
+      currentUser: this.props.user,
+      userDevices: this.props.devices
+    });
+
     return (
-      <React.Fragment>
         <Provider store={store}>
-          <h2>Hello {this.props.user.first_name} {this.props.user.last_name}</h2>
-          <DevicePane {...{
-            ...dispatchActions,
-            user: this.props.user,
-            devices: this.props.devices,
+          <HomePage {...{
+            currentUser: this.props.user,
             styles
-          }}></DevicePane>
+          }}></HomePage>
         </Provider>
-      </React.Fragment>
     );
   }
 }
 
-export default HomeProvider
+export default HomeProvider;

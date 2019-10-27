@@ -1,11 +1,13 @@
 .horizontalLayout {
-    background-color: lightgrey;
+    background-color: #FF3333;
+    color: white;
     flex-direction: row;
 }
 
 .floatRight {
     float: right;
     justify-self: flex-end;
+    vertical-align: middle;
 }
 
 .deviceList {

@@ -11,13 +11,31 @@ const DevicePane = ({
     devices,
     styles,
     addNewDevice,
-    updateDeviceStatus
+    updateDeviceStatus,
+    onRemoveDevice
 }) => {
-    const [focusedDevice, setFocusedDevice] = useState(null);
+    const [focusedDeviceIndex, setFocusedDeviceIndex] = useState(0);
+    const [focusedDevice, setFocusedDevice] = useState(null)
     //const [newDevice, addNewDevice] = useState(null);
 
-    if (focusedDevice == null && devices != null && devices.length > 0) {
-        setFocusedDevice(devices[0]);
+    // if (focusedDevice == null && devices != null && devices.length > 0) {
+    //     setFocusedDevice(devices[0]);
+    // }
+
+    const getFocusedDeviceIndex = () => {
+        let index = 0;
+        if (devices == null || devices.length == 0) {
+            return null;
+        }
+        if (focusedDevice == null) {
+            return 0;
+        }
+        for  (index = 0; index < devices.length; index++) {
+            if (devices[index].id == focusedDevice.id) {
+                return index; //setFocusedDeviceIndex(index);
+            }
+        }
+        return 0;
     }
 
     return (
@@ -25,17 +43,20 @@ const DevicePane = ({
         <div className="mainHomeLayout">
             <DeviceListPane className="deviceList" {...{
               user,
-              focusedDevice,
+              focusedDevice: (getFocusedDeviceIndex() != null)
+                                ? devices[getFocusedDeviceIndex()]
+                                : null,
               setFocusedDevice,
               devices,
               styles,
               addNewDevice
             }}></DeviceListPane>
             <DeviceDetailWindow className="deviceDetailCard" {...{
-              focusedDevice,
+              focusedDevice: devices[getFocusedDeviceIndex()],
               styles,
               addNewDevice,
-              updateDeviceStatus
+              updateDeviceStatus,
+              onRemoveDevice
             }}></DeviceDetailWindow>
           </div>
         </>
