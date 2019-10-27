@@ -29,10 +29,14 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: 'json'} do 
     namespace :v1 do
-      resources :devices
+      #resources :devices
       get 'user/:id', to: 'users#user'
       post 'login', to: 'users#login'
       post '/create_user' => 'users#create'
+
+      post 'new_device/create', to: 'devices#create'
+      patch 'device/:device_id/set_status', to: 'devices#set_device_status'
+      delete 'remove_device/:device_id', to: 'devices#delete_device'
 
       post 'register' => 'devices#register_device'
       post 'check_status' => 'devices#check_device_status'

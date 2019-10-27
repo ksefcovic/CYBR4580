@@ -11,7 +11,7 @@ const DevicePane = ({
     devices,
     styles,
     addNewDevice,
-    updateDeviceStatus
+    updateDeviceStatus,
 }) => {
     const [focusedDevice, setFocusedDevice] = useState(null);
     //const [newDevice, addNewDevice] = useState(null);

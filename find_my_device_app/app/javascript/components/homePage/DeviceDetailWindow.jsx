@@ -13,13 +13,11 @@ const DeviceDetailWindow = ({
 
     const markDeviceMissing = () => {
         console.log("Device marked missing: ", focusedDevice.id, " Status: missing");
-        //setDeviceStatus("missing");
         updateDeviceStatus(focusedDevice.id, "missing");
     }
 
     const markDeviceFound = () => {
         console.log("Device marked found");
-        //setDeviceStatus("good-standing");
         updateDeviceStatus(focusedDevice.id, "good-standing");
     }
 
@@ -60,7 +58,7 @@ const DeviceDetailWindow = ({
 
     const renderMissingDeviceInfo = () => {
         return (
-            <>
+            <div className="missingDeviceInfoCard">
                 {dropDownIsOpen 
                     ? <button onClick={toggleDropdown}>- Show Less Details</button>
                     : <button onClick={toggleDropdown}>+ Show More Details</button> }
@@ -68,7 +66,7 @@ const DeviceDetailWindow = ({
                 && <DeviceInfoFooter {...{
                     knownLocations: focusedDevice.known_locations
                 }}></DeviceInfoFooter>}
-            </>
+            </div>
         )
     }
 
@@ -76,7 +74,7 @@ const DeviceDetailWindow = ({
         return (
             <div>
                 <div className="deviceInfoHorizontalLayout">
-                    <img src="https://image.shutterstock.com/image-vector/smartphone-iphone-style-black-color-260nw-530681137.jpg" className="mr-3" alt="..."/>
+                    <img src="https://image.shutterstock.com/image-vector/smartphone-iphone-style-black-color-260nw-530681137.jpg" className="circularSquareLarge" alt="..."/>
 
                     <div className="deviceInfoList">
                         <h3 className="mt-0">Device Name: {focusedDevice.name}</h3>
@@ -111,9 +109,13 @@ const DeviceDetailWindow = ({
         )
     }
 
+    const cardClassName = (focusedDevice.status == "missing")
+        ? "missingDeviceDetailCard"
+        : "deviceDetailCard"
+
     return (
         <>
-            <div className="deviceDetailCard">
+            <div className={cardClassName}>
                 {focusedDevice
                     ? displayFocusedDevice()
                     : displayEmptyState()

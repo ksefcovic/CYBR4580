@@ -93,4 +93,30 @@ class Api::V1::DevicesController < ApplicationController
 def generate_registration_code
     (SecureRandom.random_number(9e5) + 1e5).to_i
 end
+
+def set_device_status
+  device_id, status = params.values_at :device_id, :status
+  if (status == "missing" || status == "pending-found" || status == "good-standing")
+      if (device_id != nil && @device = Device.find_by_id(device_id))
+          @device.update(:status => status)
+          @device.save 
+          render json: {
+              status: status,
+              device_id: @device.id
+          }, status: 201
+      else
+          render json: {
+              message: "Device not found."
+          }, status: 404
+      end
+  else
+      render json: {
+          message: "Device status " + status + " is invalid. Set status to 'missing', 'pending-found' or 'good-standing'"
+      }, status: 404
+  end
+end
+
+def delete_device
+  render json: { message: "Device removed" }, status: 201
+end
 end

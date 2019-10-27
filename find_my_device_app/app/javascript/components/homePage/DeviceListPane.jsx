@@ -12,9 +12,13 @@ const DeviceListPane = ({
     addNewDevice
 }) => {
 
+    const [showAddDeviceForm, setShowAddDeviceForm] = React.useState(false);
+    const newDeviceButtonText = showAddDeviceForm 
+        ? "Close Form"
+        : "Add New Device +"
+
     const addNewDeviceForm = () => {
-        console.log("Add new device");
-        //Todo: open form
+        setShowAddDeviceForm(!showAddDeviceForm);
     }
 
     const renderDeviceRow = (device) => {
@@ -33,12 +37,13 @@ const DeviceListPane = ({
                 </div>
                 { devices.map( device => renderDeviceRow(device) ) }
                 <div onClick={addNewDeviceForm} className="addNewDeviceButton">
-                    Add New Device +
+                    {newDeviceButtonText}
                 </div>
-                <AddDeviceForm {...{
+                {showAddDeviceForm 
+                && <AddDeviceForm {...{
                     user,
                     addNewDevice
-                }}></AddDeviceForm>
+                }}></AddDeviceForm> }
             </div>
         </>
     )

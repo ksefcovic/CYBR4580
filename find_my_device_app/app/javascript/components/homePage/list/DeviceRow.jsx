@@ -14,23 +14,45 @@ const DeviceRow = ({
     }
 
     const unfocusedDeviceRow = () => {
-        const deviceName = device.registration_status == "registered"
-        ? device.name
-        : "Pending: " + device.name
+        let className = "deviceRow"
+        if (device.status == "missing") className = "deviceRowMissing"
+        if (device.registration_status != "registered") className = "deviceRowPending"
         return (
-            <div className="deviceRow" onClick={onDeviceSelected}>
-                <h2>{deviceName}</h2>
+            <div className={className}>
+            <div>
+                <img className="circularSquare" src="https://image.shutterstock.com/image-vector/smartphone-iphone-style-black-color-260nw-530681137.jpg" alt="..."/>
+            </div>
+            <div className="test" onClick={onDeviceSelected}>
+                <h2>{device.name}</h2>
+                {device.registration_status == "pending" 
+                    ? <h4>Registration Pending</h4>
+                    : device.status == "missing" 
+                        ? <h4>Status: Missing</h4>
+                        : <h4>Status: Good Standing</h4>
+                }
+            </div>
             </div>
         )
     }
 
     const focusedDeviceRow = () => {
-        const deviceName = device.registration_status == "registered"
-        ? device.name
-        : "Pending: " + device.name
+        let className = "focusedDeviceRow"
+        if (device.status == "missing") className = "focusedDeviceRowMissing"
+        if (device.registration_status != "registered") className = "focusedDeviceRowPending"
         return (
-            <div className="focusedDeviceRow" onClick={onDeviceSelected}>
-                <h2>{deviceName}</h2>
+            <div className={className}>
+            <div>
+                <img className="circularSquare" src="https://image.shutterstock.com/image-vector/smartphone-iphone-style-black-color-260nw-530681137.jpg" alt="..."/>
+            </div>
+            <div className="test" onClick={onDeviceSelected}>
+                <h2>{device.name}</h2>
+                {device.registration_status == "pending" 
+                    ? <h4>Registration Pending</h4>
+                    : device.status == "missing" 
+                        ? <h4>Status: Missing</h4>
+                        : <h4>Status: Good Standing</h4>
+                }
+            </div>
             </div>
         )
     }
