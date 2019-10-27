@@ -1,5 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
+import styles from "../../assets/stylesheets/landingStyles.scss"
+
 class LandingProvider extends React.Component {
   render () {
     return (
@@ -13,4 +15,4 @@ class LandingProvider extends React.Component {
   }
 }
 
-export default LandingProvider
+export default LandingProvider;

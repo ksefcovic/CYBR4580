@@ -12,6 +12,7 @@ import HomePage from './homePage/HomePage';
 // });
  
 class HomeProvider extends React.Component {
+  //const [newDevice, addNewDevice] = useState(null);
   render () {
     console.log("Starting User: ", this.props.user);
     const store = configureStore({
