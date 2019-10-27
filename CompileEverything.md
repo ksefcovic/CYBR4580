@@ -28,4 +28,4 @@ m
   
 from https://source.android.com/setup/build/building and https://stackoverflow.com/questions/35579646/android-source-code-compile-error-try-increasing-heap-size-with-java-option
 
-Next: [flash the device] or [test in Android emulator]
+Next: [flash the device](https://github.com/ksefcovic/CYBR4580/blob/master/DeviceSetUp.md) or [test in Android emulator](https://github.com/ksefcovic/CYBR4580/blob/master/RunAndroidEmulator.md)
