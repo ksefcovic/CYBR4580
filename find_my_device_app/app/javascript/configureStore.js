@@ -7,25 +7,15 @@ import { ADD_DEVICE,
     UPDATE_DEVICE_STATUS_SUCCESS,
     ADD_DEVICE_SUCCESS, 
     ADD_DEVICE_FAILURE,
-    SET_LOADING_STATUS
+    SET_LOADING_STATUS,
+    REMOVE_DEVICE_SUCCESS
 } from './components/actions'
+import update from 'immutability-helper';
 
 const initialState = {
     currentUser: {},
-    userDevices: [{ user_id: 1, name: "initial device", imei: "", status: "good-standing", registration_status: "pending", known_locations: [], registration_code: "123456" }],
+    userDevices: [],
     isLoading: false
-};
-
-const apiConfig = {
-    baseUrl: 'http://localhost:3000/api/v1/',
-    resources: {
-      Devices: {
-        controller: 'devices'
-      },
-      Users: {
-        controller: 'users'
-      }
-    }
 };
 
 function isLoading(state = false, action) {
@@ -39,43 +29,42 @@ function isLoading(state = false, action) {
 }
 
 function currentUser(state = {}, action) {
-    switch (action.type) {
-        default:
-            return state;
-    }
+    return state;
 }
 
 function userDevices(state = [], action) {
     switch (action.type) {
         case ADD_DEVICE:
             console.log("Add New Device Requested");
-            return state;//[...state, { id: 1, user_id: action.userId, name: action.name, imei: "", status: "good-standing", registration_status: "pending", known_locations: [], registration_code: "123456" }];
+            return state;
         case ADD_DEVICE_SUCCESS:
-            console.log("Device Added: ", action.device);
-            return [...state, action.response.data];
+            console.log("Device Added: ", action.devices);
+            return action.devices;
         case ADD_DEVICE_FAILURE:
             console.log("Device Added Failure: ", action.error);
             return state;
         case UPDATE_DEVICE_STATUS_SUCCESS:
-            let newState = state;
-            let index = 0;
-            console.log(action.deviceId, action.status);
-            for (index = 0; index < newState.length; index++) {
-                if (newState[index].id === action.deviceId) {
-                    console.log("Device Found");
-                    newState[index].status = action.status
+            console.log("Updating status to:", action.status);
+            var index = 0;
+            for (index = 0; index < state.length; index++) {
+                if (state[index].id === action.deviceId) {
+                    break;
                 }
             }
-            return newState;
+            return update(state, { 
+                  [index]: {
+                    status: {$set: action.status}
+                  }
+              });
+        case REMOVE_DEVICE_SUCCESS:
+            console.log("Update Device Status: ", action.devices);
+            return action.devices;
         default:
             return state;
     }
 }
 
-const deviceFinderApiReducer = apiReducer(apiConfig);
-
 const rootReducer = combineReducers({
-    deviceFinderApiReducer,
     currentUser,
     userDevices,
     isLoading
@@ -86,8 +75,7 @@ export default function configureStore(hydratedState = {}) {
         rootReducer, 
         {...initialState, ...hydratedState},
         composeWithDevTools (
-            applyMiddleware(thunk),
-            applyMiddleware(middleWare(apiConfig))
+            applyMiddleware(thunk)
         )
     );
     return store;

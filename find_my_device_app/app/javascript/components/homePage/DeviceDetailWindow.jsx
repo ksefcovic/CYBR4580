@@ -7,7 +7,8 @@ const DeviceDetailWindow = ({
     styles,
     setDeviceStatus,
     addNewDevice,
-    updateDeviceStatus
+    updateDeviceStatus,
+    onRemoveDevice
 }) => {
     const [dropDownIsOpen, setDropDownIsOpen] = React.useState(false)
 
@@ -19,6 +20,11 @@ const DeviceDetailWindow = ({
     const markDeviceFound = () => {
         console.log("Device marked found");
         updateDeviceStatus(focusedDevice.id, "good-standing");
+    }
+
+    const removeDevice = () => {
+        console.log("Remove Device");
+        onRemoveDevice(focusedDevice.id);
     }
 
     const renderRegisteredDeviceInfo = () => {
@@ -41,7 +47,9 @@ const DeviceDetailWindow = ({
     const renderMarkDeviceMissingButton = () => {
         const enabled = focusedDevice.registration_status == "registered";
         return (
-            <button className="markDeviceMissingButton" enabled={enabled ? 1 : 0} onClick={markDeviceMissing}>Mark Device Missing</button>
+            <>
+                {enabled && <button className="markDeviceMissingButton" disabled={!enabled} onClick={markDeviceMissing}>Mark Device Missing</button>}
+            </>
         )
     }
 
@@ -86,6 +94,7 @@ const DeviceDetailWindow = ({
                             ? renderMarkDeviceFoundButton()
                             : renderMarkDeviceMissingButton() 
                         }
+                        <button className="markDeviceFoundButton" onClick={removeDevice}>Remove This Device</button>
                     </div>
                 </div>
                 { focusedDevice && focusedDevice.status == "missing" && renderMissingDeviceInfo() }

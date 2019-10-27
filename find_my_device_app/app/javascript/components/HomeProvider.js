@@ -13,6 +13,7 @@ import HomePage from './homePage/HomePage';
  
 class HomeProvider extends React.Component {
   render () {
+    console.log("Starting User: ", this.props.user);
     const store = configureStore({
       currentUser: this.props.user,
       userDevices: this.props.devices
@@ -21,6 +22,7 @@ class HomeProvider extends React.Component {
     return (
         <Provider store={store}>
           <HomePage {...{
+            currentUser: this.props.user,
             styles
           }}></HomePage>
         </Provider>

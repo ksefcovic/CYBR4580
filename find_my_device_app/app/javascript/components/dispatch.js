@@ -1,8 +1,11 @@
 import { railsActions } from 'redux-rails'
+import { ApiHelper } from '../ApiHelper'
 import { 
     addDevice, 
     addNewDeviceSuccess, 
     addNewDeviceFailed, 
+    removeDeviceSuccess,
+    removeDeviceFailed,
     updateDeviceStatus,
     updateDeviceStatusSuccess,
     updateDeviceStatusFailed,
@@ -13,11 +16,10 @@ import axios from 'axios';
 const mapDispatchToProps = dispatch => {
     return {
       onAddDevice: (userId, name) => {
-        console.log("Adding Device Action...")
         dispatch(setLoading(true))
-        axios.post(`http://localhost:3000/api/v1/new_device/create`, { user_id: userId, name: name })
+        axios.post(ApiHelper.ADD_DEVICE_ENDPOINT, { user_id: userId, name: name })
         .then(function (response) {
-            dispatch(addNewDeviceSuccess(response))
+            dispatch(addNewDeviceSuccess(response.data.devices))
             dispatch(setLoading(false))
         })
         .catch(function (error) {
@@ -25,22 +27,23 @@ const mapDispatchToProps = dispatch => {
             dispatch(setLoading(false))
         });
       },
-      onRemoveDevice: deviceId => {
-        console.log("Removing Device Action...")
+      onRemoveDevice: (deviceId, userId) => {
         dispatch(setLoading(true))
-        fetch(`http://localhost:3000/api/v1/remove_device/${deviceId}`).then(
-            response => response.json(),
-            error => console.log(error)///dispatch(addNewDeviceFailed(error))
-        ).then(json => {
-                //dispatch(addNewDeviceSuccess(json))
-                dispatch(setLoading(false))
-            }
-        )
+        axios.delete(ApiHelper.REMOVE_DEVICE_ENDPOINT(deviceId))
+        .then(function (response) {
+            console.log("SUCCES!", response);
+            dispatch(removeDeviceSuccess(response.data.devices))
+            dispatch(setLoading(false))
+        })
+        .catch(function (error) {
+            console.log("ERROR!", error);
+            //dispatch(updateDeviceStatusFailed(error))
+            dispatch(setLoading(false))
+        });
       },
       onUpdateDeviceStatus: (deviceId, status) => {
-        console.log("Updating Device Action...")
         dispatch(setLoading(true))
-        axios.patch(`http://localhost:3000/api/v1/device/${deviceId}/set_status`, { status })
+        axios.patch(ApiHelper.UPDATE_STATUS_ENDPOINT(deviceId), { status })
         .then(function (response) {
             console.log("SUCCES!", response);
             dispatch(updateDeviceStatusSuccess(response))

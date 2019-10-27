@@ -9,7 +9,7 @@ const DeviceRow = ({
     isLastRow
 }) => {
     const onDeviceSelected = () => {
-        console.log("Focused Device Set To: ", device);
+        //console.log("Focused Device Set To: ", device);
         setFocusedDevice(device);
     }
 

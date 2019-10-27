@@ -3,7 +3,7 @@
 }
 
 .horizontalLayout {
-    background-color: green;
+    background-color: #FF3333;
     color: white;
     display: flex;
     flex-direction: row;
@@ -15,4 +15,5 @@
 .floatRight {
     float: right;
     justify-self: flex-end;
+    vertical-align: middle;
 }

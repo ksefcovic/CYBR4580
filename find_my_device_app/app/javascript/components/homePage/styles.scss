@@ -50,6 +50,7 @@
     display: flex;
     flex-direction: row;
     position: relative;
+    vertical-align: middle;
 }
 .deviceRowPending {
     color: gray;
@@ -113,9 +114,8 @@
     border-radius: 50%;
     margin: 0;
     padding-right: 10px;
+    //vertical-align: middle;
     padding-top: 15px;
-  //position: absolute;
-  //top: 50%;
 }
 
 .circularSquareLarge {
@@ -165,4 +165,9 @@
 .missingDeviceInfoCard {
     padding: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.addDeviceForm {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px;
 }
