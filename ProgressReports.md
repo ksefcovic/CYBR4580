@@ -20,7 +20,6 @@ Kevin:
 Lauren  
 * 
 
-
 Dylan 
 * Learned that the compiled ROM must be made for the correct device
 
@@ -55,7 +54,6 @@ Kevin
 Lauren - 
 *
 
-
 Dylan - 
 * Looked into flashing a ROM to a physical device (Old Pixel XL)and caught up with Aaaron on the AOSP info
 
@@ -81,10 +79,13 @@ Aaron
 ## Hinderances
 Kevin 
 * Need to get a better understanding of HTML to create renderings of mockups
+
 Lauren  
 * 
+
 Dylan  
 * Ran out of space on my laptop while I was pulling the repo, and learned that it must be run on a Linux machine 
+
 Aaron 
 * using repo (the source control system) to pull the code took roughly 6 hours
 * Indexing the folder in android studio took roughly 2 hours
