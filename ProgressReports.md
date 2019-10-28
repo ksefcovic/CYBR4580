@@ -91,17 +91,11 @@ Aaron
 
 ## Ongoing Risks
 |Risk name (value)  | Impact     | Likelihood | Description |
-31
 |-------------------|------------|------------|-------------|
-32
 |No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
-33
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
-34
 |Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-35
 |Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-36
 | NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
 
 
@@ -112,7 +106,6 @@ Kevin
 
 Lauren
 * 
-
 
 Dylan  
 * Started looking taking a deeper look at AOSP repo and determined the requirements needed to develop a custom ROM
@@ -155,17 +148,11 @@ Aaron
 
 ## Ongoing Risks
 |Risk name (value)  | Impact     | Likelihood | Description |
-31
 |-------------------|------------|------------|-------------|
-32
 |No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
-33
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
-34
 |Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-35
 |Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-36
 | NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
 
 
@@ -219,15 +206,9 @@ Aaron
 
 ## Ongoing Risks
 |Risk name (value)  | Impact     | Likelihood | Description |
-31
 |-------------------|------------|------------|-------------|
-32
 |No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
-33
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
-34
 |Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-35
 |Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-36
 | NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
