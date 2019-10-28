@@ -105,3 +105,6 @@ Murakami, Ryo, et al. “A MAC-Address Relaying NAT Router for PC Identification
 “LoJax: First UEFI Rootkit Found in the Wild, Courtesy of the Sednit Group.” WeLiveSecurity, ESET Research, 9 Oct. 2018, www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-courtesy-sednit-group/.
 
 Steiner, Stuart, et al. “Hardening Web Applications Using a Least Privilege DBMS Access Model.” Proceedings of the Fifth Cybersecurity Symposium on   - CyberSec '18, 2018. ACM Digital Library, doi:10.1145/3212687.3212863.
+
+##Environment Setup
+
