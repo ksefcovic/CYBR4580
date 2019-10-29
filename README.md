@@ -111,3 +111,7 @@ Steiner, Stuart, et al. “Hardening Web Applications Using a Least Privilege DB
 # Architectural Diagram
 
 ![Architectural Diagram](https://github.com/ksefcovic/CYBR4580/blob/Diagrams/New%20Architectural%20diagram.png)
+
+# Process Diagram
+
+![Process Diagram](https://github.com/ksefcovic/CYBR4580/blob/Diagrams/Process%20Diagram.png)
