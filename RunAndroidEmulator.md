@@ -9,5 +9,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 4. In the root of the AOSP source, run the following:
 ```bash
-emulator @Pixel_XL_API_29 -system out/target/product/marlin/system.img -ramdisk out/target/product/marlin/ramdisk.img -logcat *:v
+emulator @Pixel_XL_API_29 -system out/target/product/marlin/system.img -ramdisk out/target/product/marlin/ramdisk.img -encryption-key device/generic/goldfish/data/etc/encryptionkey.img -logcat *:v
+
 ```
