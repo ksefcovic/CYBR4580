@@ -4,8 +4,7 @@ Kevin
 * Worked on developing diagrams for Milestone 2
 
 Lauren  
-* 
-
+* Worked with Kevin on developing a plan for the web application.
 Dylan  
 * Started work on looking at how to flash a custom ROM to an emulator
 
@@ -18,7 +17,7 @@ Kevin:
 * Created a logical diagram and discussed with MLHale and team
 
 Lauren  
-* 
+* Ended with a plan for the goal of our web app and a plan of where to begin.
 
 Dylan 
 * Learned that the compiled ROM must be made for the correct device
@@ -52,7 +51,7 @@ Kevin
 * Created Mockups of website in LucidCharts and uploaded to Invision environment
 
 Lauren - 
-*
+* 
 
 Dylan - 
 * Looked into flashing a ROM to a physical device (Old Pixel XL)and caught up with Aaaron on the AOSP info
