@@ -51,7 +51,7 @@ Kevin
 * Created Mockups of website in LucidCharts and uploaded to Invision environment
 
 Lauren - 
-* 
+* Woked on developing the structure of the app.
 
 Dylan - 
 * Looked into flashing a ROM to a physical device (Old Pixel XL)and caught up with Aaaron on the AOSP info
@@ -64,7 +64,7 @@ Kevin:
 * Uploaded mockups to Invision and created links to the mockups to show functionality
 
 Lauren 
-* 
+* Built the base structure of the app and broke out the react components.
 
 Dylan  
 * Pulled the android 10 release 3 source tree
@@ -80,7 +80,7 @@ Kevin
 * Need to get a better understanding of HTML to create renderings of mockups
 
 Lauren  
-* 
+* Had webpack issues that took time to debug.
 
 Dylan  
 * Ran out of space on my laptop while I was pulling the repo, and learned that it must be run on a Linux machine 
@@ -105,7 +105,7 @@ Kevin
 * Learned some HTML and began turning mockups into usable web pages
 
 Lauren
-* 
+* Worked on building out the react components.
 
 Dylan  
 * Started looking taking a deeper look at AOSP repo and determined the requirements needed to develop a custom ROM
@@ -119,7 +119,7 @@ Kevin
 * Examined Bootstrap CSS and added design elements
 
 Lauren 
-* 
+* Got all of the react components connected to each other.
 
 Dylan 
 * Set up a linux virtual machine to start building and developing a custom ROM 
@@ -163,7 +163,7 @@ Kevin
 * Created container that holds information about device and missing devices for users to see
 
 Lauren 
-* 
+* Worked on adding Kevin's html work into the react components and started adding css.
 
 Dylan 
 * Started the process for setting up the Pixel XL for development
@@ -179,7 +179,7 @@ Kevin
 * Container was created using HTML and Bootstrap CSS libraries
 
 Lauren 
-*
+* Our react components started to take real shape and got some styles.
 
 Dylan 
 * Unlocked the bootloader for the device
@@ -196,7 +196,7 @@ Kevin
 * Needed to examine Bootstrap libraries and learn as I went in order to create what was needed
 
 Lauren  
-*
+* The android app for registering the devices cant be used on emulators because it requires the imei. This made testing more challenging.
 
 Dylan  
 * Many of the tutorials for flashing devices are from 2012 or 2013, so they aren’t always up to date
