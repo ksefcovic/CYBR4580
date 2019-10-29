@@ -12,18 +12,13 @@ None of these are needed but if you are looking for some tools to make working i
 
 ### Yarn
 - Yarn is the package manager we are using, if you run into errors and look on stack overflow and other places, some solutions will tell you to run something with `npm` - dont use npm, use yarn commands in place.
-- Install:
-    - MacOS: 
-    - Linux: 
-    - Windows: 
 - cd to `find_my_device_app` directory and execute: `yarn install`
 - You may get errors or warkings that say peer dependencies are missing, use `yarn add [DEPENDENCY]` to add those
 
 ### Node
+'yarn add node'
 
 ### Postgres
-
-### Foreman (Optional, see RunDevelopmentOnLocalHost.md for info on use)
 
 
 ## Common Enviorment Debugging Fixes
@@ -32,3 +27,5 @@ None of these are needed but if you are looking for some tools to make working i
 ### Remove node_modules and reinstall
 
 ### Run `bundle install`
+
+### Run `rake asstes:precompile` so get debugging information if js components are not loading properly or you are experienceing webpack issues.
