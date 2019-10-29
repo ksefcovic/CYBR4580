@@ -108,6 +108,17 @@ Steiner, Stuart, et al. “Hardening Web Applications Using a Least Privilege DB
 
 # Environment Setup
 
+## Android Documentation
+All of the Android documentation can be found below, with the GetRunningOnTheAndroidSide.md file guiding a user through all of the files with links to the next file.
+* [Get Running On The Android Side](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/GetRunningOnTheAndroidSide.md)
+* [Setup Android Studio](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/AndroidStudioSetup.md)
+* [Compile the Android Source](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/CompileEverything.md)
+* [Running Android Emulator](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/RunAndroidEmulator.md)
+or
+* [Flashing the Pixel XL](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/DeviceSetUp.md)
+
+## Web Documentation
+
 # Architectural Diagram
 
 ![Architectural Diagram](https://github.com/ksefcovic/CYBR4580/blob/Diagrams/New%20Architectural%20diagram.png)
