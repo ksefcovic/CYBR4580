@@ -108,3 +108,6 @@ Steiner, Stuart, et al. “Hardening Web Applications Using a Least Privilege DB
 
 # Environment Setup
 
+# Architectural Diagram
+
+![Architectural Diagram](https://github.com/ksefcovic/CYBR4580/blob/Diagrams/New%20Architectural%20diagram.png)
