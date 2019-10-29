@@ -1,53 +1,64 @@
 # API Documentation
 ----------------------------------------------------------------------------------
 
-## Using Auth Tokens
-----------------------------------------------------------------
-TODO
-
-## Stolen Devices
+## Check Stolen Devices
 ------------------------------------------------------------------
 
-### GET: 
-#### Headers: TODO
-#### Body: TODO
-#### Returns: TODO
-
-### POST: 
-#### Headers: TODO
-#### Body: TODO
-#### Returns: TODO
-
-## Users
-----------------------------------------------------------------
-
-### GET: http://base_url/api/v1/user/:id
-#### Headers: X-Access-Token
-#### Body: None
-#### Returns: User Json : {
-    user_id: string
-    user_email: string
+### POST: /api/v1/check_status
+#### Headers: None
+#### Body: {
+    latitude: String
+    longitude: String
+    imei: String
+}
+#### Returns: {
+    message: [string indicating whether it was recorded or not]
 }
 
-### POST: 
-#### Headers: TODO
-#### Body: TODO
-#### Returns: TODO
-
-### PATCH: 
-#### Headers: TODO
-#### Body: TODO
-#### Returns: TODO
 
 ## All Devices
 ----------------------------------------------------------------
 
-### GET: 
-#### Headers: TODO
-#### Body: TODO
-#### Returns: TODO
+### GET: /devices
+#### Headers: None
+#### Body: None
+#### Returns: [
+    {
+        "id": Int,
+        "name": String,
+        "status": String,
+        "mac_address": String?,
+        "imei": String,
+        "known_locations": [],
+        "registration_status": String,
+        "registration_code": String,
+        "user_id": String
+    }
+]
 
-### POST: 
-#### Headers: TODO
-#### Body: TODO
-#### Returns: TODO
+### Initial Register
+### POST: /new_device/register
+#### Headers: None
+#### Body: {
+        "name": String,
+        "user_id": String
+}
+#### Returns: {
+        "name": String,
+        "status": String,
+        "mac_address": String?,
+        "imei": String,
+        "known_locations": [],
+        "registration_status": String,
+        "registration_code": String,
+        "user_id": String
+}
+
+### Complete Registration
+### POST: /api/v1/register
+#### Headers: None
+#### Body: {
+    code: String,
+    imei: String
+}
+#### Returns: 
