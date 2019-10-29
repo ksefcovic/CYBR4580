@@ -114,7 +114,9 @@ All of the Android documentation can be found below, with the GetRunningOnTheAnd
 * [Setup Android Studio](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/AndroidStudioSetup.md)
 * [Compile the Android Source](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/CompileEverything.md)
 * [Running Android Emulator](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/RunAndroidEmulator.md)
+
 or
+
 * [Flashing the Pixel XL](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/DeviceSetUp.md)
 
 ## Web Documentation
