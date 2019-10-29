@@ -2,8 +2,11 @@
 
 1. First make sure that Oracle JDK 8 is installed
     >  `sudo add-apt-repository ppa:webupd8team/java`
+    >
     > `sudo apt-get update`
+    >
     > `sudo apt-get install oracle-java8-installer`
+    >
     > `sudo apt-get install oracle-java8-set-default`
 
 2. Then Download the zip for [Android Studio](https://developer.android.com/studio)
@@ -14,8 +17,11 @@
 7. Once you have finished installing Android Studio through the command prompt it can be ran by executing `studio.sh`
 8. Set the `ANDROID_HOME` environment variable to the location of your Android SDK installation
     >`sudo gedit ~/.bashrc`
+    >
     >`export ANDROID_HOME=/home/user_directory/Android/Sdk`
+    >
     >`export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools`
+    >
     >`export JAVA_HOME=/usr/lib/jvm/java-8-oracle`
 9. Once you have opend Android Studio select the tools dropdown tab on the top in the drop down select AVD Manager
 10. This is where you will create a new virtual device to run as your emulator, select the Create Virtual Device button.
