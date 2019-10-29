@@ -120,6 +120,12 @@ or
 * [Flashing the Pixel XL](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/DeviceSetUp.md)
 
 ## Web Documentation
+* [AccessPostgreDB] (https://github.com/ksefcovic/CYBR4580/blob/master/WebAppDocumentation/AccessPostgreDB.md)
+* [ConfiguringSecrets] (https://github.com/ksefcovic/CYBR4580/blob/master/WebAppDocumentation/ConfiguringSecrets.md)
+* [ConnectToAWS] (https://github.com/ksefcovic/CYBR4580/blob/master/WebAppDocumentation/ConnectToAWS.md)
+* [LocalSetup] (https://github.com/ksefcovic/CYBR4580/blob/master/WebAppDocumentation/LocalSetup.md)
+* [RunDevelopmentOnLocalHost] (https://github.com/ksefcovic/CYBR4580/blob/master/WebAppDocumentation/RunDevelopmentOnLocalHost.md)
+* [UsingRailsConsoleToViewDBEntries] (https://github.com/ksefcovic/CYBR4580/blob/master/WebAppDocumentation/UsingRailsConsoleToViewDBEntries.md)
 
 # Architectural Diagram
 
