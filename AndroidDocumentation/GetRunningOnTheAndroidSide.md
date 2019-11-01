@@ -37,7 +37,7 @@ git config --global user.name "Your Name"
 git config --global user.email "you@example.com"`
 ```
 
-6. intialize repo with the Android 10 R3 Branch
+6. intialize repo with the Android 10 R2 Branch
 ```bash
 repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r2
 ```
