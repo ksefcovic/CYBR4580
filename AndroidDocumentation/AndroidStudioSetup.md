@@ -32,11 +32,3 @@
 
 Note: If you are running a 64-bit version of Ubuntu, you need to install some 32-bit libraries with the following command
     `sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386`
-
-## Flashing to the emulator
-
-Note: Every ROM is device specific (Support device specific Kernel) so when building the custom ROM build it for the specific device
-
-1. Build the custom ROM so  you have a  complied and built system.img and a ramdisk.img
-2. Replace files system.img & ramdisk.img from location .android\avd\avdname.avd
-3. OR: build your own AOSP. before.. make in "lunch" select target as: Emulator(like: genericX86) i.e generate all emulator specific .img files
