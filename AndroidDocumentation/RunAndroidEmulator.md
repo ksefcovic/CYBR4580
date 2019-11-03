@@ -9,7 +9,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 4. In the root of the AOSP source, run the following:
 ```bash
-emulator @Pixel_XL_API_29 -system oout/target/product/generic_x86_64/system.img -ramdisk out/target/product/generic_x86_64/ -encryption-key device/generic/goldfish/data/etc/ -logcat *:v
+emulator @Pixel_XL_API_29 -system out/target/product/generic_x86_64/system.img -ramdisk out/target/product/generic_x86_64/ -encryption-key device/generic/goldfish/data/etc/ -logcat *:v
 ```
 If you get an error saying that there is no ram.img file in ~/.android/avd/Pixel_XL_API_29.avd/snapshots/default_boot/ and there is a file named ram.img.dirty there, go ahead and rename it to ram.img
 ```bash
