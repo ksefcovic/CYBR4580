@@ -18,6 +18,15 @@ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -X
 NOTE: Compiling for the first time will take 2 to 3 hours, but compiling after the first time will only take a couple minutes, unless you run m clean or make clean.
 
 3. Compile the custom ROM from the root of the AOSP tree
+* If you want to use the android emulator run the following:
+```bash
+source build/envsetup.sh
+lunch aosp_x86_64-userdebug
+m update-api
+m droid
+m
+```
+* If you want to flash to a Pixel XL run the following:
 ```bash
 source build/envsetup.sh
 lunch aosp_marlin-userdebug
