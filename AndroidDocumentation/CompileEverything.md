@@ -21,9 +21,9 @@ NOTE: Compiling for the first time will take 2 to 3 hours, but compiling after t
 * If you want to use the android emulator run the following:
 ```bash
 source build/envsetup.sh
-lunch aosp_x86_64-userdebug
+lunch sdk_phone_x86
+lunch aosp_x86-userdebug
 m update-api
-m droid
 m
 ```
 * If you want to flash to a Pixel XL run the following:
