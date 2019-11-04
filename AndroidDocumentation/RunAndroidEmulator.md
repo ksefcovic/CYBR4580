@@ -5,3 +5,4 @@
 ```bash
 emulator -logcat *:v -verbose
 ```
+  * The logcat and verbose flags can be removed if you don't want to see the logs.
