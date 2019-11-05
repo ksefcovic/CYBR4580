@@ -1,2 +1,2 @@
-public class DeviceFinder{
+public static class DeviceFinder{
 }
