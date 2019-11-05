@@ -22,7 +22,6 @@ NOTE: Compiling for the first time will take 2 to 3 hours, but compiling after t
 ```bash
 source build/envsetup.sh
 lunch sdk_phone_x86
-lunch aosp_x86-userdebug
 make update-api
 make
 ```
