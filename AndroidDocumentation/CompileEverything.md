@@ -23,16 +23,15 @@ NOTE: Compiling for the first time will take 2 to 3 hours, but compiling after t
 source build/envsetup.sh
 lunch sdk_phone_x86
 lunch aosp_x86-userdebug
-m update-api
-m
+make update-api
+make
 ```
 * If you want to flash to a Pixel XL run the following:
 ```bash
 source build/envsetup.sh
 lunch aosp_marlin-userdebug
-m update-api
-m droid
-m
+make update-api
+make
 ```
   
 from https://source.android.com/setup/build/building and https://stackoverflow.com/questions/35579646/android-source-code-compile-error-try-increasing-heap-size-with-java-option
