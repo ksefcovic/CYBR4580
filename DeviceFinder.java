@@ -36,6 +36,7 @@ public static class DeviceFinder{
 
     }
 
+    //all of the functionality in the following code is from https://developer.android.com/reference/java/net/HttpURLConnection
     private void testConnectivity() {
         try {
             URL url = new URL("http://www.android.com/");
