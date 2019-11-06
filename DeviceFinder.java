@@ -13,7 +13,7 @@ import java.net.URLEncoder;
 public static class DeviceFinder{
 
     public void run() {
-        Log.v("DeviceFinder", "run() was called!")'
+        Log.v("DeviceFinder", "run() was called!");
         testConnectivity();
         //sendPostRequest(getGPS(), getImei());
     }
