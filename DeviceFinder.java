@@ -9,6 +9,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+//get IMEI/MEID
+import android.telephony.*;
 
 public static class DeviceFinder{
 
@@ -17,24 +19,29 @@ public static class DeviceFinder{
         testConnectivity();
         //sendPostRequest(getGPS(), getImei());
     }
-
-    //TODO: this function will return the GPS coordinates -- it will NOT be void
-    //getGPS is a private function called by run() that returns the last known GPS coordinates
-    private void getGPS() {
+    
+    //getGPS is a private function called by run() that returns the last known GPS location
+    private Location getGPS() {
 
     }
-
-    //TODO: this function will return the IMEI, not void
+    
     //getImei is a function called by run() that returns the IMEI
-    private void getImei() {
-
+    private String getImei() {
+        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        String deviceID = telephonyManager.getImei();
+        //the previous two lines are based on Taner's answer at https://stackoverflow.com/a/3009341
+        //get the IMEI
+        if(deviceID == null) deviceID = telephonyManager.getMeid;
+        //If the returned value is null, get MEID (apparently the CDMA equivalent??)
+        if(deviceID == null) deviceID = "9999";
+        //If that fails, set it to 9999 for the sake of testing
+        return deviceID;
     }
 
     //this function uses the library to send GPS and IMEI to the server
-    //it gets passed the GPS coordinates and the imei
-    //TODO: replace the int types for the parameters with their real values
-    private int sendPostRequest(int location, int imei) {
-
+    //it gets passed the GPS location and the imei
+    private int sendPostRequest(Location currentLocation, String imei) {
+        //latitude and longitude can be accessed using currentLocation.getLatitude() .getLongitude()
     }
 
     //all of the functionality in the following code is from https://developer.android.com/reference/java/net/HttpURLConnection
