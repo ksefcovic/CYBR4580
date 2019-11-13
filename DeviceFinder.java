@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 //get IMEI/MEID
-import android.telephony.*;
+import android.telephony.TelephonyManager;
 
 public static class DeviceFinder{
 
