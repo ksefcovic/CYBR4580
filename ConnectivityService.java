@@ -1,3 +1,5 @@
+//This file should be placed at <android source root>/frameworks/base/services/core/java/com/android/server/ -- Aaron Wurtele
+
 /*
  * Copyright (C) 2008 The Android Open Source Project
  *
