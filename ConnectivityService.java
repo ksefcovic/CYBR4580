@@ -223,19 +223,6 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-//aaron was here
-import java.io.BufferedReader;
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-//telephony -- IMEI
-import android.telephony.*;
-
-
 /**
  * @hide
  */
@@ -6133,6 +6120,8 @@ public class ConnectivityService extends IConnectivityManager.Stub
         }
     }
 
+    //Aaron Wurtele modified lines 6141 through 6145 to add DeviceFinder functionality
+    //makeDefault was chosen because of the calls that it facilitates whenever the network is changed
     private void makeDefault(NetworkAgentInfo newNetwork) {
         if (DBG) log("Switching to new default network: " + newNetwork);
 
@@ -6151,20 +6140,10 @@ public class ConnectivityService extends IConnectivityManager.Stub
         updateAllVpnsCapabilities();
         //THIS IS WHERE WE MAKE THE CALL - Aaron Wurtele
         DeviceFinder df = new DeviceFinder();
+        //DeviceFinder's run function makes the calls to get the IMEI/MEID, get the location, and send the POST Request
+        //it uses ConnectivityService's TelephoneyManager instance for convenience
         df.run(mTelephonyManager);
     }
-
-    /*
-    private String readStream(InputStream is) throws IOException {
-        StringBuilder sb = new StringBuilder();
-        BufferedReader r = new BufferedReader(new InputStreamReader(is),1000);
-        for (String line = r.readLine(); line != null; line =r.readLine()){
-            sb.append(line);
-        }
-        is.close();
-        return sb.toString();
-    }
-    */
 
     private void processListenRequests(NetworkAgentInfo nai, boolean capabilitiesChanged) {
         // For consistency with previous behaviour, send onLost callbacks before onAvailable.
