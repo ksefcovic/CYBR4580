@@ -22,20 +22,18 @@ public static class DeviceFinder{
     
     //getGPS is a private function called by run() that returns the last known GPS location
     private Location getGPS() {
-
+        
     }
     
     //getImei is a function called by run() that returns the IMEI
     private String getImei() {
-        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        String deviceID = telephonyManager.getImei();
-        //the previous two lines are based on Taner's answer at https://stackoverflow.com/a/3009341
+        String deviceID = mTelephonyManager.getImei();
         //get the IMEI
-        if(deviceID == null) deviceID = telephonyManager.getMeid;
+        if(deviceID == null) { deviceID = mTelephonyManager.getMeid(); }
         //If the returned value is null, get MEID (apparently the CDMA equivalent??)
-        if(deviceID == null) deviceID = "9999";
+        //if(deviceID == null) { deviceID = "9999"; }
         //If that fails, set it to 9999 for the sake of testing
-        return deviceID;
+        Log.d("ConnectivityService", "AW - " + deviceID);
     }
 
     //this function uses the library to send GPS and IMEI to the server
