@@ -1,3 +1,4 @@
+//this file should be placed at <aosp source root>/frameworks/base/services/core/java/com/android/server/
 package com.android.server;
 
 //get location
