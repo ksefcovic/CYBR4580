@@ -1,4 +1,4 @@
-//this file should be placed at <aosp source root>/frameworks/base/services/core/java/com/android/server/
+//this file should be placed in <aosp source root>/frameworks/base/services/core/java/com/android/server/
 package com.android.server;
 
 //get location
@@ -20,13 +20,13 @@ import java.net.URL;
 public class DeviceFinder {
 
     public void run(TelephonyManager mTelephonyManager) {
-        this.getImei(mTelephonyManager);
-        //sendPostRequest(getGPS(), getImei());
+        this.sendPostRequest(getGPS(), getImei(mTelephonyManager));
     }
 
     //getGPS is a private function called by run() that returns the last known GPS location
     //latitude and longitude can be accessed using .getLatitude() .getLongitude() on the object returned
     private Location getGPS() {
+        //TODO : add code here
         //TODO : change the return value
         return(null);
     }
@@ -55,13 +55,15 @@ public class DeviceFinder {
             String url = "http://ec2-3-17-64-157.us-east-2.compute.amazonaws.com/api/v1/check_status";
 
             HttpsURLConnection httpClient = (HttpsURLConnection) new URL(url).openConnection();
-
             httpClient.setRequestMethod("POST");
 
-            String urlParameters = "imei=9312093821321";
+            String urlParameters = "imei=" + imei;
+            //TODO: Add GPS Coordinates
 
             httpClient.setDoOutput(true);
+
             DataOutputStream wr = new DataOutputStream(httpClient.getOutputStream());
+
             wr.writeBytes(urlParameters);
             wr.flush();
 
@@ -83,6 +85,7 @@ public class DeviceFinder {
         } catch (Exception e) {
             Log.d("sendPostrequest", "Exception: " + e.toString() + " -- " + e.getMessage());
         }
+
         //TODO: change the return value
         return (0);
     }
