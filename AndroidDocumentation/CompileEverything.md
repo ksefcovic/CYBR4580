@@ -32,6 +32,8 @@ lunch aosp_marlin-userdebug
 make update-api
 make
 ```
+
+**** If you have already compiled the source and want to recompile your changes, simply run ```make```****
   
 from https://source.android.com/setup/build/building and https://stackoverflow.com/questions/35579646/android-source-code-compile-error-try-increasing-heap-size-with-java-option
 
