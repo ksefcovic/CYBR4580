@@ -10,12 +10,15 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 //post request code
 import android.annotation.TargetApi;
+
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DeviceFinder {
 
@@ -27,6 +30,7 @@ public class DeviceFinder {
     //latitude and longitude can be accessed using .getLatitude() .getLongitude() on the object returned
     private Location getGPS() {
         //TODO : add code here
+        //locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
         //TODO : change the return value
         return(null);
     }
@@ -57,19 +61,21 @@ public class DeviceFinder {
             HttpsURLConnection httpClient = (HttpsURLConnection) new URL(url).openConnection();
             httpClient.setRequestMethod("POST");
 
-            String urlParameters = "imei=" + imei;
             //TODO: Add GPS Coordinates
-
+            HashMap hm = new Map();
+            //hm.put("imei", imei);
+            hm.put("imei", "mytestimei640851");
+            hm.put("latitude", null);
+            hm.put("longitude", null);
+            String data = hm.toString();
             httpClient.setDoOutput(true);
-
             DataOutputStream wr = new DataOutputStream(httpClient.getOutputStream());
-
-            wr.writeBytes(urlParameters);
+            wr.writeBytes(data);
             wr.flush();
 
             int responseCode = httpClient.getResponseCode();
             Log.d("sendPostRequest", "\nSending 'POST' request to URL : " + url);
-            Log.d("sendPostRequest", "Post parameters : " + urlParameters);
+            Log.d("sendPostRequest", "Post parameters : " + data);
             Log.d("sendPostRequest", "Response Code : " + responseCode);
 
             BufferedReader in = new BufferedReader(new InputStreamReader(httpClient.getInputStream()));
@@ -80,7 +86,7 @@ public class DeviceFinder {
                 response.append(line);
             }
 
-            //print result
+            //log result
             Log.d("sendPostRequest", "" + response.toString());
         } catch (Exception e) {
             Log.d("sendPostrequest", "Exception: " + e.toString() + " -- " + e.getMessage());
