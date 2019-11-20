@@ -205,3 +205,138 @@ Aaron
 |Issue communicating the information from the device to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
 |Issue understanding AOSP and how everything works | 4 | 6 | Our team has little knowledge on the AOSP and will have to learn how it works |
 |Issue running the proof-of-concept code in Android emulator | 7 | 9 | Our team has little knowledge or experience working with AOSP or its emulator and there have been many errors |
+
+# Progress Report 5-Nov-2019
+## Overview
+Kevin 
+* Met with Dr. Hale and discussed Docker and discussed diagrams
+Lauren 
+* 
+Dylan 
+* 
+Aaron 
+* Worked on getting the Android Emulator to work as a means of seeing the modified log statements from logcat and looked over the log statements to determine where to insert our final endpoint code.
+
+## Outcomes
+Kevin
+* Gained a better understanding of how to setup our environment 
+* Gained a more in depth idea of what is required for the diagrams
+Lauren 
+*
+Dylan 
+* 
+Aaron
+* Successfully booted the custom ROM on the android emulator, found (what I believe is) the correct place to put our endpoint code based on the logcat output, and finished the compile source and android emulator documentation.
+
+## Hinderances
+Kevin 
+* N/A
+Lauren  
+*
+Dylan  
+*
+Aaron 
+* Building AVD’s in Android Studio modifies an environment variable, which prevented me from running it on the general AVD. I was initially struggling to determine what was making the emulator go into a perpetual bootloop, but I after reading through some large logs, I realized the emulator was set to run a different architecture than what I had compiled.
+
+## Ongoing Risks
+
+# Progress Report 12-Nov-2019
+## Overview
+Kevin 
+* Broke lifecycle diagram into two new diagrams and updated progress reports
+Lauren 
+* 
+Dylan 
+* 
+Aaron 
+* 
+
+## Outcomes
+Kevin
+*  Created an Account Creation diagram showing the steps needed for the user to go from landing at the landing page to create an account and terminating when the user gains access to their home page
+* Created a Register Device diagram showing steps needed for a user to register a new device on the webpage and terminating when the user has the device added
+* Added a few more weeks to this document to assist teammates in keeping track of their updates
+Lauren 
+*
+Dylan 
+* 
+Aaron
+* 
+
+## Hinderances
+Kevin 
+* N/A
+Lauren  
+*
+Dylan  
+*
+Aaron 
+* 
+
+## Ongoing Risks
+
+# Progress Report 19-Nov-2019
+## Overview
+Kevin 
+* 
+Lauren 
+* 
+Dylan 
+* 
+Aaron 
+* 
+
+## Outcomes
+Kevin
+*  
+Lauren 
+*
+Dylan 
+* 
+Aaron
+* 
+
+## Hinderances
+Kevin 
+* 
+Lauren  
+*
+Dylan  
+*
+Aaron 
+* 
+
+## Ongoing Risks
+
+# Progress Report 26-Nov-2019
+## Overview
+Kevin 
+* 
+Lauren 
+* 
+Dylan 
+* 
+Aaron 
+* 
+
+## Outcomes
+Kevin
+*  
+Lauren 
+*
+Dylan 
+* 
+Aaron
+* 
+
+## Hinderances
+Kevin 
+* 
+Lauren  
+*
+Dylan  
+*
+Aaron 
+* 
+
+## Ongoing Risks
