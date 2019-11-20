@@ -28,23 +28,19 @@ public class DeviceFinder {
 
     //getGPS is a private function called by run() that returns the last known GPS location
     //latitude and longitude can be accessed using .getLatitude() .getLongitude() on the object returned
-   private Location getGPS() {
-        boolean isGPSEnabled = false;
-        boolean isNetworkEnabled = false;
-        boolean canGetLocation = false;
-        private final Context mContext;
-        Location location;
-
-        private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10; // min distance to change updates
-        private static final long MIN_TIME_BW_UPDATES = 1000 * 60 * 1; // min time between updates
-
-        protected LocationManager locationManager;
-
+       private Location getGPS() {
         try{
+            boolean isGPSEnabled = false;
+            boolean isNetworkEnabled = false;
+            boolean canGetLocation = false;
+            final Context mContext;
+            Location location;
+            LocationManager locationManager;
+
             locationManager = (LocationManager) mContext.getSystemService(LOCATION_SERVICE);
 
             isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-            isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+            isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
             if(!isGPSEnabled && !isNetworkEnabled) {
                 // no network is enabled
@@ -53,7 +49,7 @@ public class DeviceFinder {
                 if(isNetworkEnabled) {
                     locationManager.requestSingleUpdates(
                             LocationManager.NETWORK_PROVIDER,
-                             this);
+                            this);
                     Log.d("Network", "Network");
                     if(locationManager != null) {
                         location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
