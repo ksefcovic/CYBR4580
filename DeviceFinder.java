@@ -2,15 +2,19 @@
 package com.android.server;
 
 //get location
+import android.content.Context;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 //get imei/meid
+import android.os.Bundle;
+import android.os.HandlerThread;
+import android.os.Looper;
 import android.telephony.TelephonyManager;
 //for Log.d
 import android.util.Log;
 //post request code
 import android.annotation.TargetApi;
-
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -21,60 +25,66 @@ import java.util.HashMap;
 
 public class DeviceFinder {
 
-    public void run(TelephonyManager mTelephonyManager) {
-        this.sendPostRequest(getGPS(), getImei(mTelephonyManager));
+    private Location curLocation = null;
+    private String lat = null;
+    private String lon = null;
+    private DeviceFinder df;
+    private HandlerThread ht;
+    private TelephonyManager mTelephonyManager;
+
+    private LocationListener ll = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            curLocation = location;
+            double latitude = curLocation.getLatitude();
+            double longitude = curLocation.getLongitude();
+            lat = Double.toString(latitude);
+            lon = Double.toString(longitude);
+            Log.d("DeviceFinder","AW - Lat:"+ lat + " , Long:"+ lon);
+            //df.sendPostRequest(getImei());
+            //call this again because the previous request likely sent null or old
+            if(ht.quit() == true) { Log.d("DeviceFinder","AW - ht quit"); }
+            else Log.d("DeviceFinder","AW - ht quit failed");
+        }
+
+        @Override
+        public void onStatusChanged(String s, int i, Bundle bundle) {
+            Log.d("DeviceFinder","onStatusChanged " + s + " " + bundle.toString());
+        }
+
+        @Override
+        public void onProviderEnabled(String s) {
+            Log.d("DeviceFinder", "ProviderDisabled");
+        }
+
+        @Override
+        public void onProviderDisabled(String s) {
+            Log.d("DeviceFinder", "ProviderDisabled");
+        }
+    };
+
+    public void run(TelephonyManager tm, Context mContext) {
+        df = this;
+        mTelephonyManager = tm;
+        this.getGPS(mContext);
+        this.sendPostRequest(getImei());
     }
 
     //getGPS is a private function called by run() that returns the last known GPS location
-    //latitude and longitude can be accessed using .getLatitude() .getLongitude() on the object returned
-    private Location getGPS() {
-        try{
-            boolean isGPSEnabled = false;
-            boolean isNetworkEnabled = false;
-            boolean canGetLocation = false;
-            final Context mContext;
-            Location location;
-            LocationManager locationManager;
-
-            locationManager = (LocationManager) mContext.getSystemService(LOCATION_SERVICE);
-
-            isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-            isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-
-            if(!isGPSEnabled && !isNetworkEnabled) {
-                // no network is enabled
-            } else {
-                canGetLocation = true;
-                if(isNetworkEnabled) {
-                    locationManager.requestSingleUpdates(
-                            LocationManager.NETWORK_PROVIDER,
-                            this);
-                    Log.d("Network", "Network");
-                    if(locationManager != null) {
-                        location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                    }
-                }
-                if(isGPSEnabled) {
-                    if(location == null) {
-                        locationManager.requestSingleLocationUpdates(
-                                LocationManager.GPS_PROVIDER,
-                                this);
-                        Log.d("GPS Enabled", "GPS Enabled");
-                        if (locationManager != null) {
-                            location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                        }
-                    }
-                }
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+    private void getGPS(Context mContext) {
+        LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
+        if(locationManager != null) {
+            //locationManager.requestLocationUpdate(LocationManager.GPS_PROVIDER, 0, 0, this);
+            ht = new HandlerThread("ht");
+            ht.start();
+            Looper myLooper = ht.getLooper();
+            locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, ll, myLooper);
         }
-        return(location);
+        else Log.d("DeviceFinder","getGPS - locationManager = null");
     }
 
     //getImei is a function called by run() that returns the IMEI as a string
-    private String getImei(TelephonyManager mTelephonyManager) {
+    private String getImei() {
         String deviceID = mTelephonyManager.getImei();
         //get the IMEI
         if (deviceID == null) {
@@ -85,25 +95,23 @@ public class DeviceFinder {
             deviceID = "9999";
         }
         //If that fails, set it to 9999 for the sake of testing
-        Log.d("ConnectivityService", "AW - " + deviceID);
+        Log.d("DeviceFinder", "AW - IMEI: " + deviceID);
         return (deviceID);
     }
 
     //this function uses the library to send GPS and IMEI to the server
-    //it gets passed the GPS location and the imei
-    private int sendPostRequest(Location currentLocation, String imei) {
+    //it gets passed the imei
+    private int sendPostRequest(String imei) {
         //latitude and longitude can be accessed using currentLocation.getLatitude() .getLongitude()
         try {
             String url = "http://ec2-3-17-64-157.us-east-2.compute.amazonaws.com/api/v1/check_status";
-
             HttpURLConnection httpClient = (HttpURLConnection) new URL(url).openConnection();
             httpClient.setRequestMethod("POST");
-
             HashMap<String, String> hm = new HashMap();
             //hm.put("imei", imei);
             hm.put("IMEI", "mytestimei640851");
-            hm.put("latitude", "1");
-            hm.put("longitude", "11");
+            hm.put("latitude", lat);
+            hm.put("longitude", lon);
             String data = hm.toString();
             httpClient.setDoOutput(true);
             DataOutputStream wr = new DataOutputStream(httpClient.getOutputStream());
@@ -118,7 +126,6 @@ public class DeviceFinder {
             BufferedReader in = new BufferedReader(new InputStreamReader(httpClient.getInputStream()));
             String line;
             StringBuilder response = new StringBuilder();
-
             while ((line = in.readLine()) != null) {
                 response.append(line);
             }
