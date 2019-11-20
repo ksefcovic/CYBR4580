@@ -34,8 +34,6 @@ public class DeviceFinder {
         boolean canGetLocation = false;
         private final Context mContext;
         Location location;
-        double latitude;
-        double longtitude;
 
         private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10; // min distance to change updates
         private static final long MIN_TIME_BW_UPDATES = 1000 * 60 * 1; // min time between updates
@@ -60,10 +58,6 @@ public class DeviceFinder {
                     Log.d("Network", "Network");
                     if(locationManager != null) {
                         location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                        if (location != null) {
-                            latitude = location.getLatitude();
-                            longitude = location.getLongitude();
-                        }
                     }
                 }
                 if(isGPSEnabled) {
@@ -75,10 +69,6 @@ public class DeviceFinder {
                         Log.d("GPS Enabled", "GPS Enabled");
                         if (locationManager != null) {
                             location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                            if (location != null) {
-                                latitude = location.getLatitude();
-                                longitude = location.getLongitude();
-                            }
                         }
                     }
                 }
