@@ -71,10 +71,6 @@ public class DeviceFinder {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        //TODO : add code here
-        //locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-        //TODO : change the return value
         return(location);
     }
 
