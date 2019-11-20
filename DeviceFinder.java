@@ -30,19 +30,20 @@ public class DeviceFinder {
     private String lon = null;
     private DeviceFinder df;
     private HandlerThread ht;
-    private TelephonyManager mTelephonyManager;
 
+    //setup the location listener
     private LocationListener ll = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
+            //set the locaiton, lat, and lon
             curLocation = location;
             double latitude = curLocation.getLatitude();
             double longitude = curLocation.getLongitude();
+            //make lat and lon a string -- sendPostRequest will access this
             lat = Double.toString(latitude);
             lon = Double.toString(longitude);
             Log.d("DeviceFinder","AW - Lat:"+ lat + " , Long:"+ lon);
-            //df.sendPostRequest(getImei());
-            //call this again because the previous request likely sent null or old
+            //kill the handlerthread so we don't continually get updates
             if(ht.quit() == true) { Log.d("DeviceFinder","AW - ht quit"); }
             else Log.d("DeviceFinder","AW - ht quit failed");
         }
@@ -64,17 +65,18 @@ public class DeviceFinder {
     };
 
     public void run(TelephonyManager tm, Context mContext) {
+        //save the instance for the locaiton listener
         df = this;
-        mTelephonyManager = tm;
         this.getGPS(mContext);
-        this.sendPostRequest(getImei());
+        this.sendPostRequest(getImei(tm));
     }
 
     //getGPS is a private function called by run() that returns the last known GPS location
     private void getGPS(Context mContext) {
+        //get the system service
         LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
+        //if we got it, start a handlerthread for updates and request an update
         if(locationManager != null) {
-            //locationManager.requestLocationUpdate(LocationManager.GPS_PROVIDER, 0, 0, this);
             ht = new HandlerThread("ht");
             ht.start();
             Looper myLooper = ht.getLooper();
@@ -84,45 +86,44 @@ public class DeviceFinder {
     }
 
     //getImei is a function called by run() that returns the IMEI as a string
-    private String getImei() {
+    private String getImei(TelephonyManager mTelephonyManager) {
         String deviceID = mTelephonyManager.getImei();
         //get the IMEI
         if (deviceID == null) {
             deviceID = mTelephonyManager.getMeid();
         }
         //If the returned value is null, get MEID (apparently the CDMA equivalent??)
-        if (deviceID == null) {
-            deviceID = "9999";
-        }
-        //If that fails, set it to 9999 for the sake of testing
         Log.d("DeviceFinder", "AW - IMEI: " + deviceID);
         return (deviceID);
     }
 
     //this function uses the library to send GPS and IMEI to the server
     //it gets passed the imei
-    private int sendPostRequest(String imei) {
+    private boolean sendPostRequest(String imei) {
         //latitude and longitude can be accessed using currentLocation.getLatitude() .getLongitude()
         try {
+            //setup everything for POST request
             String url = "http://ec2-3-17-64-157.us-east-2.compute.amazonaws.com/api/v1/check_status";
             HttpURLConnection httpClient = (HttpURLConnection) new URL(url).openConnection();
             httpClient.setRequestMethod("POST");
+            Log.d("sendPostRequest", "\nAW - Sending 'POST' request to URL : " + url);
+            //put the parameters in a hashmap
             HashMap<String, String> hm = new HashMap();
             //hm.put("imei", imei);
             hm.put("IMEI", "mytestimei640851");
             hm.put("latitude", lat);
             hm.put("longitude", lon);
+            //make it a string to send
             String data = hm.toString();
             httpClient.setDoOutput(true);
+            //send the POST Request
             DataOutputStream wr = new DataOutputStream(httpClient.getOutputStream());
             wr.writeBytes(data);
             wr.flush();
-
-            int responseCode = httpClient.getResponseCode();
-            Log.d("sendPostRequest", "\nAW - Sending 'POST' request to URL : " + url);
             Log.d("sendPostRequest", "AW - Post parameters : " + data);
+            //get the response code
+            int responseCode = httpClient.getResponseCode();
             Log.d("sendPostRequest", "AW - Response Code : " + responseCode);
-
             BufferedReader in = new BufferedReader(new InputStreamReader(httpClient.getInputStream()));
             String line;
             StringBuilder response = new StringBuilder();
@@ -134,8 +135,10 @@ public class DeviceFinder {
             Log.d("sendPostRequest", "AW - " + response.toString());
         } catch (Exception e) {
             Log.d("sendPostrequest", "AW - Exception: " + e.toString() + " -- " + e.getMessage());
+            //return false to let the driver know it did not work
+            return(false);
         }
-        //TODO: change the return value
-        return (0);
+        //return true to let the driver know it worked
+        return(true);
     }
 }
