@@ -18,7 +18,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.Map;
 
 public class DeviceFinder {
 
@@ -28,7 +27,7 @@ public class DeviceFinder {
 
     //getGPS is a private function called by run() that returns the last known GPS location
     //latitude and longitude can be accessed using .getLatitude() .getLongitude() on the object returned
-       private Location getGPS() {
+    private Location getGPS() {
         try{
             boolean isGPSEnabled = false;
             boolean isNetworkEnabled = false;
@@ -97,15 +96,14 @@ public class DeviceFinder {
         try {
             String url = "http://ec2-3-17-64-157.us-east-2.compute.amazonaws.com/api/v1/check_status";
 
-            HttpsURLConnection httpClient = (HttpsURLConnection) new URL(url).openConnection();
+            HttpURLConnection httpClient = (HttpURLConnection) new URL(url).openConnection();
             httpClient.setRequestMethod("POST");
 
-            //TODO: Add GPS Coordinates
-            HashMap hm = new Map();
+            HashMap<String, String> hm = new HashMap();
             //hm.put("imei", imei);
-            hm.put("imei", "mytestimei640851");
-            hm.put("latitude", null);
-            hm.put("longitude", null);
+            hm.put("IMEI", "mytestimei640851");
+            hm.put("latitude", "1");
+            hm.put("longitude", "11");
             String data = hm.toString();
             httpClient.setDoOutput(true);
             DataOutputStream wr = new DataOutputStream(httpClient.getOutputStream());
@@ -113,9 +111,9 @@ public class DeviceFinder {
             wr.flush();
 
             int responseCode = httpClient.getResponseCode();
-            Log.d("sendPostRequest", "\nSending 'POST' request to URL : " + url);
-            Log.d("sendPostRequest", "Post parameters : " + data);
-            Log.d("sendPostRequest", "Response Code : " + responseCode);
+            Log.d("sendPostRequest", "\nAW - Sending 'POST' request to URL : " + url);
+            Log.d("sendPostRequest", "AW - Post parameters : " + data);
+            Log.d("sendPostRequest", "AW - Response Code : " + responseCode);
 
             BufferedReader in = new BufferedReader(new InputStreamReader(httpClient.getInputStream()));
             String line;
@@ -126,11 +124,10 @@ public class DeviceFinder {
             }
 
             //log result
-            Log.d("sendPostRequest", "" + response.toString());
+            Log.d("sendPostRequest", "AW - " + response.toString());
         } catch (Exception e) {
-            Log.d("sendPostrequest", "Exception: " + e.toString() + " -- " + e.getMessage());
+            Log.d("sendPostrequest", "AW - Exception: " + e.toString() + " -- " + e.getMessage());
         }
-
         //TODO: change the return value
         return (0);
     }
