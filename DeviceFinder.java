@@ -51,10 +51,9 @@ public class DeviceFinder {
             } else {
                 canGetLocation = true;
                 if(isNetworkEnabled) {
-                    locationManager.requestLocationUpdates(
+                    locationManager.requestSingleUpdates(
                             LocationManager.NETWORK_PROVIDER,
-                            MIN_TIME_BW_UPDATES,
-                            MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                             this);
                     Log.d("Network", "Network");
                     if(locationManager != null) {
                         location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
@@ -62,10 +61,9 @@ public class DeviceFinder {
                 }
                 if(isGPSEnabled) {
                     if(location == null) {
-                        locationManager.requestLocationUpdates(
+                        locationManager.requestSingleLocationUpdates(
                                 LocationManager.GPS_PROVIDER,
-                                MIN_TIME_BW_UPDATES,
-                                MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                                this);
                         Log.d("GPS Enabled", "GPS Enabled");
                         if (locationManager != null) {
                             location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
