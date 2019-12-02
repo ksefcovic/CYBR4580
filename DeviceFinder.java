@@ -25,35 +25,26 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 
 public class DeviceFinder {
-
-    private Location curLocation = null;
-    private String lat = null;
-    private String lon = null;
     private DeviceFinder df;
     private HandlerThread ht;
-    Semaphore latSem = new Semaphore(1, true);
-    Semaphore lonSem = new Semaphore(1, true);
+    private String imei;
+    private Semaphore latSem = new Semaphore(1, true);
+    private Semaphore lonSem = new Semaphore(1, true);
 
     //setup the location listener
     private LocationListener ll = new LocationListener() {
         @Override
-        public void onLocationChanged(Location location) {
-            //grab the semaphore
-            latSem.acquire();
-            lonSem.acquire();
-            //set the locaiton, lat, and lon
-            curLocation = location;
-            double latitude = curLocation.getLatitude();
-            double longitude = curLocation.getLongitude();
-            //make lat and lon a string -- sendPostRequest will access this
-            lat = Double.toString(latitude);
-            lon = Double.toString(longitude);
-            Log.d("DeviceFinder","AW - Lat:"+ lat + " , Long:"+ lon);
-            latSem.release();
-            lonSem.release();
-            //kill the handlerthread so we don't continually get updates
+        public void onLocationChanged(Location curLocation) {
+            //convert the double coordinates to a string
+            String lat = Double.toString(curLocation.getLatitude());
+            String lon = Double.toString(curLocation.getLongitude());
+            Log.d("DeviceFinder", "AW - Lat:" + lat + " , Long:" + lon);
+            //call sendPostRequest now that we have the new location
+            df.sendPostRequest(lat, lon);
+            //kill the handlerthread
             if(ht.quit() == true) { Log.d("DeviceFinder","AW - ht quit"); }
             else Log.d("DeviceFinder","AW - ht quit failed");
         }
@@ -74,18 +65,22 @@ public class DeviceFinder {
         }
     };
 
+    //run makes all of the calls necessary to ensure DeviceFinder's endpoint functionality
     public void run(TelephonyManager tm, Context mContext) {
-        //save the instance for the locaiton listener
+        //save the instance for the location listener
         df = this;
+        //get the device's unique ID (IMEI or MEID)
+        imei = this.getImei(tm);
+        //get the GPS location and call sendPostRequest, passing it string representations of the coordinates
         this.getGPS(mContext);
-        this.sendPostRequest(getImei(tm));
     }
 
-    //getGPS is a private function called by run() that returns the last known GPS location
+    //getGPS is a private function called by run()
+    //it starts a handler thread that receives location updates and calls sendPostRequest with the new GPS coordinates
     private void getGPS(Context mContext) {
         //get the system service
         LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
-        //if we got it, start a handlerthread for updates and request an update
+        //start a handlerthread for updates and request an update
         if(locationManager != null) {
             ht = new HandlerThread("ht");
             ht.start();
@@ -104,13 +99,12 @@ public class DeviceFinder {
         }
         //If the returned value is null, get MEID (apparently the CDMA equivalent??)
         Log.d("DeviceFinder", "AW - IMEI: " + deviceID);
-        return (deviceID);
+        return(deviceID);
     }
 
-    //this function uses the library to send GPS and IMEI to the server
-    //it gets passed the imei
-    private boolean sendPostRequest(String imei) {
-        //latitude and longitude can be accessed using currentLocation.getLatitude() .getLongitude()
+    //this function sends the GPS coordinates and IMEI to the server
+    //it gets passed the gps coordinates and is called by handlerthread running onLocationChanged
+    private boolean sendPostRequest(String lat, String lon) {
         try {
             //setup everything for POST request
             String url = "http://ec2-3-17-64-157.us-east-2.compute.amazonaws.com/api/v1/check_status";
@@ -121,24 +115,17 @@ public class DeviceFinder {
 
             //put the parameters in a hashmap
             HashMap<String, String> hm = new HashMap();
-
             //hm.put("imei", imei);
             hm.put("imei", "mytestimei640851");
-            latSem.acquire();
             hm.put("latitude", lat);
-            latSem.release();
-            lonSem.acquire();
             hm.put("longitude", lon);
-            lonSem.release();
 
             //make it a string to send
             JSONObject obj = new JSONObject(hm);
             String data = obj.toString();
 
-            //String data = hm.toString();
-            httpClient.setDoOutput(true);
-
             //send the POST Request
+            httpClient.setDoOutput(true);
             DataOutputStream wr = new DataOutputStream(httpClient.getOutputStream());
             wr.writeBytes(data);
             wr.flush();
