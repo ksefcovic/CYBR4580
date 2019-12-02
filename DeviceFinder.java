@@ -31,8 +31,6 @@ public class DeviceFinder {
     private DeviceFinder df;
     private HandlerThread ht;
     private String imei;
-    private Semaphore latSem = new Semaphore(1, true);
-    private Semaphore lonSem = new Semaphore(1, true);
 
     //setup the location listener
     private LocationListener ll = new LocationListener() {
