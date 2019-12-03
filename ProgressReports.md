@@ -296,7 +296,51 @@ Aaron
 # Progress Report 19-Nov-2019
 ## Overview
 Kevin 
+* Discussed design documents with the group. 
+* Developed plan for doing a security evaluation of our environment. 
+
+Lauren 
 * 
+
+Dylan 
+* 
+
+Aaron 
+* 
+
+## Outcomes
+Kevin
+* Updated design documents to more accurately show what is being done with the processes. 
+* Ran Nmap scan against our network. 
+
+Lauren 
+*
+
+Dylan 
+* 
+
+Aaron
+* 
+
+## Hinderances
+Kevin 
+* N/A
+
+Lauren  
+*
+
+Dylan  
+*
+
+Aaron 
+* 
+
+## Ongoing Risks
+
+# Progress Report 26-Nov-2019
+## Overview
+Kevin 
+* Added information to the design documents. 
 
 Lauren 
 * 
@@ -335,7 +379,49 @@ Aaron
 
 ## Ongoing Risks
 
-# Progress Report 26-Nov-2019
+# Progress Report 3-Dec-2019
+## Overview
+Kevin 
+* Examined Metasploit to find what we can use to attack our environment. 
+
+Lauren 
+* 
+
+Dylan 
+* 
+
+Aaron 
+* 
+
+## Outcomes
+Kevin
+* There are numerous apache and postgresql modules in metasploit that can be used. 
+
+Lauren 
+*
+
+Dylan 
+* 
+
+Aaron
+* 
+
+## Hinderances
+Kevin 
+* Not sure how to use Metasploit. Will use this week to work on getting these to work. 
+
+Lauren  
+*
+
+Dylan  
+*
+
+Aaron 
+* 
+
+## Ongoing Risks
+
+# Progress Report 9-Dec-2019
 ## Overview
 Kevin 
 * 
