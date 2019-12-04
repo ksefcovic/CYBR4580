@@ -1,25 +1,48 @@
-version: "2"
-services:
-  web: 
-    build: .
-    ports: 
-      - "80:80"
-    volumes: 
-      - ./my-httpd.conf:/usr/local/apache2/conf/httpd.conf
-      #- local path to source code tree
-    depends_on:
-      - "db"
+# version: "2"
+# services:
+#   web: 
+#     build: .
+#     ports: 
+#       - "80:80"
+#     volumes: 
+#       - ./my-httpd.conf:/usr/local/apache2/conf/httpd.conf
+#       #- local path to source code tree
+#     depends_on:
+#       - "db"
 
-  db:
-    image: postgres:latest
-    volumes: 
-      - postgres-config:/etc/postgresql
-      - postgres-data:/var/lib/postgresql/data
-      - postgres-logs:/var/log/postgresql
-      - ./database-backup:/database-backup
+#   db:
+#     image: postgres:latest
+#     volumes: 
+#       - postgres-config:/etc/postgresql
+#       - postgres-data:/var/lib/postgresql/data
+#       - postgres-logs:/var/log/postgresql
+#       - ./database-backup:/database-backup
 
-volumes:
-  postgres-config:
-  postgres-data:
-  postgres-logs:
+# volumes:
+#   postgres-config:
+#   postgres-data:
+#   postgres-logs:
+
+version: '3'
+volumes:  
+  postgres_data: {} 
+services:  
+  app:    
+    build: ./application     
+      # context: .    
+      # dockerfile: docker-appDockerFile    
+    depends_on:      
+      - db  
+  db:    
+    image: postgres    
+    volumes:      
+      - postgres_data:/var/lib/postgresql/data  
+  web:    
+    build: .     
+      # context: .      
+      # dockerfile: docker-web/DockerFile    
+    depends_on:      
+      - app    
+    ports:      
+      - 80:80
     
