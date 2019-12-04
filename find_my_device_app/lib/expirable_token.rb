@@ -7,6 +7,7 @@ class ExpirableToken < TokenBuilder
     end
   
     def build(data)
+      puts "build_expirable"
       cons(create_expiration.to_s, token_builder.build(data))
     end
   

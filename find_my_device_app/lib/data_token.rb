@@ -7,6 +7,7 @@ class DataToken < TokenBuilder
     end
   
     def build(data)
+      puts "builds_data"
       cons(extract_data.(data), token_builder.build(data))
     end
   

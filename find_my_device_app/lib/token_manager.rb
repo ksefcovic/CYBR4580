@@ -8,7 +8,8 @@ class TokenManager
   end
 
   def self.validate_token(token)
-    user_id, create_time_s, enc_token = Base64.decode64(token).split(':')
+    decoded_token = Base64.decode64(token)
+    user_id, create_time_s, enc_token = decoded_token.split(':')
     create_time = Time.at(create_time_s.to_i)
     return false unless 1.day.ago < create_time
     return false unless ActiveSupport::SecurityUtils.secure_compare(enc_token, gen_enc_token(user_id, create_time))

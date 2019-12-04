@@ -4,6 +4,7 @@ class SignableToken < TokenBuilder
     end
   
     def build(data)
+      put "builds_dignable"
       base_token = token_builder.build(data)
       cons(compute_signature(base_token), base_token)
     end

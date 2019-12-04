@@ -68,8 +68,8 @@ const DeviceDetailWindow = ({
         return (
             <div className="missingDeviceInfoCard">
                 {dropDownIsOpen 
-                    ? <button onClick={toggleDropdown}>- Show Less Details</button>
-                    : <button onClick={toggleDropdown}>+ Show More Details</button> }
+                    ? <button onClick={toggleDropdown} className="showMoreDetailButton">- Show Less Details</button>
+                    : <button onClick={toggleDropdown} className="showMoreDetailButton">+ Show More Details</button> }
                 {dropDownIsOpen
                 && <DeviceInfoFooter {...{
                     knownLocations: focusedDevice.known_locations
