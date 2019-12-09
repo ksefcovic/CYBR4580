@@ -6732,3 +6732,1892 @@ Processing by Api::V1::DevicesController#set_device_status as JSON
 Completed 201 Created in 7ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 4257)
 
 
+Started POST "/api/v1/device_type/create" for ::1 at 2019-12-09 00:40:37 -0600
+Processing by Api::V1::DevicesController#add_device_type as JSON
+  Parameters: {"photo_url"=>"https://images-na.ssl-images-amazon.com/images/I/61hBc3oHjyL._SX425_.jpg", "name"=>"iPhone XS"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/devices_controller.rb:141:in `add_device_type'
+  [1m[36mDeviceType Create (1.2ms)[0m  [1m[32mINSERT INTO "device_types" ("name", "photo_url") VALUES ($1, $2) RETURNING "id"[0m  [["name", "iPhone XS"], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/61hBc3oHjyL._SX425_.jpg"]]
+  ↳ app/controllers/api/v1/devices_controller.rb:141:in `add_device_type'
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/devices_controller.rb:141:in `add_device_type'
+Completed 201 Created in 29ms (Views: 2.0ms | ActiveRecord: 6.1ms | Allocations: 2201)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 00:40:46 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.4ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 29.2ms | Allocations: 4798)
+Completed 200 OK in 56ms (Views: 30.9ms | ActiveRecord: 2.7ms | Allocations: 11519)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 00:57:56 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.8ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 402a03b4b9d177f6d51c
+Version: webpack 4.40.2
+Time: 4244ms
+Built at: 12/09/2019 12:58:03 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-d4a10daa03e23b5ab8ad.js  2.48 MiB       application  [emitted] [immutable]  application
+     js/application-d4a10daa03e23b5ab8ad.js.map  2.46 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-089a7533fa26bd010cde.js  2.37 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-089a7533fa26bd010cde.js.map  2.33 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-d4a10daa03e23b5ab8ad.js js/application-d4a10daa03e23b5ab8ad.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-089a7533fa26bd010cde.js js/server_rendering-089a7533fa26bd010cde.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 260 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6883.6ms | Allocations: 6436)
+Completed 200 OK in 6937ms (Views: 6884.5ms | ActiveRecord: 4.4ms | Allocations: 28955)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 00:58:51 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.2ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 081939b2f79a383f9b84
+Version: webpack 4.40.2
+Time: 3502ms
+Built at: 12/09/2019 12:58:57 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-1752c85e745f338b8f99.js  2.48 MiB       application  [emitted] [immutable]  application
+     js/application-1752c85e745f338b8f99.js.map  2.46 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-a6678046d2c55a304f20.js  2.37 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-a6678046d2c55a304f20.js.map  2.33 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-1752c85e745f338b8f99.js js/application-1752c85e745f338b8f99.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-a6678046d2c55a304f20.js js/server_rendering-a6678046d2c55a304f20.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 260 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 5763.3ms | Allocations: 6435)
+Completed 200 OK in 5859ms (Views: 5763.7ms | ActiveRecord: 18.8ms | Allocations: 29626)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 00:59:59 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.4ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.1ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 86cacd5305a300224bce
+Version: webpack 4.40.2
+Time: 3684ms
+Built at: 12/09/2019 1:00:06 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-8e368f0bf79e0e6e9739.js  2.48 MiB       application  [emitted] [immutable]  application
+     js/application-8e368f0bf79e0e6e9739.js.map  2.46 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-dd2fee395583186574cc.js  2.37 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-dd2fee395583186574cc.js.map  2.33 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-8e368f0bf79e0e6e9739.js js/application-8e368f0bf79e0e6e9739.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-dd2fee395583186574cc.js js/server_rendering-dd2fee395583186574cc.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 260 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 5982.6ms | Allocations: 6435)
+Completed 200 OK in 6059ms (Views: 5984.5ms | ActiveRecord: 16.8ms | Allocations: 29604)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:00:32 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (1.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 02894d8aade3af43e1d2
+Version: webpack 4.40.2
+Time: 2899ms
+Built at: 12/09/2019 1:00:36 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-d9c594bf2cf5d6c96a00.js  2.48 MiB       application  [emitted] [immutable]  application
+     js/application-d9c594bf2cf5d6c96a00.js.map  2.46 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-9585ab868cef0f08f21e.js  2.37 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-9585ab868cef0f08f21e.js.map  2.33 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-d9c594bf2cf5d6c96a00.js js/application-d9c594bf2cf5d6c96a00.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-9585ab868cef0f08f21e.js js/server_rendering-9585ab868cef0f08f21e.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 260 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 4363.2ms | Allocations: 6430)
+Completed 200 OK in 4451ms (Views: 4363.8ms | ActiveRecord: 11.8ms | Allocations: 29598)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:08:38 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.7ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 3c551031b24adb5fcc24
+Version: webpack 4.40.2
+Time: 3622ms
+Built at: 12/09/2019 1:08:44 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-fa69f7da644a9cf33afc.js  2.48 MiB       application  [emitted] [immutable]  application
+     js/application-fa69f7da644a9cf33afc.js.map  2.46 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-8646651375429f5c3157.js  2.37 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-8646651375429f5c3157.js.map  2.33 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-fa69f7da644a9cf33afc.js js/application-fa69f7da644a9cf33afc.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-8646651375429f5c3157.js js/server_rendering-8646651375429f5c3157.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 260 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 5886.4ms | Allocations: 6435)
+Completed 200 OK in 5943ms (Views: 5887.4ms | ActiveRecord: 3.8ms | Allocations: 28918)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:12:18 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: ee30741f8fa9458f7344
+Version: webpack 4.40.2
+Time: 3600ms
+Built at: 12/09/2019 1:12:24 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-6e7396de44d455fef2fa.js  2.48 MiB       application  [emitted] [immutable]  application
+     js/application-6e7396de44d455fef2fa.js.map  2.46 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-c4d65d38650e1ba70bd2.js  2.37 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-c4d65d38650e1ba70bd2.js.map  2.33 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-6e7396de44d455fef2fa.js js/application-6e7396de44d455fef2fa.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-c4d65d38650e1ba70bd2.js js/server_rendering-c4d65d38650e1ba70bd2.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 260 hidden modules
+
+  [1m[36mDeviceType Load (0.8ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6351.9ms | Allocations: 6435)
+Completed 200 OK in 6410ms (Views: 6352.3ms | ActiveRecord: 17.6ms | Allocations: 29664)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:19:24 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.5ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: a9ec162b3ab4d02115f5
+Version: webpack 4.40.2
+Time: 5716ms
+Built at: 12/09/2019 1:19:32 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-de50ca434272fe8ad4ec.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-de50ca434272fe8ad4ec.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-cef35f18c4e5a1cd7898.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-cef35f18c4e5a1cd7898.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-de50ca434272fe8ad4ec.js js/application-de50ca434272fe8ad4ec.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-cef35f18c4e5a1cd7898.js js/server_rendering-cef35f18c4e5a1cd7898.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 8060.8ms | Allocations: 6440)
+Completed 200 OK in 8125ms (Views: 8062.2ms | ActiveRecord: 3.8ms | Allocations: 28917)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:19:56 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.2ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 14c0f89ef4d06eb6ad54
+Version: webpack 4.40.2
+Time: 4250ms
+Built at: 12/09/2019 1:20:02 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-5ec65b7eebd09c31ea2a.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-5ec65b7eebd09c31ea2a.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-0403e2d22de00df6d7cb.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-0403e2d22de00df6d7cb.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-5ec65b7eebd09c31ea2a.js js/application-5ec65b7eebd09c31ea2a.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-0403e2d22de00df6d7cb.js js/server_rendering-0403e2d22de00df6d7cb.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.6ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6421.2ms | Allocations: 6436)
+Completed 200 OK in 6464ms (Views: 6421.2ms | ActiveRecord: 12.4ms | Allocations: 29664)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:21:05 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.4ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 0c0a3d2c591167237975
+Version: webpack 4.40.2
+Time: 4556ms
+Built at: 12/09/2019 1:21:12 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-cbd04cfc752740f05513.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-cbd04cfc752740f05513.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-7cd16505bea95afe1754.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-7cd16505bea95afe1754.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-cbd04cfc752740f05513.js js/application-cbd04cfc752740f05513.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-7cd16505bea95afe1754.js js/server_rendering-7cd16505bea95afe1754.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6740.9ms | Allocations: 6438)
+Completed 200 OK in 6782ms (Views: 6741.1ms | ActiveRecord: 9.7ms | Allocations: 29612)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:21:34 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.2ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.9ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 7e1ec1e2a285873c5d43
+Version: webpack 4.40.2
+Time: 3749ms
+Built at: 12/09/2019 1:21:39 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-57c275db108bfa837b75.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-57c275db108bfa837b75.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-3a1dd5715e26f49a24fb.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-3a1dd5715e26f49a24fb.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-57c275db108bfa837b75.js js/application-57c275db108bfa837b75.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-3a1dd5715e26f49a24fb.js js/server_rendering-3a1dd5715e26f49a24fb.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 5519.5ms | Allocations: 6435)
+Completed 200 OK in 5562ms (Views: 5519.7ms | ActiveRecord: 10.3ms | Allocations: 29565)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:22:51 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.4ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: ffe0e8853ccf8254c8b4
+Version: webpack 4.40.2
+Time: 4505ms
+Built at: 12/09/2019 1:22:58 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-4c56361d6b755beb80c5.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-4c56361d6b755beb80c5.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-71b28eccfb27e7f2607a.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-71b28eccfb27e7f2607a.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-4c56361d6b755beb80c5.js js/application-4c56361d6b755beb80c5.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-71b28eccfb27e7f2607a.js js/server_rendering-71b28eccfb27e7f2607a.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6682.6ms | Allocations: 6438)
+Completed 200 OK in 6724ms (Views: 6682.8ms | ActiveRecord: 10.0ms | Allocations: 29611)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:24:01 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.4ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 69bebed065ef94d33707
+Version: webpack 4.40.2
+Time: 4027ms
+Built at: 12/09/2019 1:24:07 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-9de3749bcdea9e4895ac.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-9de3749bcdea9e4895ac.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-333c33e0f312cd90af20.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-333c33e0f312cd90af20.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-9de3749bcdea9e4895ac.js js/application-9de3749bcdea9e4895ac.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-333c33e0f312cd90af20.js js/server_rendering-333c33e0f312cd90af20.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6278.3ms | Allocations: 6452)
+Completed 200 OK in 6300ms (Views: 6278.7ms | ActiveRecord: 3.5ms | Allocations: 13177)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:30:18 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (1.5ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: c54c99cb10f18703658d
+Version: webpack 4.40.2
+Time: 4549ms
+Built at: 12/09/2019 1:30:25 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-eff4d303e848afe32b75.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-eff4d303e848afe32b75.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-57e92c997ded6cc254db.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-57e92c997ded6cc254db.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-eff4d303e848afe32b75.js js/application-eff4d303e848afe32b75.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-57e92c997ded6cc254db.js js/server_rendering-57e92c997ded6cc254db.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 7099.2ms | Allocations: 6441)
+Completed 200 OK in 7228ms (Views: 7100.2ms | ActiveRecord: 4.6ms | Allocations: 28986)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:30:49 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: a63f2c417d6f01772664
+Version: webpack 4.40.2
+Time: 4496ms
+Built at: 12/09/2019 1:30:55 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-d25f47904812ff854d51.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-d25f47904812ff854d51.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-1165b09ec0419b7aef18.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-1165b09ec0419b7aef18.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-d25f47904812ff854d51.js js/application-d25f47904812ff854d51.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-1165b09ec0419b7aef18.js js/server_rendering-1165b09ec0419b7aef18.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6623.5ms | Allocations: 6412)
+Completed 200 OK in 6680ms (Views: 6623.8ms | ActiveRecord: 13.4ms | Allocations: 34548)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:31:31 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.4ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: f66937692eb0681c3351
+Version: webpack 4.40.2
+Time: 4623ms
+Built at: 12/09/2019 1:31:38 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-d235e3bd329a731790f9.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-d235e3bd329a731790f9.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-3920dd1392535fa1bccc.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-3920dd1392535fa1bccc.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-d235e3bd329a731790f9.js js/application-d235e3bd329a731790f9.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-3920dd1392535fa1bccc.js js/server_rendering-3920dd1392535fa1bccc.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6661.6ms | Allocations: 6436)
+Completed 200 OK in 6701ms (Views: 6661.8ms | ActiveRecord: 9.6ms | Allocations: 29566)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:32:45 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: b75f733fd67fde8b10ae
+Version: webpack 4.40.2
+Time: 4820ms
+Built at: 12/09/2019 1:32:52 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-cd5a01bc0136ca2fa860.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-cd5a01bc0136ca2fa860.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-0628221c3709400a52ad.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-0628221c3709400a52ad.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-cd5a01bc0136ca2fa860.js js/application-cd5a01bc0136ca2fa860.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-0628221c3709400a52ad.js js/server_rendering-0628221c3709400a52ad.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 7185.1ms | Allocations: 6440)
+Completed 200 OK in 7239ms (Views: 7186.4ms | ActiveRecord: 10.6ms | Allocations: 29612)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:33:13 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 4c8c9bc1cb14b07bb364
+Version: webpack 4.40.2
+Time: 4746ms
+Built at: 12/09/2019 1:33:20 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-a99c517af9e6b605caab.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-a99c517af9e6b605caab.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-c8cfc5af0d1b6cf72d70.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-c8cfc5af0d1b6cf72d70.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-a99c517af9e6b605caab.js js/application-a99c517af9e6b605caab.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-c8cfc5af0d1b6cf72d70.js js/server_rendering-c8cfc5af0d1b6cf72d70.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6786.3ms | Allocations: 6436)
+Completed 200 OK in 6835ms (Views: 6786.5ms | ActiveRecord: 11.6ms | Allocations: 29566)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 01:34:52 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.2ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 1e854ae3484ef3850ac3
+Version: webpack 4.40.2
+Time: 4447ms
+Built at: 12/09/2019 1:34:59 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-bc66ea14a479a890ea1e.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-bc66ea14a479a890ea1e.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-f120006825d6975289de.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-f120006825d6975289de.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-bc66ea14a479a890ea1e.js js/application-bc66ea14a479a890ea1e.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-f120006825d6975289de.js js/server_rendering-f120006825d6975289de.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6360.6ms | Allocations: 6435)
+Completed 200 OK in 6403ms (Views: 6360.8ms | ActiveRecord: 9.7ms | Allocations: 29608)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 11:56:01 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  Rendering users/expired_session.html.erb
+  Rendered users/expired_session.html.erb (Duration: 4.0ms | Allocations: 190)
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 19ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 1521)
+
+
+Started GET "/login" for ::1 at 2019-12-09 11:56:03 -0600
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (Duration: 1.4ms | Allocations: 133)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 491)
+
+
+Started POST "/login/submit" for ::1 at 2019-12-09 11:56:09 -0600
+Processing by UsersController#submit_login as HTML
+  Parameters: {"email"=>"jhalpert@dundermifflin.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jhalpert@dundermifflin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:47:in `submit_login'
+Redirected to http://localhost:3000/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14
+Completed 302 Found in 268ms (ActiveRecord: 2.5ms | Allocations: 8000)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 11:56:09 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (2.2ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.6ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 9f256d98275041a6f281
+Version: webpack 4.40.2
+Time: 4607ms
+Built at: 12/09/2019 11:56:16 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-dfb306570f4332578df1.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-dfb306570f4332578df1.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-80eef73ea9c4092f8ada.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-80eef73ea9c4092f8ada.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-dfb306570f4332578df1.js js/application-dfb306570f4332578df1.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-80eef73ea9c4092f8ada.js js/server_rendering-80eef73ea9c4092f8ada.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 7164.7ms | Allocations: 6474)
+Completed 200 OK in 7267ms (Views: 7164.8ms | ActiveRecord: 4.6ms | Allocations: 22624)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 11:57:38 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.2ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: cb327650a7355f45eb1a
+Version: webpack 4.40.2
+Time: 5153ms
+Built at: 12/09/2019 11:57:46 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-37befba3f37f58580de7.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-37befba3f37f58580de7.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-b63f94eb2429bbc6734b.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-b63f94eb2429bbc6734b.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-37befba3f37f58580de7.js js/application-37befba3f37f58580de7.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-b63f94eb2429bbc6734b.js js/server_rendering-b63f94eb2429bbc6734b.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 7506.7ms | Allocations: 6436)
+Completed 200 OK in 7583ms (Views: 7506.9ms | ActiveRecord: 36.4ms | Allocations: 29628)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 11:58:00 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: fe06699fb0fec3e2c194
+Version: webpack 4.40.2
+Time: 4598ms
+Built at: 12/09/2019 11:58:07 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-af4ac140a045df212caf.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-af4ac140a045df212caf.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-0bba8a8186eb2e8ed275.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-0bba8a8186eb2e8ed275.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-af4ac140a045df212caf.js js/application-af4ac140a045df212caf.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-0bba8a8186eb2e8ed275.js js/server_rendering-0bba8a8186eb2e8ed275.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6669.7ms | Allocations: 6439)
+Completed 200 OK in 6774ms (Views: 6670.0ms | ActiveRecord: 9.7ms | Allocations: 29607)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 11:58:35 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.4ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: c421b3dc193336ad6246
+Version: webpack 4.40.2
+Time: 4615ms
+Built at: 12/09/2019 11:58:42 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-791c09e32f21e7b6303a.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-791c09e32f21e7b6303a.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-11f09e0e957b9ceb66ae.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-11f09e0e957b9ceb66ae.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-791c09e32f21e7b6303a.js js/application-791c09e32f21e7b6303a.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-11f09e0e957b9ceb66ae.js js/server_rendering-11f09e0e957b9ceb66ae.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6676.6ms | Allocations: 6436)
+Completed 200 OK in 6721ms (Views: 6676.9ms | ActiveRecord: 9.9ms | Allocations: 29572)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 12:01:26 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.9ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: dbb773ed845869e3d64a
+Version: webpack 4.40.2
+Time: 4667ms
+Built at: 12/09/2019 12:01:33 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-dde8fb227d87d6a2c170.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-dde8fb227d87d6a2c170.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-aa2455e9577235578529.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-aa2455e9577235578529.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-dde8fb227d87d6a2c170.js js/application-dde8fb227d87d6a2c170.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-aa2455e9577235578529.js js/server_rendering-aa2455e9577235578529.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 7010.2ms | Allocations: 6439)
+Completed 200 OK in 7059ms (Views: 7010.8ms | ActiveRecord: 12.9ms | Allocations: 29614)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 12:02:16 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 9fb9f70ea22284f7dbc3
+Version: webpack 4.40.2
+Time: 4512ms
+Built at: 12/09/2019 12:02:23 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-f05f08a6b19fadf741ce.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-f05f08a6b19fadf741ce.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-ba1b8d94bd326aefbaeb.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-ba1b8d94bd326aefbaeb.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-f05f08a6b19fadf741ce.js js/application-f05f08a6b19fadf741ce.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-ba1b8d94bd326aefbaeb.js js/server_rendering-ba1b8d94bd326aefbaeb.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6650.6ms | Allocations: 6436)
+Completed 200 OK in 6706ms (Views: 6651.0ms | ActiveRecord: 11.0ms | Allocations: 29566)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 12:05:17 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 4d61d533c625ef0c8763
+Version: webpack 4.40.2
+Time: 4545ms
+Built at: 12/09/2019 12:05:24 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-905dda05c91d89530653.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-905dda05c91d89530653.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-2e75663089c08316cb3e.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-2e75663089c08316cb3e.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-905dda05c91d89530653.js js/application-905dda05c91d89530653.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-2e75663089c08316cb3e.js js/server_rendering-2e75663089c08316cb3e.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.6ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6978.7ms | Allocations: 6436)
+Completed 200 OK in 7036ms (Views: 6979.2ms | ActiveRecord: 13.8ms | Allocations: 29609)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 12:06:21 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.2ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: bbc4d3814cbbce243623
+Version: webpack 4.40.2
+Time: 4577ms
+Built at: 12/09/2019 12:06:29 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-314e7403e2889cb08578.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-314e7403e2889cb08578.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-cf06b2be94a1b89bb349.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-cf06b2be94a1b89bb349.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-314e7403e2889cb08578.js js/application-314e7403e2889cb08578.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-cf06b2be94a1b89bb349.js js/server_rendering-cf06b2be94a1b89bb349.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6980.2ms | Allocations: 6436)
+Completed 200 OK in 7027ms (Views: 6980.5ms | ActiveRecord: 9.6ms | Allocations: 29566)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 12:07:53 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.2ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: f96704d0778ec62d2373
+Version: webpack 4.40.2
+Time: 4515ms
+Built at: 12/09/2019 12:08:00 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-d61a0adb22de43a4bb59.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-d61a0adb22de43a4bb59.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-966a5742d429282a6636.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-966a5742d429282a6636.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-d61a0adb22de43a4bb59.js js/application-d61a0adb22de43a4bb59.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-966a5742d429282a6636.js js/server_rendering-966a5742d429282a6636.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (1.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6752.3ms | Allocations: 6438)
+Completed 200 OK in 6793ms (Views: 6752.2ms | ActiveRecord: 10.0ms | Allocations: 29610)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 12:11:49 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.4ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.6ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 7f726fa074b552fc5b53
+Version: webpack 4.40.2
+Time: 4118ms
+Built at: 12/09/2019 12:11:55 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-dfca8695769876e770ed.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-dfca8695769876e770ed.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-2f5f18bc9ec5c7838fe9.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-2f5f18bc9ec5c7838fe9.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-dfca8695769876e770ed.js js/application-dfca8695769876e770ed.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-2f5f18bc9ec5c7838fe9.js js/server_rendering-2f5f18bc9ec5c7838fe9.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 6378.3ms | Allocations: 6456)
+Completed 200 OK in 6409ms (Views: 6379.7ms | ActiveRecord: 3.0ms | Allocations: 13177)
+
+

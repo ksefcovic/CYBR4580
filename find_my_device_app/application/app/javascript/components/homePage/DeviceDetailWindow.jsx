@@ -1,6 +1,7 @@
 import React from "react"
 
 import DeviceInfoFooter from './details/DeviceInfoFooter'
+import FoundAtMap from './details/FoundAtMap'
 
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
@@ -42,18 +43,10 @@ const DeviceDetailWindow = ({
     }
 
     const renderPendingDeviceInfo = () => {
-        //const [showHowToRegister, setShowHowToRegister] = React.useState(false);
         return (
             <div>
                 <h4 className="mt-0">Registration Code: {focusedDevice.registration_code}</h4>
-                {/* <p onClick={() => setShowHowToRegister(true)} className="howToText">How to register?</p>
-                {showHowToRegister && 
-                    <div>
-                        <p>To register this device, download the app on your phone and enter the 6 digit code</p>
-                        <button onClick={() => setShowHowToRegister(false)}>X</button>
-                    </div>} */}
             </div>
-            //<h4 className="mt-0">This device is not yet registered, to register this device, download the app on your phone and enter the 6 digit code: {focusedDevice.registration_code}</h4>
         )
     }
 
@@ -78,15 +71,34 @@ const DeviceDetailWindow = ({
     }
 
     const renderMissingDeviceInfo = () => {
+       // const [selectedMarker, setSelectedMarker] = React.useState({ lat: 0, lng: 0});
+
+       // focusedDevice.known_locations.length > 0 &&  setSelectedMarker({ lat: parseInt(focusedDevice.known_locations[0].latitude), lng: parseInt(focusedDevice.known_locations[0].longitude) })
+        // let locationPositions = [];
+        // focusedDevice.known_locations.map(location => {
+        //     let locationPair = {
+        //         lat: parseInt(location.latitude),
+        //         lng: parseInt(location.longitude)
+        //     }
+        //     locationPositions.push(locationPair);
+        // });
         return (
             <div className="missingDeviceInfoCard">
                 {dropDownIsOpen 
                     ? <button onClick={toggleDropdown} className="showMoreDetailButton">- Show Less Details</button>
                     : <button onClick={toggleDropdown} className="showMoreDetailButton">+ Show More Details</button> }
                 {dropDownIsOpen
-                ? <DeviceInfoFooter {...{
-                    knownLocations: focusedDevice.known_locations
+                ? <div>
+                    <DeviceInfoFooter {...{
+                    knownLocations: focusedDevice.known_locations,
+                   // setSelectedMarker
                 }}></DeviceInfoFooter>
+                {/* <FoundAtMap {...{
+                    lat: locationPositions.length > 0 ? locationPositions[0].lat : 0,
+                    lng: locationPositions.length > 0 ? locationPositions[0].lng : 0,
+                    marker: selectedMarker
+                }}></FoundAtMap> */}
+                </div>
                 : <h2 className="centerText">...</h2>}
             </div>
         )
@@ -123,6 +135,7 @@ const DeviceDetailWindow = ({
                     
                 </div>
                 { focusedDevice && focusedDevice.status == "missing" && renderMissingDeviceInfo() }
+                
             </div>
         )
     }

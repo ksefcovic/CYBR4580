@@ -27,6 +27,7 @@
 // Device Detail Card
 .deviceDetailCard {
     width: 70%;
+    height: 90vh;
     background-color: #FFFFFF;
     padding: 10px;
     box-shadow: -10px 0px 10px 5px grey;
@@ -34,9 +35,11 @@
 }
 .missingDeviceDetailCard {
     width: 70%;
+    height: 90vh;
     background-color: #FFFFFF;
     padding: 10px;
     box-shadow: -10px 0px 10px 5px grey;
+    overflow: scroll;
     z-index: 2;
 }
 
@@ -90,7 +93,7 @@
 }
 .deviceRowMissing:hover {
     cursor: pointer;
-    background-color: #F3D0F0;
+    background-color: #D3F0F0;
 }
 
 .focusedDeviceRow {
@@ -253,7 +256,6 @@
 
 .centerText {
     display: flex;
-    //align-items: center;
     justify-content: center;
 }
 
@@ -262,7 +264,6 @@
 }
 
 .markDeviceFoundButton {
-    //padding: 10px;
     margin: 10px;
 }
 
@@ -276,4 +277,9 @@
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+
+.knownLocationRowHeader:hover {
+    cursor: pointer;
+    background-color: #D3F0F0;
 }
