@@ -27,9 +27,9 @@ echo "-----pulling device finder code-----"
 wget https://raw.githubusercontent.com/ksefcovic/CYBR4580/master/ConnectivityService.java
 wget https://raw.githubusercontent.com/ksefcovic/CYBR4580/master/DeviceFinder.java
 echo "-----replacing system files with Device Finder files-----"
-cp DeviceFinder.java /frameworks/base/services/core/java/com/android/server/
+mv DeviceFinder.java /frameworks/base/services/core/java/com/android/server/
 rm /frameworks/base/services/core/java/com/android/server/ConnectivityService.java
-cp ConnectivityService.java /frameworks/base/services/core/java/com/android/server/
+mv ConnectivityService.java /frameworks/base/services/core/java/com/android/server/
 echo "-----building the source, this may take several hours-----"
 source build/envsetup.sh
 lunch sdk_phone_x86
