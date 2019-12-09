@@ -1,0 +1,37 @@
+
+
+<html style="height: 100%;">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Device Finder</title>
+</head>
+<body style="min-height: 100%; height: 100vh"> 
+<div style="background-color: #00BCD4; color: #FFFFFF; padding: 10px; display: flex; flex-direction: row;">
+    <h1>Device Finder</h1>
+    <%= button_to 'Login', login_path, method: :get, class: 'floatRight' %>
+    
+</div>
+<div style="background-color: #B2EBF2; display: flex; flex-direction: row; padding: 10px; height: 80%;">
+    <div style="width: 30%; padding: 10px; background-color: #FFC107; color: #FFFFFF; border-radius: 10%; margin: 3%;">
+        <h2>Why Device Finder?</h2>
+        <p>Zerospace was designed to prioritize user privacy. When you create a Zerospace account, your privacy selection defaults your post to only be visible to you unless you activly share them with others.</p>
+    </div>
+
+    <div style="width: 30%; padding: 10px; background-color: #9C27B0; color: #FFFFFF; border-radius: 10%; margin: 3%;">
+        <h2>Our Mission</h2>
+        <p>Our mission is to provide a safer and more private social media experience for our users and protect there right to own their data.</p>
+    </div>
+
+    <div style="width: 30%; padding: 10px; background-color: #4CAF50; color: #FFFFFF; border-radius: 10%; margin: 3%;">
+        <h2>New to Device Finder?</h2>
+        <%= button_to 'Sign Up', create_user_path, method: :get, class: 'floatRight' %>
+    </div>
+</div>
+</body>
+</html>

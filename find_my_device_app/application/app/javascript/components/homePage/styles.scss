@@ -1,0 +1,285 @@
+
+.horizontalLayout {
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding-left: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mainHomeLayout {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.deviceList {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 90vh;
+    overflow: scroll;
+    background-color: darkgray;
+}
+
+// Device Detail Card
+.deviceDetailCard {
+    width: 70%;
+    height: 90vh;
+    background-color: #FFFFFF;
+    padding: 10px;
+    box-shadow: -10px 0px 10px 5px grey;
+    z-index: 2;
+}
+.missingDeviceDetailCard {
+    width: 70%;
+    height: 90vh;
+    background-color: #FFFFFF;
+    padding: 10px;
+    box-shadow: -10px 0px 10px 5px grey;
+    overflow: scroll;
+    z-index: 2;
+}
+
+// Devices Column
+.columnLayout {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+// Device Rows
+.deviceRow {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+    color: #757575;
+    background-color: #FFFFFF;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    vertical-align: middle;
+}
+.deviceRow:hover {
+    cursor: pointer;
+    background-color: #D3F0F0;
+}
+
+.deviceRowPending {
+    color: #757575;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+    background-color: #FFFFFF;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.deviceRowPending:hover {
+    cursor: pointer;
+    background-color: #D3F0F0;
+}
+
+.deviceRowMissing {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+    color: #757575;
+    background-color: #FFFFFF;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.deviceRowMissing:hover {
+    cursor: pointer;
+    background-color: #D3F0F0;
+}
+
+.focusedDeviceRow {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+    color: #212121;
+    background-color: #FFFFFF;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 5;
+}
+.focusedDeviceRow:hover {
+    cursor: pointer;
+}
+
+.focusedDeviceRowPending {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #212121;
+    padding-left: 10px;
+    background-color: #FFFFFF;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 5;
+}
+.focusedDeviceRowPending:hover {
+    cursor: pointer;
+}
+
+.focusedDeviceRowMissing {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+    color: #212121;
+    background-color: #FFFFFF;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 5;
+}
+.focusedDeviceRowMissing:hover {
+    cursor: pointer;
+}
+
+.deviceRowContainer {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+// Images
+.circularSquare {
+    height: 50px;
+    border-radius: 50%;
+    margin: 0;
+    padding-right: 10px;
+    padding-top: 15px;
+    //border:1px solid black;
+}
+
+.circularSquareLarge {
+    height: 250px;
+    border-radius: 50%;
+    margin: 0;
+    border:1px solid black;
+}
+
+// Main
+.deviceDetailsMainBox {
+    background-color: beige;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.addNewDeviceButton {
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-color: #FF5252;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 30%;
+    bottom: 0;
+    z-index: 6;
+    position: absolute; 
+}
+.addNewDeviceButton:hover {
+    cursor: pointer;
+    background-color: rgb(250, 104, 104);
+}
+
+.deviceInfoHorizontalLayout {
+    display: flex;
+    flex-direction: row;
+}
+
+.deviceInfoList {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    text-decoration-color: white;
+}
+
+.markDeviceMissingButton {
+    background-color: red;
+    color: white;
+}
+
+.deviceListHeader {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    background-color: #757575;
+    z-index: 4;
+    color: white;
+}
+
+.missingDeviceInfoCard {
+    margin-top: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 15px;
+    border:1px solid black;
+    padding-bottom: 15px;
+}
+
+.addDeviceForm {
+    background-color: #BDBDBD;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.showMoreDetailButton {
+    color: white;
+    background-color: gray;
+    width: 100%;
+    height: 50px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.addDeviceFormBar {
+    position: absolute;
+    bottom: 0;
+}
+
+.deviceListContainer {
+    margin-bottom: 10px;
+    overflow: scroll;
+}
+
+.howToText {
+    color: blue;
+}
+
+.howToText:hover {
+    cursor: pointer;
+}
+
+.centerText {
+    display: flex;
+    justify-content: center;
+}
+
+.mainDeviceInfoHeader {
+    padding-bottom: 15px;
+}
+
+.markDeviceFoundButton {
+    margin: 10px;
+}
+
+.helpBubble {
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.knownLocationRowHeader:hover {
+    cursor: pointer;
+    background-color: #D3F0F0;
+}

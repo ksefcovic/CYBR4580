@@ -1,0 +1,87 @@
+/* line 1, /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/app/assets/stylesheets/homeStyles.scss */
+.horizontalLayout {
+  background-color: #FF3333;
+  color: white;
+  flex-direction: row;
+}
+
+/* line 7, /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/app/assets/stylesheets/homeStyles.scss */
+.floatRight {
+  float: right;
+  justify-self: flex-end;
+  vertical-align: middle;
+  position: absolute;
+  right: 0;
+  margin: 30px;
+}
+
+/* line 16, /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/app/assets/stylesheets/homeStyles.scss */
+.deviceList {
+  width: 30%;
+  background-color: coral;
+}
+
+/* line 21, /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/app/assets/stylesheets/homeStyles.scss */
+.deviceDetailCard {
+  width: 70%;
+  background-color: blue;
+}
+/* line 1, /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/app/assets/stylesheets/landingStyles.scss */
+.blueBackground {
+  background-color: coral;
+}
+
+/* line 5, /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/app/assets/stylesheets/landingStyles.scss */
+.horizontalLayout {
+  background-color: #FF3333;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding-left: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* line 15, /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/app/assets/stylesheets/landingStyles.scss */
+.floatRight {
+  float: right;
+  justify-self: flex-end;
+  vertical-align: middle;
+}
+/* line 1, /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/app/assets/stylesheets/mainStyles.scss */
+.blueBackground {
+  background-color: coral;
+}
+
+/* line 5, /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/app/assets/stylesheets/mainStyles.scss */
+.horizontalLayout {
+  background-color: #FF3333;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding-left: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* line 15, /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/app/assets/stylesheets/mainStyles.scss */
+.floatRight {
+  float: right;
+  justify-self: flex-end;
+  vertical-align: middle;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
