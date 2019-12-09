@@ -24,8 +24,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx8g"
 echo "-----pulling device finder code-----"
-wget https://github.com/ksefcovic/CYBR4580/blob/master/ConnectivityService.java
-wget https://github.com/ksefcovic/CYBR4580/blob/master/DeviceFinder.java
+wget https://raw.githubusercontent.com/ksefcovic/CYBR4580/master/ConnectivityService.java
+wget https://raw.githubusercontent.com/ksefcovic/CYBR4580/master/DeviceFinder.java
 echo "-----replacing system files with Device Finder files-----"
 cp DeviceFinder.java /frameworks/base/services/core/java/com/android/server/
 rm /frameworks/base/services/core/java/com/android/server/ConnectivityService.java
