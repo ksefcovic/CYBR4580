@@ -41,9 +41,7 @@ class Api::V1::UsersController < ApplicationController
           access_token: token_manager.build(user.id)
         }, status: 201
       else
-        render json: {
-          message: "username or password is incorrect."
-        }, status: :unauthorized
+        render 'users/credentials_error', status: :unauthorized
       end
     end
 end

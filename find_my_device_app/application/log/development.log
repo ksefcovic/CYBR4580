@@ -8621,3 +8621,130 @@ Entrypoint server_rendering = js/server_rendering-2f5f18bc9ec5c7838fe9.js js/ser
 Completed 200 OK in 6409ms (Views: 6379.7ms | ActiveRecord: 3.0ms | Allocations: 13177)
 
 
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 12:18:06 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.7ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (3.5ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.6ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 146.3ms | Allocations: 4808)
+Completed 200 OK in 198ms (Views: 148.2ms | ActiveRecord: 6.9ms | Allocations: 11687)
+
+
+Started POST "/api/v1/check_status" for ::1 at 2019-12-09 12:18:41 -0600
+Processing by Api::V1::DevicesController#check_device_status as JSON
+  Parameters: {"latitude"=>nil, "imei"=>"mytestimei763411", "longitude"=>nil, "device"=>{"imei"=>"mytestimei763411"}}
+  [1m[36mDevice Load (0.6ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."imei" = $1 LIMIT $2[0m  [["imei", "mytestimei763411"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/devices_controller.rb:25:in `check_device_status'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/devices_controller.rb:38:in `check_device_status'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/devices_controller.rb:38:in `check_device_status'
+  [1m[36mDevice Update (23.9ms)[0m  [1m[33mUPDATE "devices" SET "known_locations" = $1 WHERE "devices"."id" = $2[0m  [["known_locations", "{\"{\\\"latitude\\\":\\\"41.3800387\\\",\\\"longitude\\\":\\\"-96.267448\\\",\\\"timestamp\\\":\\\"2019-10-21T23:31:16.852Z\\\"}\",\"{\\\"latitude\\\":null,\\\"longitude\\\":null,\\\"timestamp\\\":\\\"2019-12-09T18:18:41.948Z\\\"}\"}"], ["id", 6]]
+  ↳ app/controllers/api/v1/devices_controller.rb:38:in `check_device_status'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/devices_controller.rb:38:in `check_device_status'
+Completed 201 Created in 50ms (Views: 0.7ms | ActiveRecord: 26.7ms | Allocations: 5505)
+
+
+Started GET "/user/bd7244a4-cd99-4a1d-9629-99fa3cf58c14" for ::1 at 2019-12-09 12:18:46 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"bd7244a4-cd99-4a1d-9629-99fa3cf58c14"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (0.8ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "bd7244a4-cd99-4a1d-9629-99fa3cf58c14"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  Rendering users/show.html.erb
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb (Duration: 30.8ms | Allocations: 4850)
+Completed 200 OK in 52ms (Views: 30.9ms | ActiveRecord: 3.3ms | Allocations: 11571)
+
+
+Started GET "/" for ::1 at 2019-12-09 12:19:41 -0600
+Processing by StaticController#index as HTML
+  Rendering static/index.html.erb
+  Rendered static/index.html.erb (Duration: 0.3ms | Allocations: 139)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 657)
+
+
+Started GET "/login" for ::1 at 2019-12-09 12:19:43 -0600
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (Duration: 0.5ms | Allocations: 134)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 507)
+
+
+Started POST "/login/submit" for ::1 at 2019-12-09 12:19:46 -0600
+Processing by UsersController#submit_login as HTML
+  Parameters: {"email"=>"jhalpert@dundermifflin.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jhalpert@dundermifflin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:47:in `submit_login'
+Completed 404 Not Found in 224ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1045)
+
+
+Started POST "/login/submit" for ::1 at 2019-12-09 12:20:55 -0600
+Processing by UsersController#submit_login as HTML
+  Parameters: {"email"=>"jhalpert@dundermifflin.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jhalpert@dundermifflin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:47:in `submit_login'
+Completed 404 Not Found in 227ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 884)
+
+
+Started POST "/login/submit" for ::1 at 2019-12-09 12:22:57 -0600
+Processing by UsersController#submit_login as HTML
+  Parameters: {"email"=>"jhalpert@dundermifflin.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jhalpert@dundermifflin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:47:in `submit_login'
+  Rendering users/credentials_error.html.erb
+  Rendered users/credentials_error.html.erb (Duration: 1.5ms | Allocations: 187)
+Completed 401 Unauthorized in 251ms (Views: 4.0ms | ActiveRecord: 16.3ms | Allocations: 8108)
+
+
+Started GET "/login" for ::1 at 2019-12-09 12:23:01 -0600
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (Duration: 2.1ms | Allocations: 343)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 856)
+
+

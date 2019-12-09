@@ -52,10 +52,7 @@ class UsersController < ApplicationController
     
       redirect_to action: 'show', id: user.id
     else
-      render json: {
-        message: "username or password is incorrect.",
-        email: email
-      }, status: 404
+      render 'users/credentials_error', status: :unauthorized
     end
   end
 
