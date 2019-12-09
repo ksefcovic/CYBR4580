@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'login', to: 'users#login'
   get 'create_user', to: 'users#create'
   get 'login/submit', to: 'users#submit_login'
+  post 'login/submit', to: 'users#submit_login'
   get 'logout', to: 'users#logout'
   get 'users', to: 'users#all_users'
   post 'create_user/submit', to: 'users#submit_create'
@@ -33,6 +34,9 @@ Rails.application.routes.draw do
 
       post 'register' => 'devices#register_device'
       post 'check_status' => 'devices#check_device_status'
+
+      get 'device_types', to: 'devices#list_device_types'
+      post 'device_type/create', to: 'devices#add_device_type'
     end
   end
 end

@@ -4,11 +4,8 @@ class Api::V1::DevicesController < ApplicationController
         @device = Device.where(:registration_code => code)
         if (@device != nil) 
             @device.update(:imei => imei, :registration_status => "registered", :registration_code => "")
-            #@device.save
           render json: {
             device: @device
-            #device_status: @device.registration_status,
-            #imei: imei
           }, status: 201
         else
           render json: {
@@ -38,8 +35,6 @@ class Api::V1::DevicesController < ApplicationController
                 longitude: longitude,
                 timestamp: Time.zone.now()
             }
-            # new_known_locations = device.known_locations
-            # new_known_locations.add(newLocation)
             device.update(:known_locations => device.known_locations << newLocation)
             device.save
             render json: {
@@ -55,7 +50,6 @@ class Api::V1::DevicesController < ApplicationController
     def update
       id, attributes = params.values_at :id, :attributes
       status = attributes.values_at :status
-      #id, attributes = params.values_at :id, :attributes
       @device = Device.find_by_id(id)
       if @device.update(:status => status)
           render json: @device
@@ -65,13 +59,16 @@ class Api::V1::DevicesController < ApplicationController
   end
 
   def create
-      name, user_id = params.values_at :name, :user_id
+      name, user_id, device_type_id = params.values_at :name, :user_id, :device_type_id
       registration_code = generate_registration_code
-      if (user_id != nil && user = User.find_by_id(user_id) != nil) 
+    if (user_id != nil && user = User.find_by_id(user_id) != nil) 
         @new_device = Device.new(:name => name, :registration_code => registration_code, :user_id => user_id)
-        @new_device.save
+        @new_device.device_type_id = device_type_id
         if @new_device.save
-          render json: { devices: user.devices }, status: :created, location: device_url(@new_device)
+          device_type = DeviceType.find_by_id(device_type_id)
+          @new_device.type_name = device_type.name
+          @new_device.type_photo_url = device_type.photo_url
+          render json: { device: @new_device }, status: :created, location: device_url(@new_device)
         else
           render json: @new_device.errors, status: :unprocessable_entity
         end
@@ -108,14 +105,48 @@ class Api::V1::DevicesController < ApplicationController
     end
   end
 
+  def map_devices(devices)
+    @mapped_devices = []
+    devices.each do |device|
+      device_object = device
+      device_type = DeviceType.find_by_id(device.device_type_id)
+      if (device_type != nil)
+        device_object["type_name"] = device_type.name
+        device_object["type_photo_url"] = device_type.photo_url
+      else
+        unkown_device = DeviceType.find_by_id("1")
+        device_object["type_name"] = unkown_device.name
+        device_object["type_photo_url"] = unkown_device.photo_url
+      end
+      @mapped_devices << device_object
+    end
+    return @mapped_devices
+  end
+
   def delete_device
     device_id = params.values_at :device_id
     @device = Device.find_by_id(device_id)
     user_id = @device.user_id
     if (Device.destroy(device_id))
-      render json: { devices: User.find_by_id(user_id).devices }, status: 201
+      render json: { devices: map_devices(User.find_by_id(user_id).devices) }, status: 201
     else
       render json: { message: "Device could not be removed!" }, status: 500
     end
+  end
+
+  def add_device_type
+    name, photo_url = params.values_at :name, :photo_url
+    @new_device_type = DeviceType.new(:name => name, :photo_url => photo_url)
+
+    if @new_device_type.save
+      render json: @new_device_type, status: 201
+    else
+      render json: { message: "Device type could not be added!" }, status: 500
+    end
+  end
+
+  def list_device_types
+    @device_types = DeviceType.all
+    render json: { device_types: @device_types }, status: 200
   end
 end

@@ -37,8 +37,8 @@ export function addDevice(userId, name) {
   return { type: ADD_DEVICE, name, userId }
 }
 
-export function addNewDeviceSuccess(devices) {
-    return { type: ADD_DEVICE_SUCCESS, devices }
+export function addNewDeviceSuccess(device) {
+    return { type: ADD_DEVICE_SUCCESS, device }
 }
 
 export function addNewDeviceFailed(error) {

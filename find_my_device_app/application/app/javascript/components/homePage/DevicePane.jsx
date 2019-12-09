@@ -12,15 +12,11 @@ const DevicePane = ({
     styles,
     addNewDevice,
     updateDeviceStatus,
-    onRemoveDevice
+    onRemoveDevice,
+    deviceTypes
 }) => {
     const [focusedDeviceIndex, setFocusedDeviceIndex] = useState(0);
     const [focusedDevice, setFocusedDevice] = useState(null)
-    //const [newDevice, addNewDevice] = useState(null);
-
-    // if (focusedDevice == null && devices != null && devices.length > 0) {
-    //     setFocusedDevice(devices[0]);
-    // }
 
     const getFocusedDeviceIndex = () => {
         let index = 0;
@@ -32,7 +28,7 @@ const DevicePane = ({
         }
         for  (index = 0; index < devices.length; index++) {
             if (devices[index].id == focusedDevice.id) {
-                return index; //setFocusedDeviceIndex(index);
+                return index;
             }
         }
         return 0;
@@ -47,12 +43,15 @@ const DevicePane = ({
                                 ? devices[getFocusedDeviceIndex()]
                                 : null,
               setFocusedDevice,
-              devices,
+              devices: devices ? devices : [],
               styles,
-              addNewDevice
+              addNewDevice,
+              deviceTypes
             }}></DeviceListPane>
             <DeviceDetailWindow className="deviceDetailCard" {...{
-              focusedDevice: devices[getFocusedDeviceIndex()],
+              focusedDevice: (getFocusedDeviceIndex() != null)
+              ? devices[getFocusedDeviceIndex()]
+              : null,
               styles,
               addNewDevice,
               updateDeviceStatus,

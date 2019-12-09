@@ -2,6 +2,8 @@ import React from "react"
 
 import DeviceInfoFooter from './details/DeviceInfoFooter'
 
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 const DeviceDetailWindow = ({
     focusedDevice,
     styles,
@@ -10,6 +12,7 @@ const DeviceDetailWindow = ({
     updateDeviceStatus,
     onRemoveDevice
 }) => {
+    console.log("DeviceDetailWindow", focusedDevice);
     const [dropDownIsOpen, setDropDownIsOpen] = React.useState(false)
 
     const markDeviceMissing = () => {
@@ -32,15 +35,25 @@ const DeviceDetailWindow = ({
             <>
                 {focusedDevice.status == "missing"
                     ? <h4 className="mt-0">This device has been reported mising.</h4>
-                    : <h4 className="mt-0">This device not currently reported mising.</h4>
+                    : <h4 className="mt-0">This device is not currently reported missing.</h4>
                 }
             </>
         )
     }
 
     const renderPendingDeviceInfo = () => {
+        //const [showHowToRegister, setShowHowToRegister] = React.useState(false);
         return (
-            <h4 className="mt-0">This device is not yet registered, to register this device, download the app on your phone and enter the 6 digit code: {focusedDevice.registration_code}</h4>
+            <div>
+                <h4 className="mt-0">Registration Code: {focusedDevice.registration_code}</h4>
+                {/* <p onClick={() => setShowHowToRegister(true)} className="howToText">How to register?</p>
+                {showHowToRegister && 
+                    <div>
+                        <p>To register this device, download the app on your phone and enter the 6 digit code</p>
+                        <button onClick={() => setShowHowToRegister(false)}>X</button>
+                    </div>} */}
+            </div>
+            //<h4 className="mt-0">This device is not yet registered, to register this device, download the app on your phone and enter the 6 digit code: {focusedDevice.registration_code}</h4>
         )
     }
 
@@ -48,7 +61,7 @@ const DeviceDetailWindow = ({
         const enabled = focusedDevice.registration_status == "registered";
         return (
             <>
-                {enabled && <button className="markDeviceMissingButton" disabled={!enabled} onClick={markDeviceMissing}>Mark Device Missing</button>}
+                {enabled && <Button color="warning" className="" disabled={!enabled} onClick={markDeviceMissing}>Mark Device Missing</Button>}
             </>
         )
     }
@@ -56,7 +69,7 @@ const DeviceDetailWindow = ({
     const renderMarkDeviceFoundButton = () => {
         const enabled = focusedDevice.registration_status == "registered";
         return (
-            <button className="markDeviceFoundButton" enabled={enabled ? 1 : 0} onClick={markDeviceFound}>Mark Device Found</button>
+            <Button color="success" className="markDeviceFoundButton" enabled={enabled ? 1 : 0} onClick={markDeviceFound}>Mark Device Found</Button>
         )
     }
 
@@ -71,22 +84,26 @@ const DeviceDetailWindow = ({
                     ? <button onClick={toggleDropdown} className="showMoreDetailButton">- Show Less Details</button>
                     : <button onClick={toggleDropdown} className="showMoreDetailButton">+ Show More Details</button> }
                 {dropDownIsOpen
-                && <DeviceInfoFooter {...{
+                ? <DeviceInfoFooter {...{
                     knownLocations: focusedDevice.known_locations
-                }}></DeviceInfoFooter>}
+                }}></DeviceInfoFooter>
+                : <h2 className="centerText">...</h2>}
             </div>
         )
     }
 
     const displayFocusedDevice = () => {
+        const [showRegistrationHelp, setShowRegistrationHelp] = React.useState(false);
         return (
             <div>
                 <div className="deviceInfoHorizontalLayout">
-                    <img src="https://image.shutterstock.com/image-vector/smartphone-iphone-style-black-color-260nw-530681137.jpg" className="circularSquareLarge" alt="..."/>
+                    <img src={focusedDevice.type_photo_url} className="circularSquareLarge" alt="..."/>
 
                     <div className="deviceInfoList">
-                        <h3 className="mt-0">Device Name: {focusedDevice.name}</h3>
-                        <h4 className="mt-0">Device IMEI: {focusedDevice.imei}</h4>
+                        <div className="mainDeviceInfoHeader">
+                            <h3 className="mt-0"><b>{focusedDevice.name}</b></h3>
+                            <h4 className="mt-0">Device IMEI: {focusedDevice.imei}</h4>
+                        </div>
                         {focusedDevice.registration_status == "registered"
                             ? renderRegisteredDeviceInfo()
                             : renderPendingDeviceInfo() }
@@ -94,8 +111,16 @@ const DeviceDetailWindow = ({
                             ? renderMarkDeviceFoundButton()
                             : renderMarkDeviceMissingButton() 
                         }
-                        <button className="markDeviceFoundButton" onClick={removeDevice}>Remove This Device</button>
+                        {focusedDevice.registration_status != "registered" && <Button color="primary" className="markDeviceFoundButton"  onClick={() => setShowRegistrationHelp(true)}>Registration Help</Button>}
+                        
+                        <Button color="danger" className="markDeviceFoundButton" onClick={removeDevice}>Remove This Device</Button>
+
+                        {focusedDevice.registration_status != "registered" && showRegistrationHelp && <div className="helpBubble">
+                                <Button color="secondary" onClick={() => setShowRegistrationHelp(false)}>X</Button>
+                                <p>To register this device, download our app on the device you want to register and follow the setup steps.</p>
+                            </div>}
                     </div>
+                    
                 </div>
                 { focusedDevice && focusedDevice.status == "missing" && renderMissingDeviceInfo() }
             </div>
@@ -118,7 +143,7 @@ const DeviceDetailWindow = ({
         )
     }
 
-    const cardClassName = (focusedDevice.status == "missing")
+    const cardClassName = (focusedDevice && focusedDevice.status == "missing")
         ? "missingDeviceDetailCard"
         : "deviceDetailCard"
 

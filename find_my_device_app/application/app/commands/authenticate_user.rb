@@ -7,6 +7,11 @@ class AuthenticateUser
     end
   
     def call
+      puts "CALL AUTHENTICATE"
+      puts email
+      puts password
+      #user = getUser()
+      puts user.id
         TokenManager.generate_token(user_id: user.id) if user
       #JsonWebToken.encode(user_id: user.id) if user
     end

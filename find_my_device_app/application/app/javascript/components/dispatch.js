@@ -15,11 +15,11 @@ import axios from 'axios';
 
 const mapDispatchToProps = dispatch => {
     return {
-      onAddDevice: (userId, name) => {
+      onAddDevice: (userId, name, device_type_id) => {
         dispatch(setLoading(true))
-        axios.post(ApiHelper.ADD_DEVICE_ENDPOINT, { user_id: userId, name: name })
+        axios.post(ApiHelper.ADD_DEVICE_ENDPOINT, { user_id: userId, name: name, device_type_id })
         .then(function (response) {
-            dispatch(addNewDeviceSuccess(response.data.devices))
+            dispatch(addNewDeviceSuccess(response.data.device))
             dispatch(setLoading(false))
         })
         .catch(function (error) {
@@ -37,7 +37,6 @@ const mapDispatchToProps = dispatch => {
         })
         .catch(function (error) {
             console.log("ERROR!", error);
-            //dispatch(updateDeviceStatusFailed(error))
             dispatch(setLoading(false))
         });
       },

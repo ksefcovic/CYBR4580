@@ -11,11 +11,9 @@ const HomePageBase = ({
     onAddDevice,
     onUpdateDeviceStatus,
     styles,
-    onRemoveDevice
+    onRemoveDevice,
+    deviceTypes
 }) => {
-    console.log("Current User: ", currentUser);
-    console.log("userDevices: ", userDevices);
-    console.log("addDevices: ", onAddDevice);
     return (
         <>
             <DevicePane {...{
@@ -24,7 +22,8 @@ const HomePageBase = ({
                 styles,
                 addNewDevice: onAddDevice,
                 updateDeviceStatus: onUpdateDeviceStatus,
-                onRemoveDevice
+                onRemoveDevice,
+                deviceTypes
             }} ></DevicePane>
         </>
     )

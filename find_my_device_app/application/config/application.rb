@@ -12,6 +12,8 @@ module FindMyDeviceApp
     config.load_defaults 6.0
     config.autoload_paths += %W(#{config.root}/lib)
 
+    config.middleware.use ActionDispatch::Cookies
+
     #config.autoload_paths << Rails.root.join('lib')
 
     # Settings in config/environments/* take precedence over those specified here.

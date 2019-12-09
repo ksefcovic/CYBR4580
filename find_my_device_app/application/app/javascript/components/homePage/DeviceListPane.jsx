@@ -9,7 +9,8 @@ const DeviceListPane = ({
     setFocusedDevice,
     devices,
     styles,
-    addNewDevice
+    addNewDevice,
+    deviceTypes
 }) => {
 
     const [showAddDeviceForm, setShowAddDeviceForm] = React.useState(false);
@@ -20,6 +21,7 @@ const DeviceListPane = ({
     const addNewDeviceForm = () => {
         setShowAddDeviceForm(!showAddDeviceForm);
     }
+
 
     const renderDeviceRow = (device) => {
         return (<DeviceRow key={device.id} {...{
@@ -35,14 +37,20 @@ const DeviceListPane = ({
                 <div className="deviceListHeader">
                     Your Devices
                 </div>
-                { devices.map( device => renderDeviceRow(device) ) }
+                <div className="deviceListContainer">
+                    { devices.map( device => renderDeviceRow(device) ) }
+                </div>
                 <div onClick={addNewDeviceForm} className="addNewDeviceButton">
                     {newDeviceButtonText}
                 </div>
                 {showAddDeviceForm 
                 && <AddDeviceForm {...{
                     user,
-                    addNewDevice
+                    addNewDevice,
+                    deviceTypes,
+                    onClose: () => {
+                        setShowAddDeviceForm(false);
+                    }
                 }}></AddDeviceForm> }
             </div>
         </>

@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_192102) do
+ActiveRecord::Schema.define(version: 2019_12_09_053946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "device_types", force: :cascade do |t|
+    t.string "name"
+    t.string "photo_url"
+  end
 
   create_table "devices", force: :cascade do |t|
     t.string "name", default: "MyDevice"
@@ -25,6 +30,10 @@ ActiveRecord::Schema.define(version: 2019_10_21_192102) do
     t.string "registration_status", default: "pending"
     t.string "registration_code", default: ""
     t.uuid "user_id", null: false
+    t.bigint "device_type_id"
+    t.string "type_name", default: "", null: false
+    t.string "type_photo_url", default: "", null: false
+    t.index ["device_type_id"], name: "index_devices_on_device_type_id"
     t.index ["user_id"], name: "index_devices_on_user_id"
   end
 
@@ -36,6 +45,8 @@ ActiveRecord::Schema.define(version: 2019_10_21_192102) do
     t.string "first_name", default: ""
     t.string "last_name", default: ""
     t.string "username", default: ""
+    t.bigint "device_type_id"
+    t.index ["device_type_id"], name: "index_users_on_device_type_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

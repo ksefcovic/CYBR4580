@@ -15,7 +15,8 @@ import update from 'immutability-helper';
 const initialState = {
     currentUser: {},
     userDevices: [],
-    isLoading: false
+    isLoading: false,
+    deviceTypes: []
 };
 
 function isLoading(state = false, action) {
@@ -28,6 +29,13 @@ function isLoading(state = false, action) {
     }
 }
 
+function deviceTypes(state = [], action) {
+    switch (action.type) {
+        default:
+            return state;
+    }
+}
+
 function currentUser(state = {}, action) {
     return state;
 }
@@ -35,16 +43,12 @@ function currentUser(state = {}, action) {
 function userDevices(state = [], action) {
     switch (action.type) {
         case ADD_DEVICE:
-            console.log("Add New Device Requested");
             return state;
         case ADD_DEVICE_SUCCESS:
-            console.log("Device Added: ", action.devices);
-            return action.devices;
+            return [...state, action.device];
         case ADD_DEVICE_FAILURE:
-            console.log("Device Added Failure: ", action.error);
             return state;
         case UPDATE_DEVICE_STATUS_SUCCESS:
-            console.log("Updating status to:", action.status);
             var index = 0;
             for (index = 0; index < state.length; index++) {
                 if (state[index].id === action.deviceId) {
@@ -57,7 +61,6 @@ function userDevices(state = [], action) {
                   }
               });
         case REMOVE_DEVICE_SUCCESS:
-            console.log("Update Device Status: ", action.devices);
             return action.devices;
         default:
             return state;
@@ -67,7 +70,8 @@ function userDevices(state = [], action) {
 const rootReducer = combineReducers({
     currentUser,
     userDevices,
-    isLoading
+    isLoading,
+    deviceTypes
 })
 
 export default function configureStore(hydratedState = {}) {

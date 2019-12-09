@@ -20,7 +20,7 @@ const DeviceRow = ({
         return (
             <div className={className}>
             <div>
-                <img className="circularSquare" src="https://image.shutterstock.com/image-vector/smartphone-iphone-style-black-color-260nw-530681137.jpg" alt="..."/>
+                <img className="circularSquare" src={device.type_photo_url} alt="..."/>
             </div>
             <div className="test" onClick={onDeviceSelected}>
                 <h2>{device.name}</h2>
@@ -42,7 +42,7 @@ const DeviceRow = ({
         return (
             <div className={className}>
             <div>
-                <img className="circularSquare" src="https://image.shutterstock.com/image-vector/smartphone-iphone-style-black-color-260nw-530681137.jpg" alt="..."/>
+                <img className="circularSquare" src={device.type_photo_url} alt="..."/>
             </div>
             <div className="test" onClick={onDeviceSelected}>
                 <h2>{device.name}</h2>
