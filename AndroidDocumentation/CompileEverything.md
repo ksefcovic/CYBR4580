@@ -18,14 +18,23 @@ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -X
 NOTE: Compiling for the first time will take 2 to 3 hours, but compiling after the first time will only take a couple minutes, unless you run m clean or make clean.
 
 3. Compile the custom ROM from the root of the AOSP tree
+* If you want to use the android emulator run the following:
+```bash
+source build/envsetup.sh
+lunch sdk_phone_x86
+make update-api
+make
+```
+* If you want to flash to a Pixel XL run the following:
 ```bash
 source build/envsetup.sh
 lunch aosp_marlin-userdebug
-m update-api
-m droid
-m
+make update-api
+make
 ```
+
+**** If you have already compiled the source and want to recompile your changes, simply run ```make```****
   
 from https://source.android.com/setup/build/building and https://stackoverflow.com/questions/35579646/android-source-code-compile-error-try-increasing-heap-size-with-java-option
 
-Next: [flash the device](https://github.com/ksefcovic/CYBR4580/blob/master/DeviceSetUp.md) or [test in Android emulator](https://github.com/ksefcovic/CYBR4580/blob/master/RunAndroidEmulator.md)
+Next: [flash the device](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/DeviceSetUp.md) or [test in Android emulator](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/RunAndroidEmulator.md)

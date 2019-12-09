@@ -8,7 +8,7 @@ NOTE:
 - Before pulling the code, you should know that building the source tree requires at least 16gb of RAM, perferably more than 4 threads, and at least 400gb of storage. The official requirements are at https://source.android.com/setup/build/requirements.
 
 
-1. Install dependencies and [Android Studio](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidStudiosSetup.md)
+1. Install dependencies and [Android Studio](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/AndroidStudioSetup.md)
 ```bash
 sudo apt update && sudo apt upgrade && sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev libncurses5 x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip python python3
 ```
@@ -37,9 +37,9 @@ git config --global user.name "Your Name"
 git config --global user.email "you@example.com"`
 ```
 
-6. intialize repo with the Android 10 R3 Branch
+6. intialize repo with the Android 10 R2 Branch
 ```bash
-repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r3
+repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r2
 ```
 
 7. Download the AOSP Souce Tree (make sure to change the number of threads)
@@ -110,4 +110,4 @@ sudo sysctl -p --system
 
 20. Click on File -> Settings Expand System settings, and click on Memory settings. Set the IDE Max Heap size to at least 2048 MB.
 
-Next: Make your changes and [compile everything](https://github.com/ksefcovic/CYBR4580/blob/master/CompileEverything.md)
+Next: Make your changes and [compile everything](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/CompileEverything.md)

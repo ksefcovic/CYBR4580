@@ -39,11 +39,9 @@ Aaron -
 
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
-|No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
-|Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-|Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will have to learn how it works |
-| NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
+|Issue communicating the information from the device to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
+|Issue understanding AOSP and how everything works | 4 | 6 | Our team has little knowledge on the AOSP and will have to learn how it works |
 
 # Progress Report 01-Oct-2019
 ## Overview
@@ -92,11 +90,9 @@ Aaron
 ## Ongoing Risks
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
-|No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
-|Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-|Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-| NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
+|Issue communicating the information from the device to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
+|Issue understanding AOSP and how everything works | 7 | 8 | Our team has little knowledge on the AOSP and will have to learn how it works |
 
 
 # Progress Report 08-Oct-2019
@@ -149,11 +145,9 @@ Aaron
 ## Ongoing Risks
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
-|No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
-|Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-|Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-| NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
+|Issue communicating the information from the device to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
+|Issue understanding AOSP and how everything works | 7 | 8 | Our team has little knowledge on the AOSP and will have to learn how it works |
 
 
 
@@ -207,8 +201,264 @@ Aaron
 ## Ongoing Risks
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
-|No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
-|Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-|Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
-| NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
+|Issue communicating the information from the device to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
+|Issue understanding AOSP and how everything works | 4 | 6 | Our team has little knowledge on the AOSP and will have to learn how it works |
+|Issue running the proof-of-concept code in Android emulator | 7 | 9 | Our team has little knowledge or experience working with AOSP or its emulator and there have been many errors |
+
+# Progress Report 5-Nov-2019
+## Overview
+Kevin 
+* Met with Dr. Hale and discussed Docker and discussed diagrams
+
+Lauren 
+* 
+
+Dylan 
+* 
+
+Aaron 
+* Worked on getting the Android Emulator to work as a means of seeing the modified log statements from logcat and looked over the log statements to determine where to insert our final endpoint code.
+
+## Outcomes
+Kevin
+* Gained a better understanding of how to setup our environment 
+* Gained a more in depth idea of what is required for the diagrams
+
+Lauren 
+*
+
+Dylan 
+* 
+
+Aaron
+* Successfully booted the custom ROM on the android emulator, found (what I believe is) the correct place to put our endpoint code based on the logcat output, and finished the compile source and android emulator documentation.
+
+## Hinderances
+Kevin 
+* N/A
+
+Lauren  
+*
+
+Dylan  
+*
+
+Aaron 
+* Building AVD’s in Android Studio modifies an environment variable, which prevented me from running it on the general AVD. I was initially struggling to determine what was making the emulator go into a perpetual bootloop, but I after reading through some large logs, I realized the emulator was set to run a different architecture than what I had compiled.
+
+## Ongoing Risks
+
+# Progress Report 12-Nov-2019
+## Overview
+Kevin 
+* Broke lifecycle diagram into two new diagrams and updated progress reports
+
+Lauren 
+* 
+
+Dylan 
+* 
+
+Aaron 
+* 
+
+## Outcomes
+Kevin
+*  Created an Account Creation diagram showing the steps needed for the user to go from landing at the landing page to create an account and terminating when the user gains access to their home page
+* Created a Register Device diagram showing steps needed for a user to register a new device on the webpage and terminating when the user has the device added
+* Added a few more weeks to this document to assist teammates in keeping track of their updates
+
+Lauren 
+*
+
+Dylan 
+* 
+
+Aaron
+* 
+
+## Hinderances
+Kevin 
+* N/A
+
+Lauren  
+*
+
+Dylan  
+*
+
+Aaron 
+* 
+
+## Ongoing Risks
+
+# Progress Report 19-Nov-2019
+## Overview
+Kevin 
+* Discussed design documents with the group. 
+* Developed plan for doing a security evaluation of our environment. 
+
+Lauren 
+* 
+
+Dylan 
+* 
+
+Aaron 
+* 
+
+## Outcomes
+Kevin
+* Updated design documents to more accurately show what is being done with the processes. 
+* Ran Nmap scan against our network. 
+
+Lauren 
+*
+
+Dylan 
+* 
+
+Aaron
+* 
+
+## Hinderances
+Kevin 
+* N/A
+
+Lauren  
+*
+
+Dylan  
+*
+
+Aaron 
+* 
+
+## Ongoing Risks
+
+# Progress Report 26-Nov-2019
+## Overview
+Kevin 
+* Added information to the design documents. 
+
+Lauren 
+* 
+
+Dylan 
+* 
+
+Aaron 
+* 
+
+## Outcomes
+Kevin
+*  
+
+Lauren 
+*
+
+Dylan 
+* 
+
+Aaron
+* 
+
+## Hinderances
+Kevin 
+* 
+
+Lauren  
+*
+
+Dylan  
+*
+
+Aaron 
+* 
+
+## Ongoing Risks
+
+# Progress Report 3-Dec-2019
+## Overview
+Kevin 
+* Examined Metasploit to find what we can use to attack our environment. 
+
+Lauren 
+* 
+
+Dylan 
+* 
+
+Aaron 
+* 
+
+## Outcomes
+Kevin
+* There are numerous apache and postgresql modules in metasploit that can be used. 
+
+Lauren 
+*
+
+Dylan 
+* 
+
+Aaron
+* 
+
+## Hinderances
+Kevin 
+* Not sure how to use Metasploit. Will use this week to work on getting these to work. 
+
+Lauren  
+*
+
+Dylan  
+*
+
+Aaron 
+* 
+
+## Ongoing Risks
+
+# Progress Report 10-Dec-2019
+## Overview
+Kevin 
+* 
+
+Lauren 
+* 
+
+Dylan 
+* 
+
+Aaron 
+* 
+
+## Outcomes
+Kevin
+*  
+
+Lauren 
+*
+
+Dylan 
+* 
+
+Aaron
+* 
+
+## Hinderances
+Kevin 
+* 
+
+Lauren  
+*
+
+Dylan  
+*
+
+Aaron 
+* 
+
+## Ongoing Risks

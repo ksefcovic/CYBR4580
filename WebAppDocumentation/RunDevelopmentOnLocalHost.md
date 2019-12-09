@@ -8,16 +8,6 @@
 ### Step 2: Ensure Secret Files are Added'
 - See documentation file ConfiguringSecrets.md
 
-## Using Foreman (Recomended)
--------------------------------------------------------------------
-### Step 3: Make Sure "foreman" is installed
-- If you do not have foreman, execute: ``
-
-### Step 4: Start the Server
-- Execute: `foreman start -f Procfile`
-
-## Not Using Foreman
--------------------------------------------------------------------
 ### Step 3: Run Local Development DB Setup Script
 - This will allow the development enviorment to point to a postgres db you own locally
 - Create a Local postgres DB with Info:
