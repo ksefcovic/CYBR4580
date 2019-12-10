@@ -10,5 +10,6 @@ chmod +x DesviceFinderInstaller.sh && ./DeviceFinderInstaller.sh
 ```
 4. Start the android emulator:
 ```bash
-cd AospSource && emulator
+cd AospSource
+emulator
 ```
