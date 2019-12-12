@@ -36,4 +36,4 @@ lunch sdk_phone_x86
 make update-api > updateAPI.txt
 make > make.txt
 echo "-----Device Finder installation is complete!-----"
-echo "please run emulator to start the android emulator with device finder"
+echo "please run emulator or /home/aaron/Capstone/prebuilts/android-emulator/linux-x86_64/emulator to start the android emulator with device finder"
