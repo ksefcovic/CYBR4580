@@ -105,16 +105,16 @@ public class DeviceFinder {
     private boolean sendPostRequest(String lat, String lon) {
         try {
             //setup everything for POST request
-            String url = "http://ec2-3-17-64-157.us-east-2.compute.amazonaws.com/api/v1/check_status";
-            HttpURLConnection httpClient = (HttpURLConnection) new URL(url).openConnection();
+            String url = "https://www.device-finder.com/api/v1/check_status";
+            HttpsURLConnection httpClient = (HttpsURLConnection) new URL(url).openConnection();
             httpClient.setRequestMethod("POST");
             httpClient.setRequestProperty("Content-Type", "application/json; charset=utf-8");
             Log.d("sendPostRequest", "\nAW - Sending 'POST' request to URL : " + url);
 
             //put the parameters in a hashmap
             HashMap<String, String> hm = new HashMap();
-            //hm.put("imei", imei);
-            hm.put("imei", "mytestimei640851");
+            hm.put("imei", imei);
+            // this is here for testing hm.put("imei", "mytestimei640851");
             hm.put("latitude", lat);
             hm.put("longitude", lon);
 
