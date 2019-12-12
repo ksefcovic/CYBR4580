@@ -15,9 +15,9 @@ cd AospSource
 echo "-----initializing repo-----"
 git config --global user.name "" 
 git config --global user.email ""
-repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r2
+repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r2 > repoInitialization.txt
 echo "-----pulling the source, this may take several hours-----"
-repo sync
+repo sync > repositoryPull.txt
 export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -31,9 +31,9 @@ mv DeviceFinder.java frameworks/base/services/core/java/com/android/server/
 rm frameworks/base/services/core/java/com/android/server/ConnectivityService.java
 mv ConnectivityService.java frameworks/base/services/core/java/com/android/server/
 echo "-----building the source, this may take several hours-----"
-source build/envsetup.sh
+source build/envsetup.sh 
 lunch sdk_phone_x86
-make update-api
-make
+make update-api > updateAPI.txt
+make > make.txt
 echo "-----Device Finder installation is complete!-----"
 echo "please run emulator to start the android emulator with device finder"
