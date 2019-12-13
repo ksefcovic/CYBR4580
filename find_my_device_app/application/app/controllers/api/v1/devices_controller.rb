@@ -1,11 +1,11 @@
 class Api::V1::DevicesController < ApplicationController
     def register_device
         code, imei = params.values_at :code, :imei
-        @device = Device.find(:registration_code => code)
-        if (@device != nil) 
-            @device.update(:imei => imei, :registration_status => "registered", :registration_code => "")
+        @device = Device.where(:registration_code => code)
+        if (@device != nil && @device.length > 0) 
+            @device[0].update(:imei => imei, :registration_status => "registered", :registration_code => "")
           render json: {
-            device: @device
+            device: @device[0]
           }, status: 201
         else
           render json: {
