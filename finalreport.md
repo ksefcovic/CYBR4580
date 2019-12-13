@@ -36,6 +36,7 @@ Our methodology was to split into two groups. One group tackled the issue of bui
 (list of steps to install the product/app/code/etc)
 
 # User DeviceFinder Installation Guide
+## Android Open Source Project
 1. Go to the directory you want to run the emulator from and pull the source code to.
 2. Download the install script:
 ```bash
@@ -51,6 +52,7 @@ cd AospSource
 emulator
 ```
 
+## Web Applicaiton
 *LAUREN ADDS WEB INSTALL STUFF
 
 
