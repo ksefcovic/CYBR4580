@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   #login
   post 'login', to: 'users#login'
+  get 'login', to: 'users#login'
   get 'login/submit', to: 'users#submit_login'
   post 'login/submit', to: 'users#submit_login'
 
