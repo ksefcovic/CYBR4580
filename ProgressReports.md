@@ -264,7 +264,9 @@ Dylan
 *
 
 Aaron
-*
+* Created the DeviceFinder class and inserted the call to it at the end of ConnectivityService.makeDefault()
+* Started the code to get a device's IMEI/MEID
+* Started researching how to get a device's GPS coordinates
 
 ## Outcomes
 Kevin
@@ -279,7 +281,7 @@ Dylan
 *
 
 Aaron
-*
+* Created the functionality to pull a device's IMEI and started trying to get the device's GPS coordinates.
 
 ## Hinderances
 Kevin
@@ -292,7 +294,7 @@ Dylan
 *
 
 Aaron
-*
+* There was a massive learning curve related to pulling information from system services and requesting system services.
 
 ## Ongoing Risks
 
@@ -309,7 +311,11 @@ Dylan
 *
 
 Aaron
-*
+* Testing the post request code
+* Testing the existing GPS code
+* Writing new GPS code
+* Debugging the Post Request code
+* Testing the GPS functionality
 
 ## Outcomes
 Kevin
@@ -323,7 +329,7 @@ Dylan
 *
 
 Aaron
-*
+* Finished debugging the Post request code and successfully sent a post request to the web application.
 
 ## Hinderances
 Kevin
@@ -336,7 +342,7 @@ Dylan
 *
 
 Aaron
-*
+* No experience or knowledge about post requests or how to implement it.
 
 ## Ongoing Risks
 
@@ -352,7 +358,7 @@ Dylan
 *
 
 Aaron
-*
+* Fixed the GPS code and started looking into a race condition.
 
 ## Outcomes
 Kevin
@@ -365,7 +371,9 @@ Dylan
 *
 
 Aaron
-*
+* Rewrote the getGPS function
+* Debugged issues relating to the sending of NULL coordinate values in the post requests
+* Discovered and started investigating a race condition
 
 ## Hinderances
 Kevin
@@ -378,7 +386,7 @@ Dylan
 *
 
 Aaron
-*
+* Fighting a self-created race condition
 
 ## Ongoing Risks
 
@@ -395,7 +403,9 @@ Dylan
 * Started to gain a basic understanding of the Kotlin programming language
 
 Aaron
-*
+* Debugged the GPS and POST request code
+* Fixed a face condition in the GPS and POST Request code that resulted in the sending of NULL coordinate values
+* Cleaned up code -- getting rid of unnecessary code and optimizing the functions
 
 ## Outcomes
 Kevin
@@ -409,7 +419,7 @@ Dylan
 * Added error handling for if the user tries to enter a NULL registration code
 
 Aaron
-*
+* Fixed the race condition that resulted in NULL coordinate values being sent in the POST request.
 
 ## Hinderances
 Kevin
@@ -423,7 +433,7 @@ Dylan
 * I have a limited understanding of Android development to being with and was given an application that I didn't initially develop so I have to decipher how all of the code works 
 
 Aaron
-*
+* N/A
 
 ## Ongoing Risks
 
@@ -439,7 +449,8 @@ Dylan
 *
 
 Aaron
-*
+* Created an installation script that installs dependencies, pulls the AOSP repository, pulls the modified/added files (ConnectivityService.java and DeviceFinder.java), places those files in the correct directory, and makes the custom image.
+* Create user documentation on how to "install" and run DeviceFinder for Android Emulator
 
 ## Outcomes
 Kevin
@@ -452,7 +463,7 @@ Dylan
 *
 
 Aaron
-*
+* Created user documentation for the Android endpoint code and created an installation script for users.
 
 ## Hinderances
 Kevin
@@ -465,6 +476,6 @@ Dylan
 *
 
 Aaron
-*
+* N/A
 
 ## Ongoing Risks
