@@ -451,6 +451,7 @@ Dylan
 Aaron
 * Created an installation script that installs dependencies, pulls the AOSP repository, pulls the modified/added files (ConnectivityService.java and DeviceFinder.java), places those files in the correct directory, and makes the custom image.
 * Create user documentation on how to "install" and run DeviceFinder for Android Emulator
+* Changed the code to utilize HTTPS
 
 ## Outcomes
 Kevin
@@ -464,6 +465,7 @@ Dylan
 
 Aaron
 * Created user documentation for the Android endpoint code and created an installation script for users.
+* Changed the code to utilize HTTPS
 
 ## Hinderances
 Kevin
