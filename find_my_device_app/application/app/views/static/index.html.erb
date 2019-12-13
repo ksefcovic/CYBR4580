@@ -12,23 +12,23 @@
   <title>Device Finder</title>
 </head>
 <body style="min-height: 100%; height: 100vh"> 
-<div style="background-color: #00BCD4; color: #FFFFFF; padding: 10px; display: flex; flex-direction: row;">
+<div style="background-color: #00BCD4; color: #FFFFFF; padding: 10px; display: flex; flex-direction: row; position: relative;">
     <h1>Device Finder</h1>
-    <%= button_to 'Login', login_path, method: :get, class: 'floatRight' %>
+    <%= button_to "Login", login_path, {:style => "color: white; background: #00BCD4; width: 50px; height: 30px; display: flex; postition: absoloute; float: right; right: 0;"} %>
     
 </div>
-<div style="background-color: #B2EBF2; display: flex; flex-direction: row; padding: 10px; height: 80%;">
-    <div style="width: 30%; padding: 10px; background-color: #FFC107; color: #FFFFFF; border-radius: 10%; margin: 3%;">
+<div style="background-color: #B2EBF2; display: flex; flex-direction: row; padding: 10px; height: 90vh;">
+    <div style="width: 30%; padding: 25px; background-color: #FFC107; color: #FFFFFF; border-radius: 30px; margin: 3%;">
         <h2>Why Device Finder?</h2>
         <p>Zerospace was designed to prioritize user privacy. When you create a Zerospace account, your privacy selection defaults your post to only be visible to you unless you activly share them with others.</p>
     </div>
 
-    <div style="width: 30%; padding: 10px; background-color: #9C27B0; color: #FFFFFF; border-radius: 10%; margin: 3%;">
+    <div style="width: 30%; padding: 25px; background-color: #9C27B0; color: #FFFFFF; border-radius: 30px; margin: 3%;">
         <h2>Our Mission</h2>
         <p>Our mission is to provide a safer and more private social media experience for our users and protect there right to own their data.</p>
     </div>
 
-    <div style="width: 30%; padding: 10px; background-color: #4CAF50; color: #FFFFFF; border-radius: 10%; margin: 3%;">
+    <div style="width: 30%; padding: 25px; background-color: #4CAF50; color: #FFFFFF; border-radius: 30px; margin: 3%; display: flex; flex-direction: column; align-items: center; ">
         <h2>New to Device Finder?</h2>
         <%= button_to 'Sign Up', create_user_path, method: :get, class: 'floatRight' %>
     </div>
