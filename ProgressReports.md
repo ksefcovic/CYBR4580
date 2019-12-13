@@ -250,8 +250,6 @@ Dylan
 Aaron
 * Building AVD’s in Android Studio modifies an environment variable, which prevented me from running it on the general AVD. I was initially struggling to determine what was making the emulator go into a perpetual bootloop, but I after reading through some large logs, I realized the emulator was set to run a different architecture than what I had compiled.
 
-## Ongoing Risks
-
 # Progress Report 12-Nov-2019
 ## Overview
 Kevin
@@ -295,8 +293,6 @@ Dylan
 
 Aaron
 * There was a massive learning curve related to pulling information from system services and requesting system services.
-
-## Ongoing Risks
 
 # Progress Report 19-Nov-2019
 ## Overview
@@ -344,8 +340,6 @@ Dylan
 Aaron
 * No experience or knowledge about post requests or how to implement it.
 
-## Ongoing Risks
-
 # Progress Report 26-Nov-2019
 ## Overview
 Kevin
@@ -363,7 +357,7 @@ Aaron
 
 ## Outcomes
 Kevin
-*  
+*  Improved visual guide for process flow.
 
 Lauren
 *
@@ -380,7 +374,7 @@ Aaron
 
 ## Hinderances
 Kevin
-*
+* N/A
 
 Lauren  
 *
@@ -391,8 +385,6 @@ Dylan
 
 Aaron
 * Fighting a self-created race condition
-
-## Ongoing Risks
 
 # Progress Report 3-Dec-2019
 ## Overview
@@ -436,12 +428,11 @@ Dylan
 Aaron
 * N/A
 
-## Ongoing Risks
-
 # Progress Report 10-Dec-2019
 ## Overview
 Kevin
-*
+* Ran Burpsuite against environment and examined findings.
+* Worked on final deliverables.
 
 Lauren
 *
@@ -456,7 +447,7 @@ Aaron
 
 ## Outcomes
 Kevin
-*  
+*  Found routes path and used that to find publicly facing user information. Sent information to team for remediation.
 
 Lauren
 *
@@ -470,7 +461,7 @@ Aaron
 
 ## Hinderances
 Kevin
-*
+* Needed to update Burpsuite as it was not visually appealing.
 
 Lauren  
 *
@@ -480,5 +471,3 @@ Dylan
 
 Aaron
 * N/A
-
-## Ongoing Risks
