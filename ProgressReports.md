@@ -261,7 +261,7 @@ Lauren
 *
 
 Dylan
-*
+* Working on research for how to get a GPS coordinate for the DeviceFinder class - Started looking at the android.location.Location class to gain an understanding for where long and lat can be accessed
 
 Aaron
 * Created the DeviceFinder class and inserted the call to it at the end of ConnectivityService.makeDefault()
@@ -278,7 +278,7 @@ Lauren
 *
 
 Dylan
-*
+* Gained an understanding of how android applications can gain longitude and latitude from the android class
 
 Aaron
 * Created the functionality to pull a device's IMEI and started trying to get the device's GPS coordinates.
@@ -291,7 +291,7 @@ Lauren
 *
 
 Dylan  
-*
+* Most of the examples for gaining the GPS data are on the user application level and not at the firmware level of where we are writing our code, so it is hard to get an example that fits our case well 
 
 Aaron
 * There was a massive learning curve related to pulling information from system services and requesting system services.
@@ -355,7 +355,8 @@ Lauren
 *
 
 Dylan
-*
+* Started to take a look at the Device Registration Application that is linked to account creation for our web app.
+* Started to gain a basic understanding of the Kotlin programming language
 
 Aaron
 * Fixed the GPS code and started looking into a race condition.
@@ -368,7 +369,9 @@ Lauren
 *
 
 Dylan
-*
+* Gaining a better understanding and trying to help the error reporting for our device registration Application
+* Added error handling for if the user tries to enter a NULL registration code
+
 
 Aaron
 * Rewrote the getGPS function
@@ -383,7 +386,8 @@ Lauren
 *
 
 Dylan  
-*
+* I have never done development in Kotlin so that is a learning process
+* I have a limited understanding of Android development to being with and was given an application that I didn't initially develop so I have to decipher how all of the code works
 
 Aaron
 * Fighting a self-created race condition
@@ -399,8 +403,7 @@ Lauren
 *
 
 Dylan
-* Started to take a look at the Device Registration Application that is linked to account creation for our web app.
-* Started to gain a basic understanding of the Kotlin programming language
+* Determined what the issue was for our error handling for device registration and started to learn about handlers and loopers to try and fix the problem
 
 Aaron
 * Debugged the GPS and POST request code
@@ -415,8 +418,7 @@ Lauren
 *
 
 Dylan
-* Gaining a better understanding and trying to help the error reporting for our device registration Application
-* Added error handling for if the user tries to enter a NULL registration code
+* Gain understanding of why the code is crashing and now have an idea of where to start looking on how to fix it
 
 Aaron
 * Fixed the race condition that resulted in NULL coordinate values being sent in the POST request.
@@ -429,8 +431,7 @@ Lauren
 *
 
 Dylan  
-* I have never done development in Kotlin so that is a learning process
-* I have a limited understanding of Android development to being with and was given an application that I didn't initially develop so I have to decipher how all of the code works 
+* Again, I have little understanding of Android application development and have only been using Kotlin for half a week now so I have to learn how handlers and loopers work
 
 Aaron
 * N/A
