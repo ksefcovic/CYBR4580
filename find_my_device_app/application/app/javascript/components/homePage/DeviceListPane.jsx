@@ -8,7 +8,6 @@ const DeviceListPane = ({
     focusedDevice,
     setFocusedDevice,
     devices,
-    styles,
     addNewDevice,
     deviceTypes
 }) => {

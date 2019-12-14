@@ -12,25 +12,33 @@
   <title>Device Finder</title>
 </head>
 <body style="min-height: 100%; height: 100vh"> 
-<div style="background-color: #00BCD4; color: #FFFFFF; padding: 10px; display: flex; flex-direction: row; position: relative;">
+<div style="background-color: #00BCD4; color: #FFFFFF; padding: 10px; display: flex; flex-direction: row; align-content: center;">
     <h1>Device Finder</h1>
-    <%= button_to "Login", login_path, {:style => "color: white; background: #00BCD4; width: 50px; height: 30px; display: flex; postition: absoloute; float: right; right: 0;"} %>
-    
+    <div style="background-color: #00BCD4; color: #FFFFFF; display: flex; flex-direction: row; align-items: center; position: absolute; right: 0; padding-right: 30px;">
+        <%= button_to 'Login', login_path, method: :get, class: 'btn btn-danger align-self-end' %>
+    </div> 
 </div>
 <div style="background-color: #B2EBF2; display: flex; flex-direction: row; padding: 10px; height: 90vh;">
-    <div style="width: 30%; padding: 25px; background-color: #FFC107; color: #FFFFFF; border-radius: 30px; margin: 3%;">
-        <h2>Why Device Finder?</h2>
-        <p>Zerospace was designed to prioritize user privacy. When you create a Zerospace account, your privacy selection defaults your post to only be visible to you unless you activly share them with others.</p>
+    <div style="width: 30%; padding: 25px; background-color: #0097A7; color: #FFFFFF; border-radius: 30px; margin: 3%; display: flex; flex-direction: column; align-items: center;">
+        <h2 style="padding-bottom: 20px;">Why Device Finder?</h2>
+        <p style="padding-bottom: 20px; text-align: center;">Have you ever lost a device? Have your current device location applications failed because your device was wiped? We have the solution.</p>
+        <p style="padding-bottom: 20px; text-align: center;">Device Finder is based on your devices OS level which means it cant be wiped.</p>
+        <%= button_to 'Learn More', create_user_path, method: :get, class: 'btn btn-danger align-self-end' %>
     </div>
 
-    <div style="width: 30%; padding: 25px; background-color: #9C27B0; color: #FFFFFF; border-radius: 30px; margin: 3%;">
-        <h2>Our Mission</h2>
-        <p>Our mission is to provide a safer and more private social media experience for our users and protect there right to own their data.</p>
+    <div style="width: 30%; padding: 25px; background-color: #0097A7; color: #FFFFFF; border-radius: 30px; margin: 3%; display: flex; flex-direction: column; align-items: center;">
+        <h2 style="padding-bottom: 20px;">How It Works</h2>
+        <p style="text-align: center;">Interested in how Device Finder works at a technical level?</p>
+        <p style="text-align: center;">Currently device finder is only supported on an open source Android platform but this is to be expanded in the future.</p>
+        <p style="text-align: center;">Device Finder is embeded in the OS level and sends out a beacon message every time the phone is powered, even if it has been wiped.</p>
+        <p style="text-align: center; padding-bottom: 20px;">Interested in viewing our documentation and learning more?</p>
+        <%= button_to 'Learn More', create_user_path, method: :get, class: 'btn btn-danger align-self-end' %>
     </div>
 
-    <div style="width: 30%; padding: 25px; background-color: #4CAF50; color: #FFFFFF; border-radius: 30px; margin: 3%; display: flex; flex-direction: column; align-items: center; ">
-        <h2>New to Device Finder?</h2>
-        <%= button_to 'Sign Up', create_user_path, method: :get, class: 'floatRight' %>
+    <div style="width: 30%; padding: 25px; background-color: #0097A7; color: #FFFFFF; border-radius: 30px; margin: 3%; display: flex; flex-direction: column; align-items: center; ">
+        <h2 style="padding-bottom: 20px;">New to Device Finder?</h2>
+        <p style="padding-bottom: 20px text-align: center;">Lets get you setup!</p>
+        <%= button_to 'Sign Up', create_user_path, method: :get, class: 'btn btn-danger align-self-end' %>
     </div>
 </div>
 </body>

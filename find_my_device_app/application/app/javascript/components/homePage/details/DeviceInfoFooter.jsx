@@ -3,8 +3,7 @@ import FoundAtMap from './FoundAtMap'
 import BaseDivider from '../../shared/BaseDivider'
 
 const DeviceInfoFooter = ({
-    knownLocations,
-    //setSelectedMarker
+    knownLocations
 }) => {
     const renderLocation = (location) => {
         const [selectedMarker, setSelectedMarker] = React.useState({ lat: 0, lng: 0});
@@ -13,11 +12,11 @@ const DeviceInfoFooter = ({
             <div className="knownLocationRow">
                 <p onClick={() => {
                     setShowMap(!showMap);
-                    setSelectedMarker({ lat: parseInt(location.latitude), lng: parseInt(location.longitude)});
-                }} className="knownLocationRowHeader" key={location.timestamp}>Coordinates: {location.latitude},{location.longitude} Timestamp: {location.timestamp}</p>
+                    setSelectedMarker({ lat: parseFloat(location.latitude), lng: parseFloat(location.longitude)});
+                }} className="knownLocationRowHeader" key={location.timestamp}><b>Coordinates:</b> {location.latitude},{location.longitude} <b>Timestamp:</b> {location.timestamp}</p>
                 {location.latitude != null && location.longitude != null && showMap && <FoundAtMap {...{
-                    lat: parseInt(location.latitude),
-                    lng: parseInt(location.longitude),
+                    lat: parseFloat(location.latitude),
+                    lng: parseFloat(location.longitude),
                     marker: selectedMarker
                 }}></FoundAtMap>}
                 <BaseDivider {...{

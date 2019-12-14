@@ -1,10 +1,7 @@
 import React, { useState } from "react"
+
 import DeviceListPane from './DeviceListPane'
 import DeviceDetailWindow from './DeviceDetailWindow'
-
-import { connect } from 'react-redux'
-import { createStructuredSelector } from 'reselect'
-import { useSelector, createSelector } from 'react-redux'
 
 const DevicePane = ({
     user,
@@ -15,7 +12,6 @@ const DevicePane = ({
     onRemoveDevice,
     deviceTypes
 }) => {
-    const [focusedDeviceIndex, setFocusedDeviceIndex] = useState(0);
     const [focusedDevice, setFocusedDevice] = useState(null)
 
     const getFocusedDeviceIndex = () => {
@@ -62,17 +58,4 @@ const DevicePane = ({
     )
 }
 
-// Base Redux Implementation
-function getTest() {
-    return {
-        type: 'GET_TEST_REQUEST'
-    };
-};
-
-const structuredSelector = createStructuredSelector ({
-    test: state => state.test,
-});
-
-const mapDispatchToProps = { getTest };
-
-export default connect(structuredSelector, mapDispatchToProps)(DevicePane);
+export default DevicePane;

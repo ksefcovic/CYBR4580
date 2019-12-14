@@ -1,33 +1,24 @@
 import React from "react"
-
+import { Button } from 'reactstrap';
 import DeviceInfoFooter from './details/DeviceInfoFooter'
-import FoundAtMap from './details/FoundAtMap'
-
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const DeviceDetailWindow = ({
     focusedDevice,
-    styles,
-    setDeviceStatus,
-    addNewDevice,
     updateDeviceStatus,
     onRemoveDevice
 }) => {
-    console.log("DeviceDetailWindow", focusedDevice);
-    const [dropDownIsOpen, setDropDownIsOpen] = React.useState(false)
+    const [dropDownIsOpen, setDropDownIsOpen] = React.useState(false);
+    const [showRegistrationHelp, setShowRegistrationHelp] = React.useState(false);
 
     const markDeviceMissing = () => {
-        console.log("Device marked missing: ", focusedDevice.id, " Status: missing");
         updateDeviceStatus(focusedDevice.id, "missing");
     }
 
     const markDeviceFound = () => {
-        console.log("Device marked found");
         updateDeviceStatus(focusedDevice.id, "good-standing");
     }
 
     const removeDevice = () => {
-        console.log("Remove Device");
         onRemoveDevice(focusedDevice.id);
     }
 
@@ -71,17 +62,6 @@ const DeviceDetailWindow = ({
     }
 
     const renderMissingDeviceInfo = () => {
-       // const [selectedMarker, setSelectedMarker] = React.useState({ lat: 0, lng: 0});
-
-       // focusedDevice.known_locations.length > 0 &&  setSelectedMarker({ lat: parseInt(focusedDevice.known_locations[0].latitude), lng: parseInt(focusedDevice.known_locations[0].longitude) })
-        // let locationPositions = [];
-        // focusedDevice.known_locations.map(location => {
-        //     let locationPair = {
-        //         lat: parseInt(location.latitude),
-        //         lng: parseInt(location.longitude)
-        //     }
-        //     locationPositions.push(locationPair);
-        // });
         return (
             <div className="missingDeviceInfoCard">
                 {dropDownIsOpen 
@@ -90,14 +70,8 @@ const DeviceDetailWindow = ({
                 {dropDownIsOpen
                 ? <div>
                     <DeviceInfoFooter {...{
-                    knownLocations: focusedDevice.known_locations,
-                   // setSelectedMarker
+                    knownLocations: focusedDevice.known_locations
                 }}></DeviceInfoFooter>
-                {/* <FoundAtMap {...{
-                    lat: locationPositions.length > 0 ? locationPositions[0].lat : 0,
-                    lng: locationPositions.length > 0 ? locationPositions[0].lng : 0,
-                    marker: selectedMarker
-                }}></FoundAtMap> */}
                 </div>
                 : <h2 className="centerText">...</h2>}
             </div>
@@ -105,7 +79,6 @@ const DeviceDetailWindow = ({
     }
 
     const displayFocusedDevice = () => {
-        const [showRegistrationHelp, setShowRegistrationHelp] = React.useState(false);
         return (
             <div>
                 <div className="deviceInfoHorizontalLayout">
@@ -140,18 +113,14 @@ const DeviceDetailWindow = ({
         )
     }
 
-    const addNewDeviceForm = () => {
-        console.log("Add new device")
-        //Todo: open form
-    }
-
     const displayEmptyState = () => {
         return (
             <>
-                <p>You currently have no device added.</p>
-                <div onClick={addNewDeviceForm} className="addNewDeviceButton">
-                    Add New Device +
+                <div className="centeredEmptyState">
+                    <p className="emptyStateText">You currently have no device added.</p>
+                    <img src="http://www.urbanleagueneb.org/wp-content/uploads/2016/10/Mobile-Phone-Icon-1024x1024.png" className="emptyStateImage" alt="..."/>
                 </div>
+                <h2 className="bottomEmptyState">{"< Try adding a device here"}</h2>
             </>
         )
     }

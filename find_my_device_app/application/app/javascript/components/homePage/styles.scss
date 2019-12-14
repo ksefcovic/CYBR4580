@@ -151,15 +151,16 @@
 // Images
 .circularSquare {
     height: 50px;
+    width: 50px;
     border-radius: 50%;
     margin: 0;
     padding-right: 10px;
     padding-top: 15px;
-    //border:1px solid black;
 }
 
 .circularSquareLarge {
     height: 250px;
+    width: 250px;
     border-radius: 50%;
     margin: 0;
     border:1px solid black;
@@ -176,7 +177,7 @@
     display: flex;
     justify-content: center;
     background-color: #FF5252;
-    padding: 10px;
+    padding: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 30%;
     bottom: 0;
@@ -224,7 +225,7 @@
     background-color: #BDBDBD;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .showMoreDetailButton {
@@ -242,7 +243,7 @@
 }
 
 .deviceListContainer {
-    margin-bottom: 10px;
+    margin-bottom: 60px;
     overflow: scroll;
 }
 
@@ -279,7 +280,48 @@
     border-bottom-right-radius: 15px;
 }
 
+.knownLocationRowHeader {
+    padding: 10px;
+}
 .knownLocationRowHeader:hover {
     cursor: pointer;
     background-color: #D3F0F0;
+}
+
+.centeredEmptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.bottomEmptyState {
+    display: flex;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    bottom: 0;
+    z-index: 6;
+    position: absolute; 
+}
+
+.emptyStateImage {
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+.emptyStateText {
+    width: 250px;
+    height: 20px;
+}
+
+.redAlertIcon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    margin-top: 15px;
+    margin-right: 40px;
 }

@@ -1,5 +1,4 @@
 import React from "react"
-
 import BaseDivider from '../../shared/BaseDivider'
 
 const DeviceRow = ({
@@ -9,7 +8,6 @@ const DeviceRow = ({
     isLastRow
 }) => {
     const onDeviceSelected = () => {
-        //console.log("Focused Device Set To: ", device);
         setFocusedDevice(device);
     }
 
@@ -18,19 +16,20 @@ const DeviceRow = ({
         if (device.status == "missing") className = "deviceRowMissing"
         if (device.registration_status != "registered") className = "deviceRowPending"
         return (
-            <div className={className}>
+            <div className={className} onClick={onDeviceSelected}>
             <div>
                 <img className="circularSquare" src={device.type_photo_url} alt="..."/>
             </div>
-            <div className="test" onClick={onDeviceSelected}>
+            <div className="test">
                 <h2>{device.name}</h2>
                 {device.registration_status == "pending" 
                     ? <h4>Registration Pending</h4>
                     : device.status == "missing" 
-                        ? <h4>Status: Missing</h4>
-                        : <h4>Status: Good Standing</h4>
+                        ? <h4>Missing</h4>
+                        : <h4>Good Standing</h4>
                 }
             </div>
+            {device.status == "missing" && <img className="redAlertIcon" src="https://icon-library.net/images/icon-alert/icon-alert-4.jpg" alt="..."/>}
             </div>
         )
     }
@@ -40,19 +39,20 @@ const DeviceRow = ({
         if (device.status == "missing") className = "focusedDeviceRowMissing"
         if (device.registration_status != "registered") className = "focusedDeviceRowPending"
         return (
-            <div className={className}>
+            <div className={className} onClick={onDeviceSelected}>
             <div>
                 <img className="circularSquare" src={device.type_photo_url} alt="..."/>
             </div>
-            <div className="test" onClick={onDeviceSelected}>
+            <div className="test">
                 <h2>{device.name}</h2>
                 {device.registration_status == "pending" 
                     ? <h4>Registration Pending</h4>
                     : device.status == "missing" 
-                        ? <h4>Status: Missing</h4>
-                        : <h4>Status: Good Standing</h4>
+                        ? <h4>Missing</h4>
+                        : <h4>Good Standing</h4>
                 }
             </div>
+            {device.status == "missing" && <img className="redAlertIcon" src="https://icon-library.net/images/icon-alert/icon-alert-4.jpg" alt="..."/>}
             </div>
         )
     }

@@ -1,5 +1,5 @@
 import React from "react"
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const AddDeviceForm = ({
     user,
