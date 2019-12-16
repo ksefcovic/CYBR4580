@@ -24,20 +24,23 @@ Our methodology was to split into two groups. One group tackled the issue of bui
 ## Install Instructions
 ### Requirements
 (list of any software / hardware requirements necessary to run the code/app/etc)
+#### AOSP
+* At least 400 gigabytes of storage for the AOSP source tree
+* At least 8 CPU threads
+* At least 32 gigabytes of RAM
+* An Ubuntu 19+ installation
+* A sudo capable account
+
+The installation script will take care of the rest of the requirements. 
+
+#### Web application
 * Docker
 * Ruby
-* Android Open Source Project (all requirements needed. Can probably link this somewhere)
-	Download AOSP and make a
-* Android Emulator
-* Android Studio
 * Postresql
 * Yarn
 
-### Installation Instructions
-(list of steps to install the product/app/code/etc)
-
-# User DeviceFinder Installation Guide
-## [Android Open Source Project](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/User-GetRunning.md)
+### User DeviceFinder Installation Guide
+#### [Android Open Source Project installation guide](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/User-GetRunning.md)
 1. Go to the directory you want to run the emulator from and pull the source code to.
 2. Download the install script:
 ```bash
@@ -53,7 +56,7 @@ cd AospSource
 emulator
 ```
 
-## Web Applicaiton
+#### Web Applicaiton
 *LAUREN ADDS WEB INSTALL STUFF
 
 
