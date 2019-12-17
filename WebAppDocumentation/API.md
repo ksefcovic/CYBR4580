@@ -1,6 +1,8 @@
 # API Documentation
 ----------------------------------------------------------------------------------
 
+Base URL: https://www.device-finder.com
+
 ## Check Stolen Devices
 ------------------------------------------------------------------
 
@@ -16,27 +18,10 @@
 }
 
 
-## All Devices
+## Register
 ----------------------------------------------------------------
 
-### GET: /devices
-#### Headers: None
-#### Body: None
-#### Returns: [
-    {
-        "id": Int,
-        "name": String,
-        "status": String,
-        "mac_address": String?,
-        "imei": String,
-        "known_locations": [],
-        "registration_status": String,
-        "registration_code": String,
-        "user_id": String
-    }
-]
-
-### Initial Register
+### Initial Device Register
 ### POST: /new_device/register
 #### Headers: None
 #### Body: {
@@ -54,7 +39,7 @@
         "user_id": String
 }
 
-### Complete Registration
+### Complete Device Registration
 ### POST: /api/v1/register
 #### Headers: None
 #### Body: {
@@ -62,3 +47,4 @@
     imei: String
 }
 #### Returns: 
+[string indicating registration success]
