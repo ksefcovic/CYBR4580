@@ -1,5 +1,5 @@
 # User DeviceFinder Insallation Guide
-1. Go to the directory you want to run the emulator from and pull the source code to.
+1. Go to the directory you want to run the emulator from and pull the source code too.
 2. Download the install script:
 ```bash
 wget https://raw.githubusercontent.com/ksefcovic/CYBR4580/master/DeviceFinderInstaller.sh

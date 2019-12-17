@@ -1,11 +1,11 @@
 These steps originate from [here](https://source.android.com/setup/build/downloading#getting-the-files), but have been modified for our specific use.
 
-NOTE: 
-- You will not be able to run the custom rom using the emulator in a VM, so there is almost no use in pulling the source in a VM. 
+NOTE:
+- You will not be able to run the custom ROM using the emulator in a VM, so there is almost no use in pulling the source in a VM.
 - The build system does not support the Windows Subsystem for Linux (WSL), so pulling using it will also likely be a waste of time.
 - I was unable to get repo working on OSX due to a git cleanup error.
 - These instructions are written for and have been tested on Ubuntu 19.10, but can be ported to other distributions.
-- Before pulling the code, you should know that building the source tree requires at least 16gb of RAM, perferably more than 4 threads, and at least 400gb of storage. The official requirements are at https://source.android.com/setup/build/requirements.
+- Before pulling the code, you should know that building the source tree requires at least 16gb of RAM, preferably  more than 4 threads, and at least 400gb of storage. The official requirements are at https://source.android.com/setup/build/requirements.
 
 
 1. Install dependencies and [Android Studio](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/AndroidStudioSetup.md)
@@ -16,7 +16,7 @@ sudo apt update && sudo apt upgrade && sudo apt-get install git-core gnupg flex 
 2. Create a bin/ directory in your home directory by running
 ```bash
 mkdir ~/bin  
-PATH=~/bin:$PATH 
+PATH=~/bin:$PATH
 ```
 
 3. Download Repo and make it executable
@@ -33,11 +33,11 @@ cd DirectoryNameHere
 
 5. Add your name and email to your git configuration
 ```bash
-git config --global user.name "Your Name" 
+git config --global user.name "Your Name"
 git config --global user.email "you@example.com"`
 ```
 
-6. intialize repo with the Android 10 R2 Branch
+6. Initialize repo with the Android 10 R2 Branch
 ```bash
 repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r2
 ```
