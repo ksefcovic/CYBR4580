@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, except: [:login, :create, :submit_login, :submit_create, :logout]
 
- # private
-
   def new
   end
 
@@ -18,6 +16,14 @@ class UsersController < ApplicationController
 
   def submit_create
     first_name, last_name, email, username, password, confirm_password = params.values_at :first_name, :last_name, :email, :username, :password, :confirm_password
+
+    first_name = ActionController::Base.helpers.sanitize(first_name)
+    last_name = ActionController::Base.helpers.sanitize(last_name)
+    username = ActionController::Base.helpers.sanitize(username)
+    confirm_password = ActionController::Base.helpers.sanitize(confirm_password)
+    email = ActionController::Base.helpers.sanitize(email)
+    password = ActionController::Base.helpers.sanitize(password)
+
     if (!User.find_by_email(email))
       @new_user = User.new(:first_name => first_name, :last_name => last_name, :email => email, :username => username, :password => password)
       @new_user.save
@@ -31,8 +37,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def login 
-    puts 'Login'
+  def login
   end
 
   def logout
@@ -42,12 +47,13 @@ class UsersController < ApplicationController
   end
 
   def submit_login
-    puts 'Submit login'
     email, password = params.values_at :email, :password
-    if (user = User.find_by_email(email)&.authenticate(password))
-      #token = token_manager.build(user.id)
-      token = token_manager.generate_token(user.id)
 
+    email = ActionController::Base.helpers.sanitize(email)
+    password = ActionController::Base.helpers.sanitize(password)
+
+    if (user = User.find_by_email(email)&.authenticate(password))
+      token = token_manager.generate_token(user.id)
       cookies.signed['X-Access-Token'] = {value:  token, httponly: true, expires: 2.hour.from_now}
     
       redirect_to action: 'show', id: user.id

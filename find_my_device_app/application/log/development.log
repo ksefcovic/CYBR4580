@@ -8748,3 +8748,202 @@ Processing by UsersController#login as HTML
 Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 856)
 
 
+Started GET "/" for ::1 at 2019-12-17 15:02:19 -0600
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#index as HTML
+  Rendering static/index.html.erb
+  Rendered static/index.html.erb (Duration: 2.3ms | Allocations: 606)
+Completed 200 OK in 13ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 1999)
+
+
+Started GET "/login" for ::1 at 2019-12-17 15:02:21 -0600
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (Duration: 5.8ms | Allocations: 3752)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 4439)
+
+
+Started GET "/" for ::1 at 2019-12-17 15:12:28 -0600
+Processing by StaticController#index as HTML
+  Rendering static/index.html.erb
+  Rendered static/index.html.erb (Duration: 2.7ms | Allocations: 459)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 1123)
+
+
+Started GET "/login" for ::1 at 2019-12-17 15:12:30 -0600
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (Duration: 0.9ms | Allocations: 358)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 1042)
+
+
+Started POST "/login/submit" for ::1 at 2019-12-17 15:12:39 -0600
+Processing by UsersController#submit_login as HTML
+  Parameters: {"email"=>"lshultz2020@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lshultz2020@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `submit_login'
+  Rendering users/credentials_error.html.erb
+  Rendered users/credentials_error.html.erb (Duration: 1.2ms | Allocations: 183)
+Completed 401 Unauthorized in 297ms (Views: 3.0ms | ActiveRecord: 26.4ms | Allocations: 9414)
+
+
+Started GET "/login" for ::1 at 2019-12-17 15:12:41 -0600
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (Duration: 0.3ms | Allocations: 134)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 492)
+
+
+Started POST "/login/submit" for ::1 at 2019-12-17 15:12:49 -0600
+Processing by UsersController#submit_login as HTML
+  Parameters: {"email"=>"lshultz2020@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lshultz2020@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `submit_login'
+  Rendering users/credentials_error.html.erb
+  Rendered users/credentials_error.html.erb (Duration: 0.2ms | Allocations: 48)
+Completed 401 Unauthorized in 229ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1211)
+
+
+Started GET "/login" for ::1 at 2019-12-17 15:13:54 -0600
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (Duration: 0.2ms | Allocations: 138)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 685)
+
+
+Started POST "/login/submit" for ::1 at 2019-12-17 15:14:01 -0600
+Processing by UsersController#submit_login as HTML
+  Parameters: {"email"=>"lshultz2020@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lshultz2020@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `submit_login'
+  Rendering users/credentials_error.html.erb
+  Rendered users/credentials_error.html.erb (Duration: 0.2ms | Allocations: 49)
+Completed 401 Unauthorized in 241ms (Views: 0.7ms | ActiveRecord: 4.1ms | Allocations: 7769)
+
+
+Started GET "/login" for ::1 at 2019-12-17 15:14:48 -0600
+Processing by UsersController#login as HTML
+  Rendering users/login.html.erb
+  Rendered users/login.html.erb (Duration: 0.9ms | Allocations: 132)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 487)
+
+
+Started POST "/login/submit" for ::1 at 2019-12-17 15:14:54 -0600
+Processing by UsersController#submit_login as HTML
+  Parameters: {"email"=>"mscott@dundermifflin.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mscott@dundermifflin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `submit_login'
+Redirected to http://localhost:3000/user/4c836407-7ffa-41a5-81c6-d2ec0f527e44
+Completed 302 Found in 249ms (ActiveRecord: 0.8ms | Allocations: 2449)
+
+
+Started GET "/user/4c836407-7ffa-41a5-81c6-d2ec0f527e44" for ::1 at 2019-12-17 15:14:54 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4c836407-7ffa-41a5-81c6-d2ec0f527e44"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4c836407-7ffa-41a5-81c6-d2ec0f527e44"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4c836407-7ffa-41a5-81c6-d2ec0f527e44"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:82:in `show'
+  [1m[36mDevice Load (5.1ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "4c836407-7ffa-41a5-81c6-d2ec0f527e44"]]
+  ↳ app/controllers/users_controller.rb:64:in `map_devices'
+  [1m[36mDeviceType Load (2.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (1.2ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mCACHE DeviceType Load (0.0ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in map_devices'
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types" WHERE "device_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `block in map_devices'
+  Rendering users/show.html.erb
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/laurenshultz/Dev/web/CYBR4580/find_my_device_app/application/public/packs
+[Webpacker] Hash: 2720aa9079cf84a9b78a
+Version: webpack 4.40.2
+Time: 4441ms
+Built at: 12/17/2019 3:15:01 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-fb5daa492406deb2a684.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-fb5daa492406deb2a684.js.map  2.86 MiB       application  [emitted] [dev]        application
+         js/hello_react-0da4cc5337220843467e.js  1.14 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-0da4cc5337220843467e.js.map  1.32 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-efca65cce4c0b8d09611.js  2.82 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-efca65cce4c0b8d09611.js.map  2.73 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-fb5daa492406deb2a684.js js/application-fb5daa492406deb2a684.js.map
+Entrypoint hello_react = js/hello_react-0da4cc5337220843467e.js js/hello_react-0da4cc5337220843467e.js.map
+Entrypoint server_rendering = js/server_rendering-efca65cce4c0b8d09611.js js/server_rendering-efca65cce4c0b8d09611.js.map
+[./app/assets/stylesheets/landingStyles.scss] 1.49 KiB {application} {server_rendering} [built]
+[./app/javascript/ApiHelper.js] 466 bytes {application} {server_rendering} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.25 KiB {application} {server_rendering} [built]
+[./app/javascript/configureStore.js] 4.17 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/assets/stylesheets/landingStyles.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/assets/stylesheets/landingStyles.scss 1.34 KiB {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 573 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {application} {server_rendering} [built]
+    + 570 hidden modules
+
+  [1m[36mDeviceType Load (0.4ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:23
+  Rendered users/show.html.erb (Duration: 6897.9ms | Allocations: 6633)
+Completed 200 OK in 6966ms (Views: 6898.0ms | ActiveRecord: 18.9ms | Allocations: 27018)
+
+
+Started GET "/" for ::1 at 2019-12-17 15:16:51 -0600
+Processing by StaticController#index as HTML
+  Rendering static/index.html.erb
+  Rendered static/index.html.erb (Duration: 0.3ms | Allocations: 249)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 770)
+
+
+Started GET "/create_user" for ::1 at 2019-12-17 15:16:54 -0600
+Processing by UsersController#create as HTML
+  Rendering users/create.html.erb
+  Rendered users/create.html.erb (Duration: 1.1ms | Allocations: 669)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 1366)
+
+
+Started POST "/create_user/submit" for ::1 at 2019-12-17 15:17:24 -0600
+Processing by UsersController#submit_create as HTML
+  Parameters: {"first_name"=>"Pam", "last_name"=>"Beasly", "email"=>"pbeasly@dundermifflin.com", "username"=>"pbeasly", "password"=>"[FILTERED]", "confirm_password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pbeasly@dundermifflin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `submit_create'
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:29:in `submit_create'
+  [1m[36mUser Create (26.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "first_name", "last_name", "username") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "pbeasly@dundermifflin.com"], ["password_digest", "$2a$12$Keswe2kKA9TrsRcZ7zwVou14uIlBp.blFmhT6X4dGR7M9dkyKejUC"], ["created_at", "2019-12-17 21:17:24.554118"], ["updated_at", "2019-12-17 21:17:24.554118"], ["first_name", "Pam"], ["last_name", "Beasly"], ["username", "pbeasly"]]
+  ↳ app/controllers/users_controller.rb:29:in `submit_create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:29:in `submit_create'
+Redirected to http://localhost:3000/user/f50f8b14-508d-46fc-ae54-cd85191fbd60
+Completed 302 Found in 318ms (ActiveRecord: 36.0ms | Allocations: 14007)
+
+
+Started GET "/user/f50f8b14-508d-46fc-ae54-cd85191fbd60" for ::1 at 2019-12-17 15:17:24 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"f50f8b14-508d-46fc-ae54-cd85191fbd60"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "f50f8b14-508d-46fc-ae54-cd85191fbd60"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `authenticate_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "f50f8b14-508d-46fc-ae54-cd85191fbd60"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:85:in `show'
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."user_id" = $1[0m  [["user_id", "f50f8b14-508d-46fc-ae54-cd85191fbd60"]]
+  ↳ app/controllers/users_controller.rb:67:in `map_devices'
+  Rendering users/show.html.erb
+  [1m[36mDeviceType Load (0.3ms)[0m  [1m[34mSELECT "device_types".* FROM "device_types"[0m
+  ↳ app/views/users/show.html.erb:23
+  Rendered users/show.html.erb (Duration: 9.2ms | Allocations: 5613)
+Completed 200 OK in 16ms (Views: 7.5ms | ActiveRecord: 3.7ms | Allocations: 9194)
+
+
