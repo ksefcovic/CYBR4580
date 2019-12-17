@@ -262,6 +262,7 @@ Dylan
 * Working on research for how to get a GPS coordinate for the DeviceFinder class - Started looking at the android.location.Location class to gain an understanding of where long and lat can be accessed
 
 Aaron
+* Created the Device Finder hook in the ConnectivityService class, specifically the makeDefault function
 * Created the DeviceFinder class and inserted the call to it at the end of ConnectivityService.makeDefault()
 * Started the code to get a device's IMEI/MEID
 * Started researching how to get a device's GPS coordinates
