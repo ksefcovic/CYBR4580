@@ -14,9 +14,9 @@ Device Finder is an OS based firmware solution that allows devices to be located
 
 Project Goals for proof of concept
 + Find and manipulate Android open source project NIC libraries
-+ Create database for storing user information
-+ Create web app for user interfacing
-+ Create alerting system for notification of device owner
++ Create a database for storing user information
++ Create a web app for user interfacing
++ Create an alerting system for notification of device owner
 
 
 Device Finder would help people get their stolen devices back. This could help cut down on device theft as it would be easier for law enforcement to gather information about stolen devices and their locations. Many applications exist for finding stolen phones, but this would help with other devices as well.
@@ -29,10 +29,10 @@ Device Finder would help people get their stolen devices back. This could help c
 
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
-|No Open Source NIC driver code | 9 | 3 | If we can't find an open source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
+|No Open-Source NIC driver code | 9 | 3 | If we can't find an open-source NIC general driver for Android we will have to reevaluate our project scope or focus on another platform |
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
 |Issue communicating the information from the NIC to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-|Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge on the AOSP and will  have to learn how it works |
+|Issue understanding the AOSP general NIC code | 4 | 6 | Our team has little knowledge of the AOSP and will  have to learn how it works |
 | NIC Initialization  | 5 | 7 | On device initialization the NIC will not be connected to a network causing problems with the firmware update we are developing |
 
 ## Project methodology

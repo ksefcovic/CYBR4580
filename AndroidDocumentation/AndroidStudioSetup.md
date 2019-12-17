@@ -12,7 +12,7 @@
 2. Then Download the zip for [Android Studio](https://developer.android.com/studio)
 3. Unzip the package somewhere you can easily find it
 4. open a terminal, navigate to the `android-studio/bin/` directory, and execute `studio.sh`
-5. The Setup wizard will appear after executing the command
+5. The Setup wizard, will appear after executing the command
 6. In the wizard there will be a screen where you select the components you want to install, **make sure to select Android Virtual Device** this is the emulator device that the custom ROM will be flashed to. You will need roughly 3GB of storage.
 7. Once you have finished installing Android Studio through the command prompt it can be run by executing `studio.sh`
 8. Set the `ANDROID_HOME` environment variable to the location of your Android SDK installation
