@@ -60,7 +60,18 @@ emulator
 * [Link](https://github.com/lauren2020/device-finder-register-android) to the application that is used to register devices to the web application
 
 #### Web Application
-*LAUREN ADDS WEB INSTALL STUFF
+To run our app enviroment locally, start docker following these steps:
+
+*1. Ensure Docker is installed and running
+*2. Inside the check out repository, navigate to:
+```CYBR4580/find_my_device_app```
+*3. Execute:
+```docker-compose up```
+
+API Documentation:
+
+To use the registration android application with the web app, visit this repo:
+ [Link](https://github.com/lauren2020/device-finder-register-android)
 
 
 ### Getting started
