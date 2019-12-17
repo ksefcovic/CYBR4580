@@ -56,8 +56,8 @@ cd AospSource
 emulator
 ```
 
-#### Device Finder Registration Application
-* [Link](https://github.com/lauren2020/device-finder-register-android) to the application that is used to register devices to the web application 
+### Device Finder Registration Application
+* [Link](https://github.com/lauren2020/device-finder-register-android) to the application that is used to register devices to the web application
 
 #### Web Application
 *LAUREN ADDS WEB INSTALL STUFF
