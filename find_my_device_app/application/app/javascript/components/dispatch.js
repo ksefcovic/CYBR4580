@@ -12,6 +12,7 @@ import {
     setLoading
 } from './actions';
 import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 const mapDispatchToProps = dispatch => {
     return {

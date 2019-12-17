@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   post 'new_device/register', to: 'devices#build_partial_registration'
   post 'device/:device_id/set_status', to: 'devices#set_device_status'
 
+  get 'redirect_to_documentation', to: 'static#redirect_to_documentation'
+  get 'redirect_to_android_documentation', to: 'static#redirect_to_android_documentation'
+
   #private
   namespace :api, defaults: { format: 'json'} do 
     namespace :v1 do
