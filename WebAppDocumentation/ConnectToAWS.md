@@ -1,7 +1,7 @@
 # Connect to AWS
 ---------------------------------------------------------------------------
-Public DNS: ec2-18-218-151-43.us-east-2.compute.amazonaws.com
-Public IP: 18.218.151.43
+Public DNS: www.device-finder.com
+Public IP: 3.136.89.118
 
 Note: Instructions provided are for terminal access on Linux or macOS, accessing the ec2 instance from windows is a lot of work so you will probably want to run a Linux / ubuntu VM to access it. Otherwise, instructions for connecting on windows can be found at this link: 
 
@@ -14,7 +14,7 @@ Note: Instructions provided are for terminal access on Linux or macOS, accessing
 
 ## Step 3: Connect to Instance
 - Ensure you are in the same directory as the .pem key pair you added previously
-- Execute: `ssh -i findMyDeviceAppKeyPair.pem ubuntu@ec2-18-218-151-43.us-east-2.compute.amazonaws.com`
+- Execute: `ssh -i findMyDeviceAppKeyPair.pem ubuntu@ec2-3-136-89-118.us-east-2.compute.amazonaws.com`
 
 ## Step 4: Create a User
 - When you first enter the instance you will be logged in as the root ubuntu user
