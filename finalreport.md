@@ -33,12 +33,6 @@ Our methodology was to split into two groups. One group tackled the issue of bui
 
 The installation script will take care of the rest of the requirements.
 
-#### Web application
-* Docker
-* Ruby
-* Postresql
-* Yarn
-
 ### User DeviceFinder Installation Guide
 #### [Android Open Source Project installation guide](https://github.com/ksefcovic/CYBR4580/blob/master/AndroidDocumentation/User-GetRunning.md)
 1. Go to the directory you want to run the emulator from and pull the source code too.
