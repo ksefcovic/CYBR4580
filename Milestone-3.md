@@ -13,7 +13,8 @@ For an in-depth look at what took place each week, follow [this link](https://gi
 * Sent location information from test device to the web environment.
 * Performed a security evaluation to find vulnerabilities and leaked user information.
 * Worked to remediate those issues by securing the web environment using an SSL certificate and applying security patches.
-* Attempted to make the user interface as pleasing as possible.  
+* Attempted to make the user interface as pleasing as possible.
+* Used the Google Maps API to show a Satellite view of the device's location based off of the last update.
 
 
 ## Hinderances
