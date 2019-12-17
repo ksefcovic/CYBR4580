@@ -6,7 +6,7 @@ wget https://raw.githubusercontent.com/ksefcovic/CYBR4580/master/DeviceFinderIns
 ```
 3. Make the script executable and run it:
 ```bash
-chmod +x DesviceFinderInstaller.sh && ./DeviceFinderInstaller.sh
+chmod +x DeviceFinderInstaller.sh && ./DeviceFinderInstaller.sh
 ```
 4. Start the android emulator:
 ```bash
