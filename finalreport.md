@@ -31,7 +31,7 @@ Our methodology was to split into two groups. One group tackled the issue of bui
 * An Ubuntu 19+ installation
 * A sudo capable account
 
-The installation script will take care of the rest of the requirements. 
+The installation script will take care of the rest of the requirements.
 
 #### Web application
 * Docker

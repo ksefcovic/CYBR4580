@@ -3,7 +3,7 @@
 Public DNS: ec2-18-218-151-43.us-east-2.compute.amazonaws.com
 Public IP: 18.218.151.43
 
-Note: Instructions provided are for terminal access on linux or macOS, accessing the ec2 instance from windows is alot of work so you will probably want to run a linux / ubuntu vm to access it. Otherwise, instructions for connecting on windows can be found at this link: 
+Note: Instructions provided are for terminal access on Linux or macOS, accessing the ec2 instance from windows is a lot of work so you will probably want to run a Linux / ubuntu VM to access it. Otherwise, instructions for connecting on windows can be found at this link: 
 
 ## Step 1: Add KeyPair
 - Add key pair to key file as outlined in the ConfiguringSecrets.md documentation file

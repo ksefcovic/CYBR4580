@@ -2,17 +2,17 @@
 ----------------------------------------------------------------------------------
 
 ### Step 1: Clone Repository & cd to it
-- (If you havent already done so) Clone Repo: `git clone https://github.com/ksefcovic/CYBR4580.git`
+- (If you haven't already done so) Clone Repo: `git clone https://github.com/ksefcovic/CYBR4580.git`
 - cd to Web App Directory: `cd CYBR4580`
 
 ### Step 2: Ensure Secret Files are Added'
 - See documentation file ConfiguringSecrets.md
 
 ### Step 3: Run Local Development DB Setup Script
-- This will allow the development enviorment to point to a postgres db you own locally
-- Create a Local postgres DB with Info:
+- This will allow the development environment  to point to a Postgres DB you own locally
+- Create a Local Postgres DB with Info:
     - Name: device_finder_dev
-    - Usernmae: admin
+    - Username: admin
     - Password: admin_dev_password
     - Note: If you want to create your own local database info, make sure to change the name, username, and password values in the database.yml file to match your configuration
 
