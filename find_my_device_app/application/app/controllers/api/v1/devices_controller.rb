@@ -3,7 +3,7 @@ class Api::V1::DevicesController < ApplicationController
         code, imei = params.values_at :code, :imei
         @device = Device.where(:registration_code => code)
         if (@device != nil && @device.length > 0) 
-          if (Device.where(:imei => imei).latitude > 0) 
+          if (Device.where(:imei => imei).length > 0) 
             render plain: 'This device is already tied to an account. For help contact support@device-finder.com', content_type: 'text/plain', status: 401
           else
             @device[0].update(:imei => imei, :registration_status => "registered", :registration_code => "")
