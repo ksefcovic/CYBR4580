@@ -47,4 +47,4 @@ Base URL: https://www.device-finder.com
     imei: String
 }
 #### Returns: 
-[string indicating registration success]
+```[string indicating registration success]```
