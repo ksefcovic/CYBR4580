@@ -69,6 +69,7 @@ To run our app enviroment locally, start docker following these steps:
 ```docker-compose up```
 
 API Documentation:
+* [LocalSetup](https://github.com/ksefcovic/CYBR4580/blob/master/WebAppDocumentation/Api.md)
 
 To use the registration android application with the web app, visit this repo:
  [Android Device Registration App Repo](https://github.com/lauren2020/device-finder-register-android)
