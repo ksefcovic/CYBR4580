@@ -41,18 +41,18 @@ Aaron -
 |-------------------|------------|------------|-------------|
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
 |Issue communicating the information from the device to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-|Issue understanding AOSP and how everything works | 4 | 6 | Our team has little knowledge on the AOSP and will have to learn how it works |
+|Issue understanding AOSP and how everything works | 4 | 6 | Our team has little knowledge of the AOSP and will have to learn how it works |
 
 # Progress Report 01-Oct-2019
 ## Overview
 Kevin
-* Created Mockups of website in LucidCharts and uploaded to Invision environment
+* Created Mockups of the website in LucidCharts and uploaded to Invision environment
 
 Lauren -
 * Woked on developing the structure of the app.
 
 Dylan -
-* Looked into flashing a ROM to a physical device (Old Pixel XL)and caught up with Aaaron on the AOSP info
+* Looked into flashing a ROM to a physical device (Old Pixel XL)and caught up with Aaron on the AOSP info
 
 Aaron
 * Looked into the process for pulling the android source tree and importing the source into Android Studio.
@@ -92,7 +92,7 @@ Aaron
 |-------------------|------------|------------|-------------|
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
 |Issue communicating the information from the device to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-|Issue understanding AOSP and how everything works | 7 | 8 | Our team has little knowledge on the AOSP and will have to learn how it works |
+|Issue understanding AOSP and how everything works | 7 | 8 | Our team has little knowledge of the AOSP and will have to learn how it works |
 
 
 # Progress Report 08-Oct-2019
@@ -111,14 +111,14 @@ Aaron
 
 ## Outcomes
 Kevin
-* Created three of the four html documents necessary for the website.
+* Created three of the four HTML documents necessary for the website.
 * Examined Bootstrap CSS and added design elements
 
 Lauren
 * Got all of the react components connected to each other.
 
 Dylan
-* Set up a linux virtual machine to start building and developing a custom ROM
+* Set up a Linux virtual machine to start building and developing a custom ROM
 * Looked into the android connectivity manager as a place to implement our code
 
 Aaron  
@@ -134,7 +134,7 @@ Lauren
 *
 
 Dylan  
-* Similarly to Aaron, I had several problems while trying to build the repo. I spent a good amount of time after I had pulled on my windows machine realizing we had to build on linux
+* Similarly to Aaron, I had several problems while trying to build the repo. I spent a good amount of time after I had pulled on my windows machine realizing we had to build on Linux
 * I had to spend 3 hours pulling the repo on my Linux VM
 
 Aaron
@@ -147,30 +147,30 @@ Aaron
 |-------------------|------------|------------|-------------|
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
 |Issue communicating the information from the device to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-|Issue understanding AOSP and how everything works | 7 | 8 | Our team has little knowledge on the AOSP and will have to learn how it works |
+|Issue understanding AOSP and how everything works | 7 | 8 | Our team has little knowledge of the AOSP and will have to learn how it works |
 
 
 
 # Progress Report 15-Oct-2019
 ## Overview
 Kevin
-* Created container that holds information about device and missing devices for users to see
+* Created container that holds information about the device and missing devices for users to see
 
 Lauren
-* Worked on adding Kevin's html work into the react components and started adding css.
+* Worked on adding Kevin's HTML work into the react components and started adding CSS.
 
 Dylan
 * Started the process for setting up the Pixel XL for development
 
 Aaron
 * Found the ConnectivityManager class and the nested NetworkCallback class, which has an onAvailable function.
-* Made the file for our DeviceFinder class on github.
+* Made the file for our DeviceFinder class on GitHub.
 * Found the documentation with all of the dependencies
 * Started looking into ways to run the proof-of-concept code in an emulator or in android studio
 
 ## Outcomes
 Kevin
-* Container was created using HTML and Bootstrap CSS libraries
+* The Container was created using HTML and Bootstrap CSS libraries
 
 Lauren
 * Our react components started to take real shape and got some styles.
@@ -190,7 +190,7 @@ Kevin
 * Needed to examine Bootstrap libraries and learn as I went in order to create what was needed
 
 Lauren  
-* The android app for registering the devices cant be used on emulators because it requires the imei. This made testing more challenging.
+* The android app for registering the devices cant be used on emulators because it requires the IMEI. This made testing more challenging.
 
 Dylan  
 * Many of the tutorials for flashing devices are from 2012 or 2013, so they aren’t always up to date
@@ -203,7 +203,7 @@ Aaron
 |-------------------|------------|------------|-------------|
 |Issue with pushing updated firmware | 8 | 2 | If we can't flash the updated firmware on an emulator we will have to try it on another device |
 |Issue communicating the information from the device to the WebApp | 6 | 3 | The firmware that we update will have to communicate the MAC address to the application |
-|Issue understanding AOSP and how everything works | 4 | 6 | Our team has little knowledge on the AOSP and will have to learn how it works |
+|Issue understanding AOSP and how everything works | 4 | 6 | Our team has little knowledge of the AOSP and will have to learn how it works |
 |Issue running the proof-of-concept code in Android emulator | 7 | 9 | Our team has little knowledge or experience working with AOSP or its emulator and there have been many errors |
 
 # Progress Report 5-Nov-2019
@@ -216,21 +216,21 @@ Lauren
 
 Dylan
 * Continued to work on research for flashing a custom ROM to a device and emulator
-* Installed a Ubuntu on a hard drive to allow for proper AOSP development, due to the high spec requirments
+* Installed a Ubuntu on a hard drive to allow for proper AOSP development, due to the high spec requirements
 
 Aaron
 * Worked on getting the Android Emulator to work as a means of seeing the modified log statements from logcat and looked over the log statements to determine where to insert our final endpoint code.
 
 ## Outcomes
 Kevin
-* Gained a better understanding of how to setup our environment
-* Gained a more in depth idea of what is required for the diagrams
+* Gained a better understanding of how to set up our environment
+* Gained a more in-depth idea of what is required for the diagrams
 
 Lauren
 *
 
 Dylan
-* Set up development environment to work on writing custom ROMs
+* Set up a development environment to work on writing custom ROMs
 * Gained a better understanding of flashing custom ROMs to emulators and physical devices
 
 Aaron
@@ -244,11 +244,11 @@ Lauren
 *
 
 Dylan  
-* Setting up the environment for AOSP development is somewhat of a hassle, because it requires such high specs to successfully be able to develop
+* Setting up the environment for AOSP development is somewhat of a hassle because it requires such high specs to successfully be able to develop
 * When I was adding the AOSP to Android Studio I ran into some indexing errors due to the source code being so large
 
 Aaron
-* Building AVD’s in Android Studio modifies an environment variable, which prevented me from running it on the general AVD. I was initially struggling to determine what was making the emulator go into a perpetual bootloop, but I after reading through some large logs, I realized the emulator was set to run a different architecture than what I had compiled.
+* Building AVD’s in Android Studio modifies an environment variable, which prevented me from running it on the general AVD. I was initially struggling to determine what was making the emulator go into a perpetual boot loop, but after reading through some large logs, I realized the emulator was set to run a different architecture than what I had compiled.
 
 # Progress Report 12-Nov-2019
 ## Overview
@@ -259,7 +259,7 @@ Lauren
 *
 
 Dylan
-* Working on research for how to get a GPS coordinate for the DeviceFinder class - Started looking at the android.location.Location class to gain an understanding for where long and lat can be accessed
+* Working on research for how to get a GPS coordinate for the DeviceFinder class - Started looking at the android.location.Location class to gain an understanding of where long and lat can be accessed
 
 Aaron
 * Created the DeviceFinder class and inserted the call to it at the end of ConnectivityService.makeDefault()
@@ -289,7 +289,7 @@ Lauren
 *
 
 Dylan  
-* Most of the examples for gaining the GPS data are on the user application level and not at the firmware level of where we are writing our code, so it is hard to get an example that fits our case well 
+* Most of the examples for gaining the GPS data are on the user application level and not at the firmware level of where we are writing our code, so it is hard to get an example that fits our case well
 
 Aaron
 * There was a massive learning curve related to pulling information from system services and requesting system services.
@@ -298,13 +298,13 @@ Aaron
 ## Overview
 Kevin
 * Discussed design documents with the group.
-* Developed plan for doing a security evaluation of our environment.
+* Developed a plan for doing a security evaluation of our environment.
 
 Lauren
 *
 
 Dylan
-*
+* Developed basic skeleton code for handling GPS data from the device
 
 Aaron
 * Testing the post request code
@@ -322,7 +322,7 @@ Lauren
 *
 
 Dylan
-*
+* We now have a basic outline of code to return the latitude and longitude of the device, this still needs work to function properly
 
 Aaron
 * Finished debugging the Post request code and successfully sent a post request to the web application.
@@ -335,7 +335,7 @@ Lauren
 *
 
 Dylan  
-*
+* The examples for getting GPS data from devices is often written in the application level, not in the firmware level. Thus the code must be fitted and arranged  to work at a lower level.
 
 Aaron
 * No experience or knowledge about post requests or how to implement it.
@@ -349,15 +349,15 @@ Lauren
 *
 
 Dylan
-* Started to take a look at the Device Registration Application that is linked to account creation for our web app.
-* Started to gain a basic understanding of the Kotlin programming language
+* I Started to take a look at the Device Registration Application that is linked to account creation for our web app.
+* I Started to gain a basic understanding of the Kotlin programming language
 
 Aaron
-* Fixed the GPS code and started looking into a race condition.
+* I fixed the GPS code and started looking into a race condition.
 
 ## Outcomes
 Kevin
-*  Improved visual guide for process flow.
+*  An improved visual guide for process flow.
 
 Lauren
 *
@@ -381,7 +381,7 @@ Lauren
 
 Dylan  
 * I have never done development in Kotlin so that is a learning process
-* I have a limited understanding of Android development to being with and was given an application that I didn't initially develop so I have to decipher how all of the code works
+* I have a limited understanding of Android development, to begin with, and was given an application that I didn't initially develop so I have to decipher how all of the code works
 
 Aaron
 * Fighting a self-created race condition
@@ -399,25 +399,25 @@ Dylan
 
 Aaron
 * Debugged the GPS and POST request code
-* Fixed a face condition in the GPS and POST Request code that resulted in the sending of NULL coordinate values
+* Fixed a race condition in the GPS and POST Request code that resulted in the sending of NULL coordinate values
 * Cleaned up code -- getting rid of unnecessary code and optimizing the functions
 
 ## Outcomes
 Kevin
-* There are numerous apache and postgresql modules in metasploit that can be used.
+* There are numerous apache and PostgreSQL modules in Metasploit that can be used.
 
 Lauren
 *
 
 Dylan
-* Gain understanding of why the code is crashing and now have an idea of where to start looking on how to fix it
+* Gain an understanding of why the code is crashing and now have an idea of where to start looking on how to fix it
 
 Aaron
 * Fixed the race condition that resulted in NULL coordinate values being sent in the POST request.
 
 ## Hinderances
 Kevin
-* Not sure how to use Metasploit. Will use this week to work on getting these to work.
+* Not sure how to use Metasploit. I Will use this week to work on getting these to work.
 
 Lauren  
 *
@@ -431,14 +431,15 @@ Aaron
 # Progress Report 10-Dec-2019
 ## Overview
 Kevin
-* Ran Burpsuite against environment and examined findings.
+* Ran Burpsuite against the environment and examined findings.
 * Worked on final deliverables.
 
 Lauren
 *
 
 Dylan
-*
+* Added fixes for error handling in the device registration application.
+* Gained better knowledge of Kotlin
 
 Aaron
 * Created an installation script that installs dependencies, pulls the AOSP repository, pulls the modified/added files (ConnectivityService.java and DeviceFinder.java), places those files in the correct directory, and makes the custom image.
@@ -447,13 +448,14 @@ Aaron
 
 ## Outcomes
 Kevin
-*  Found routes path and used that to find publicly facing user information. Sent information to team for remediation.
+*  Found routes path and used that to find publicly facing user information. Sent information to the team for remediation.
 
 Lauren
 *
 
 Dylan
-*
+* Fixed NULL value codes being sent in the device registration application
+* Watched several videos and read articles on handlers trying to gain knowledge on passing information from background thread to UI thread.
 
 Aaron
 * Created user documentation for the Android endpoint code and created an installation script for users.
@@ -467,7 +469,8 @@ Lauren
 *
 
 Dylan  
-*
+* Most of the documentation and videos are in Java, not Kotlin so I have to try and fit the code to the other language
+* After working several hours, asking for help from a friend who does Kotlin development I am still running into errors about running processes on the background thread.
 
 Aaron
 * N/A
