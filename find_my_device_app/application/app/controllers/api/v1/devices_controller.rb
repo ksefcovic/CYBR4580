@@ -4,13 +4,13 @@ class Api::V1::DevicesController < ApplicationController
         @device = Device.where(:registration_code => code)
         if (@device != nil && @device.length > 0) 
           if (Device.where(:imei => imei).latitude > 0) 
-            render text: 'This device is already tied to an account. For help contact support@device-finder.com', content_type: 'text/plain', status: 401
+            render plain: 'This device is already tied to an account. For help contact support@device-finder.com', content_type: 'text/plain', status: 401
           else
             @device[0].update(:imei => imei, :registration_status => "registered", :registration_code => "")
-            render text: 'Device was successfully registered!', content_type: 'text/plain', status: 201
+            render plain: 'Device was successfully registered!', content_type: 'text/plain', status: 201
           end
         else
-          render text: 'Registration code could not be found.', content_type: 'text/plain', status: 404
+          render plain: 'Registration code could not be found.', content_type: 'text/plain', status: 404
         end
     end
 
