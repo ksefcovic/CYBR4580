@@ -212,7 +212,7 @@ Kevin
 * Met with Dr. Hale and discussed Docker and discussed diagrams
 
 Lauren
-*
+* Worked on docker setup
 
 Dylan
 * Continued to work on research for flashing a custom ROM to a device and emulator
@@ -227,7 +227,7 @@ Kevin
 * Gained a more in-depth idea of what is required for the diagrams
 
 Lauren
-*
+* Got a base setup for docker running
 
 Dylan
 * Set up a development environment to work on writing custom ROMs
@@ -241,7 +241,7 @@ Kevin
 * N/A
 
 Lauren  
-*
+* Learning docker at the same time as adding added some extra time to the setup.
 
 Dylan  
 * Setting up the environment for AOSP development is somewhat of a hassle because it requires such high specs to successfully be able to develop
@@ -256,7 +256,7 @@ Kevin
 * Broke lifecycle diagram into two new diagrams and updated progress reports
 
 Lauren
-*
+* Implemented map view for website when missing locations are added.
 
 Dylan
 * Working on research for how to get a GPS coordinate for the DeviceFinder class - Started looking at the android.location.Location class to gain an understanding of where long and lat can be accessed
@@ -273,7 +273,7 @@ Kevin
 * Added a few more weeks to this document to assist teammates in keeping track of their updates
 
 Lauren
-*
+* Missing locations now have a map view to display found coordinates.
 
 Dylan
 * Gained an understanding of how android applications can gain longitude and latitude from the android class
@@ -286,7 +286,7 @@ Kevin
 * N/A
 
 Lauren  
-*
+* N/A
 
 Dylan  
 * Most of the examples for gaining the GPS data are on the user application level and not at the firmware level of where we are writing our code, so it is hard to get an example that fits our case well
@@ -301,7 +301,7 @@ Kevin
 * Developed a plan for doing a security evaluation of our environment.
 
 Lauren
-*
+* Worked on UI updates for web app and got advice from Dr. Hale on possible UI improvements.
 
 Dylan
 * Developed basic skeleton code for handling GPS data from the device
@@ -319,7 +319,7 @@ Kevin
 * Ran Nmap scan against our network.
 
 Lauren
-*
+* UI was improved from initial concept.
 
 Dylan
 * We now have a basic outline of code to return the latitude and longitude of the device, this still needs work to function properly
@@ -332,7 +332,7 @@ Kevin
 * N/A
 
 Lauren  
-*
+* Was not sure how to make the UI better.
 
 Dylan  
 * The examples for getting GPS data from devices is often written in the application level, not in the firmware level. Thus the code must be fitted and arranged  to work at a lower level.
@@ -346,7 +346,7 @@ Kevin
 * Added information to the design documents.
 
 Lauren
-*
+* Continued work on UI and updated authentication.
 
 Dylan
 * I Started to take a look at the Device Registration Application that is linked to account creation for our web app.
@@ -360,7 +360,7 @@ Kevin
 *  An improved visual guide for process flow.
 
 Lauren
-*
+* Further improvement on UI and  better authentication in place.
 
 Dylan
 * Gaining a better understanding and trying to help the error reporting for our device registration Application
@@ -377,7 +377,7 @@ Kevin
 * N/A
 
 Lauren  
-*
+* N/A
 
 Dylan  
 * I have never done development in Kotlin so that is a learning process
@@ -392,7 +392,7 @@ Kevin
 * Examined Metasploit to find what we can use to attack our environment.
 
 Lauren
-*
+* Fixed docker puma issue and continued UI work.
 
 Dylan
 * Determined what the issue was for our error handling for device registration and started to learn about handlers and loopers to try and fix the problem
@@ -407,7 +407,7 @@ Kevin
 * There are numerous apache and PostgreSQL modules in Metasploit that can be used.
 
 Lauren
-*
+* Docker was running again and ui improved.
 
 Dylan
 * Gain an understanding of why the code is crashing and now have an idea of where to start looking on how to fix it
@@ -420,7 +420,7 @@ Kevin
 * Not sure how to use Metasploit. I Will use this week to work on getting these to work.
 
 Lauren  
-*
+* N/A
 
 Dylan  
 * Again, I have little understanding of Android application development and have only been using Kotlin for half a week now so I have to learn how handlers and loopers work
@@ -435,7 +435,7 @@ Kevin
 * Worked on final deliverables.
 
 Lauren
-*
+* Added DNS nad security certificate to website.
 
 Dylan
 * Added fixes for error handling in the device registration application.
@@ -451,7 +451,7 @@ Kevin
 *  Found routes path and used that to find publicly facing user information. Sent information to the team for remediation.
 
 Lauren
-*
+* Website is now accesible through www.device_finder.com with https.
 
 Dylan
 * Fixed NULL value codes being sent in the device registration application
@@ -466,7 +466,7 @@ Kevin
 * Needed to update Burpsuite as it was not visually appealing.
 
 Lauren  
-*
+* Was not familar with adding security certificates so took some extra time in learning.
 
 Dylan  
 * Most of the documentation and videos are in Java, not Kotlin so I have to try and fit the code to the other language
